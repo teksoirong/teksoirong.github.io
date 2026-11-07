@@ -547,7 +547,7 @@ const svg=`<svg viewBox="0 0 560 380" role="img" aria-label="Animated illustrati
 <g transform="translate(30,330)" class="bob">${P("#5BAA5B","#A0623B","#fff")}<line x1="6" y1="-56" x2="18" y2="-28" stroke="#5BAA5B" stroke-width="6" stroke-linecap="round"/><rect x="8" y="-28" width="22" height="16" rx="3" fill="#D97745"/><path d="M10-28q9-14 18 0" stroke="#555" fill="none" stroke-width="2"/></g>
 <g><ellipse cx="415" cy="330" rx="26" ry="5" fill="#0002"/><rect x="402" y="312" width="26" height="18" rx="3" fill="#E4577A"/><rect x="402" y="312" width="26" height="5" fill="#fff" opacity=".6"/></g>
 </svg>`;
-const w=document.querySelector('.hero .w'),a=document.createElement('div');a.id='art';a.innerHTML=svg;w.appendChild(a);
+const w=document.querySelector('.hero .w'),a=document.createElement('div');a.id='art';a.innerHTML=svg;/* old illustration no longer inserted */
 if(matchMedia('(prefers-reduced-motion:reduce)').matches)a.querySelector('svg').pauseAnimations&&a.querySelector('svg').pauseAnimations();
 T.en.heronote="Illustrated animation – real project photos coming soon.";T.bn.heronote="চিত্রায়িত অ্যানিমেশন – প্রকৃত প্রকল্পের ছবি শীঘ্রই যোগ হবে।";
 const R=document.documentElement,b=document.createElement('button');b.id='th';b.type='button';
@@ -1359,6 +1359,7 @@ scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:
 .tpt button span{opacity:.7;margin-left:4px}.tpt button.on{background:linear-gradient(135deg,#E6C777,#B8862F);color:#111;border-color:transparent}
 .tpdr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
 </style>
+<style id="tpcss0">#art,.hero .note{display:none!important}.hero .b{gap:10px!important;margin-top:20px!important}.hero .b .btn{padding:8px 17px!important;font-size:13.5px!important;border-radius:9px!important;box-shadow:0 4px 12px #b8862f33}.hero .b .btn.o{border-width:1.5px!important}</style>
 <style id="tpcss2">
 #tradm{font-size:14px;animation:tpfd .28s ease both}
 @keyframes tpfd{from{opacity:0}to{opacity:1}}
