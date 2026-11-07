@@ -1364,7 +1364,10 @@ scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:
 #tradm{font-size:14px;animation:tpfd .28s ease both}
 @keyframes tpfd{from{opacity:0}to{opacity:1}}
 @keyframes tpup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes tppop{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes tppop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes tpfo{to{opacity:0}}
+#tradm{transition:background-color .45s ease,-webkit-backdrop-filter .45s ease,backdrop-filter .45s ease}
+#tradm .tpfx.fi{animation:tpfd .55s ease both}#tradm .tpfx.fo{animation:tpfo .33s ease both;pointer-events:none}
 @keyframes tpspin{to{transform:rotate(360deg)}}
 #tradm .tpab{padding:7px 12px;padding-top:calc(7px + env(safe-area-inset-top,0px));gap:6px;background:rgba(11,11,11,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 #tradm .tpab img{height:22px}#tradm .tpab b{font-size:14px;font-weight:600}#tradm .tpem{font-size:11px}
@@ -1409,18 +1412,22 @@ scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:
 #tradm .pji .ps,#tradm .pji .pe{grid-column:2/4}#tradm .pji .pe{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
 #tradm .pji.od small.s{color:#c0392b;font-weight:700}#tradm .pji.ok small.s{color:#1e7a3c;font-weight:600}
 #tradm .tpjg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#tradm .pjn{margin-top:8px;padding-top:8px;border-top:1px solid var(--grey)}#tradm .pjr{display:flex;gap:6px}#tradm .pjr input{flex:1;min-width:0}
+#tradm .pjh2{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:5px}#tradm .pjh{font-size:12px;color:var(--mu)}#tradm .pjh.er{color:#c0392b;font-weight:600}
+#tradm .pjh2 small{color:var(--mu);font-size:11.5px}#tradm .pjf{background:none;border:0;padding:2px 0;color:#B8862F;font:600 12px inherit;font-family:inherit;cursor:pointer}
 #tradm .tpt button.od span{background:#c0392b;color:#fff;opacity:1;border-radius:99px;padding:0 6px;animation:tppulse 2.2s ease-in-out infinite}
 #tradm.lg{background:rgba(12,12,12,.4);-webkit-backdrop-filter:blur(16px) saturate(1.1);backdrop-filter:blur(16px) saturate(1.1)}
 #tradm .lgw{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px}
-#tradm .lgc{position:relative;width:100%;max-width:330px;padding:24px 18px 18px;border-radius:20px;background:color-mix(in srgb,var(--card,#fff) 68%,transparent);-webkit-backdrop-filter:blur(22px) saturate(1.3);backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.3);box-shadow:0 24px 60px rgba(0,0,0,.35);animation:tppop .42s cubic-bezier(.2,.9,.25,1.1) both;color:var(--tx)}
-#tradm .lgc h2{margin:6px 0 12px;font-size:19px;text-align:center}
-#tradm .lgl{display:block;height:30px;width:auto;margin:0 auto;background:#0B0B0B;border-radius:8px;padding:5px 12px}
-#tradm .lgc label{display:block;margin-bottom:8px}
-#tradm .lgc input{width:100%;margin-top:3px;background:color-mix(in srgb,var(--card,#fff) 70%,transparent);border-color:rgba(120,120,120,.35)}
-#tradm .lgc .btn{width:100%;margin-top:4px}
-#tradm .lgc .msg{margin-top:10px;padding:9px 11px;font-size:12.5px}
+#tradm .lgc{position:relative;width:100%;max-width:272px;padding:20px 15px 14px;border-radius:18px;background:color-mix(in srgb,var(--card,#fff) 68%,transparent);-webkit-backdrop-filter:blur(22px) saturate(1.3);backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.3);box-shadow:0 24px 60px rgba(0,0,0,.35);animation:tppop .5s ease both;color:var(--tx)}
+#tradm .lgc h2{margin:4px 0 10px;font-size:15.5px;text-align:center}
+#tradm .lgl{display:block;height:22px;width:auto;margin:0 auto;background:#0B0B0B;border-radius:7px;padding:4px 10px}
+#tradm .lgc label{display:block;margin-bottom:7px;font-size:11.5px}
+#tradm .lgc input{width:100%;margin-top:3px;padding:7px 9px;font-size:13px;background:color-mix(in srgb,var(--card,#fff) 70%,transparent);border-color:rgba(120,120,120,.35)}
+#tradm .lgc .btn{width:100%;margin-top:4px;padding:7px 12px;font-size:13px}
+#tradm .lgc .msg{margin-top:9px;padding:7px 9px;font-size:12px}
+#tradm .lgc.tpal{max-width:272px!important;margin:0 auto!important}
 #tradm .lgc.np{animation:none}
-#tradm .lgb{position:absolute;top:9px;left:10px;height:26px;min-width:26px;padding:0 8px;border-radius:99px;border:1px solid rgba(120,120,120,.35);background:color-mix(in srgb,var(--card,#fff) 55%,transparent);color:var(--tx);font:600 11px inherit;font-family:inherit;cursor:pointer;transition:transform .15s,background .2s}
+#tradm .lgb{position:absolute;top:8px;left:9px;height:23px;min-width:23px;padding:0 8px;border-radius:99px;border:1px solid rgba(120,120,120,.35);background:color-mix(in srgb,var(--card,#fff) 55%,transparent);color:var(--tx);font:600 11px inherit;font-family:inherit;cursor:pointer;transition:transform .15s,background .2s}
 #tradm .lgb:active{transform:scale(.92)}#tradm .lgx{left:auto;right:10px;padding:0}
 #tradm .tpsp{width:30px;height:30px;border-radius:50%;border:3px solid rgba(255,255,255,.35);border-top-color:#E6C777;animation:tpspin .8s linear infinite}
 @media(max-width:480px){#tradm .tpem{display:none}}
@@ -1540,85 +1547,90 @@ function ensureC(){if(location.hash==='#bill-payment'&&OK()&&C.id&&!C.un&&!C.loa
 
 /* ================= ADMIN ================= */
 const A={ready:false,shown:0,fresh:0,u:null,tab:'pending',s:'',m:'',f:'',t:'',P:[],I:[],im:{},un:[],err:'',init:false,open:false};
+const te=(a,b)=>a,bE=n=>String(n),mE=n=>'৳ '+Number(n).toLocaleString('en-US'),dtE=x=>dt(x,1);
+const dE=x=>{if(!x)return'—';const d=typeof x==='string'?new Date(x+'T12:00:00+06:00'):(x.toDate?x.toDate():new Date(x));return d.toLocaleDateString('en-GB',{timeZone:'Asia/Dhaka',day:'numeric',month:'short',year:'numeric'})};
+const pctF=x=>{const v=Math.round(x*10)/10;return(v%1?v.toFixed(1):String(v))+'%'};
+const chipE=s=>{const m={unpaid:['','Unpaid'],pending:['p','Pending'],paid:['s','Success'],approved:['s','Success'],rejected:['r','Rejected']}[s]||['',s];return`<span class="tpchip ${m[0]}">${m[1]}</span>`};
 const ael=()=>{let e=q('#tradm');if(!e){e=document.createElement('div');e.id='tradm';document.body.appendChild(e)}return e};
 async function openA(){const e=ael();e.style.display='block';document.documentElement.style.overflow='hidden';A.open=true;
 if(OK()&&!A.init){A.init=true;try{const F=await fb();F.onAuthStateChanged(F.auth,u=>{A.u=u;A.ready=true;u?watch():unwatch();paintA()})}catch(x){A.init=false;A.ready=true}}paintA()}
 function closeA(){const e=q('#tradm');if(e){e.style.display='none';e.classList.remove('lg');A.pop=0}A.open=false;document.documentElement.style.overflow=''}
-function unwatch(){A.un.forEach(f=>f());A.un=[];A.P=[];A.I=[];A.shown=0}
+function unwatch(){A.un.forEach(f=>f());A.un=[];A.P=[];A.I=[];A.shown=0;A.pop=0}
 async function watch(){unwatch();const F=await fb(),db=F.db;
 const er=e=>{if(e.code==='permission-denied'){A.err='denied';F.signOut(F.auth)}else{A.err='load';paintA()}};
 const qy=c=>F.query(F.collection(db,c),F.orderBy('createdAt','desc'),F.limit(1000));
 A.un=[F.onSnapshot(qy('payments'),s=>{A.P=s.docs.map(d=>Object.assign({id:d.id},d.data()));paintT();paintL()},er),
 F.onSnapshot(qy('invoices'),s=>{A.I=s.docs.map(d=>Object.assign({id:d.id},d.data()));A.im=Object.fromEntries(A.I.map(x=>[x.id,x]));paintT();paintL()},er)]}
 function paintA(){const e=ael();if(!A.open)return;const im=q('header .nav img'),logo=im?im.src:'';
-e.classList.toggle('lg',!A.u);let b='';
-if(!OK()||(!A.u&&!A.ready)||!A.u){
-const msg=!OK()?`<p style="margin:0">${tr('Firebase is not configured yet. See the setup guide.','Firebase এখনও সেট করা হয়নি। সেটআপ গাইড দেখুন।')}</p>`:'';
-const bt=`<button type="button" class="lgb" data-a="lang" aria-label="Language">${L==='bn'?'EN':'বাং'}</button><button type="button" class="lgb lgx" data-a="back" aria-label="Close">✕</button>`;
-if(OK()&&!A.ready)e.innerHTML=`<div class="lgw"><div class="tpsp"></div></div>`;
-else e.innerHTML=`<div class="lgw"><form class="lgc tpal${A.pop?' np':''}" novalidate>${bt}${logo?`<img class="lgl" src="${logo}" alt="Teksoi Rong">`:''}<h2>${tr('Admin Login','অ্যাডমিন লগইন')}</h2>${OK()?`<label>Email<input name="e" type="email" autocomplete="username"></label><label>${tr('Password','পাসওয়ার্ড')}<input name="p" type="password" autocomplete="current-password"></label><button class="btn" type="submit">${tr('Login','লগইন')}</button>${A.err?`<div class="msg err">${A.err==='denied'?tr('This account is not authorised as admin.','এই অ্যাকাউন্টটি অ্যাডমিন হিসেবে অনুমোদিত নয়।'):A.err==='load'?tr('Could not load data.','ডাটা লোড করা যায়নি।'):esc(A.err)}</div>`:''}`:msg}</form></div>`;A.pop=1;
-return}
-const bar=`<div class="tpab"><img src="${logo}" alt="Teksoi Rong"><b>${tr('Admin Panel','অ্যাডমিন প্যানেল')}</b><span class="grow"></span><span class="tpem">${esc(A.u.email)}</span><button class="btn o sm" data-a="out">${tr('Logout','লগআউট')}</button><button class="btn o sm" data-a="lang">${L==='bn'?'EN':'বাং'}</button><button class="btn o sm" data-a="back">✕</button></div>`;
-b=`<div id="at" class="tpt"></div><div id="af"></div><div id="al"></div>`;
-e.innerHTML=bar+`<div class="w tpaw">${b}</div>`;paintT();paintF();A.fresh=!A.shown;paintL();A.fresh=0;A.shown=1}
+e.classList.toggle('lg',!A.u);
+if(!OK()||!A.u){
+const bt='<button type="button" class="lgb lgx" data-a="back" aria-label="Close">✕</button>';
+if(OK()&&!A.ready)e.innerHTML='<div class="lgw"><div class="tpsp"></div></div>';
+else e.innerHTML=`<div class="lgw"><form class="lgc tpal${A.pop?' np':''}" novalidate>${bt}${logo?`<img class="lgl" src="${logo}" alt="Teksoi Rong">`:''}<h2>Admin Login</h2>${OK()?`<label>Email<input name="e" type="email" autocomplete="username"></label><label>Password<input name="p" type="password" autocomplete="current-password"></label><button class="btn" type="submit">Login</button>${A.err?`<div class="msg err">${A.err==='denied'?'This account is not authorised as admin.':A.err==='load'?'Could not load data.':esc(A.err)}</div>`:''}`:'<p style="margin:0">Firebase is not configured yet. See the setup guide.</p>'}</form></div>`;
+A.pop=1;return}
+const bar=`<div class="tpab"><img src="${logo}" alt="Teksoi Rong"><b>Admin Panel</b><span class="grow"></span><span class="tpem">${esc(A.u.email)}</span><button class="btn o sm" data-a="out">Logout</button><button class="btn o sm" data-a="back">✕</button></div>`;
+e.innerHTML=`<div class="tpfx${A.shown?'':' fi'}">`+bar+`<div class="w tpaw"><div id="at" class="tpt"></div><div id="af"></div><div id="al"></div></div></div>`;paintT();paintF();A.fresh=!A.shown;paintL();A.fresh=0;A.shown=1}
 const TD=()=>new Date(Date.now()+6*36e5).toISOString().slice(0,10);
-const LBL=[['Advance','অগ্রিম'],['Mid-work','কাজের অর্ধেক'],['Final','শেষ দিন']];
-const bnD=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
+const nm=v=>Math.round(Number(String(v).replace(/[,\s]/g,'')));
+const ms=i=>i.createdAt&&i.createdAt.toMillis?i.createdAt.toMillis():0;
 function projs(){const td=TD(),m={};
 A.I.forEach(i=>{if(!i.proj)return;const p=m[i.proj]||(m[i.proj]={id:i.proj,name:i.customerName,work:i.work||'',total:i.projTotal||0,st:[]});p.st.push(i)});
-return Object.values(m).map(p=>{p.st.sort((a,b)=>(a.stage||0)-(b.stage||0));p.paid=0;p.odAmt=0;p.odDays=0;let pen=0;
-p.st.forEach(i=>{i._pay=A.P.find(x=>x.invoiceId===i.id&&x.status==='approved');
+return Object.values(m).map(p=>{p.st.sort((a,b)=>(a.stage||0)-(b.stage||0)||ms(a)-ms(b));p.paid=0;p.inv=0;p.odAmt=0;p.odDays=0;let pen=0;
+p.st.forEach(i=>{p.inv+=i.amount;i._pay=A.P.find(x=>x.invoiceId===i.id&&x.status==='approved');
 if(i.payState==='paid'){i._s='ok';p.paid+=i.amount}
 else if(i.payState==='pending'){i._s='pen';pen++}
 else if(i.due&&i.due<td){i._s='od';p.odAmt+=i.amount;i._days=Math.round((Date.parse(td)-Date.parse(i.due))/864e5);p.odDays=Math.max(p.odDays,i._days)}
 else i._s=i.due===td?'td':'up'});
-p.rem=p.total-p.paid;p.cl=p.odAmt?'od':(pen?'pen':(p.rem<=0?'ok':''));return p})
+p.rem=p.total-p.paid;p.left=p.total-p.inv;p.cl=p.odAmt?'od':(pen?'pen':(p.rem<=0?'ok':''));return p})
 .sort((a,b)=>(a.cl==='od'?0:1)-(b.cl==='od'?0:1)||(b.rem>0)-(a.rem>0))}
-function pjCalc(f){const num=n=>Number(f.elements[n].value.trim().replace(/[,\s]/g,'')),t=Math.round(num('t')),p1=num('p1'),p2=num('p2');
-if(!(t>0)||!(p1>0)||!(p2>p1)||!(p2<100))return null;const c1=Math.round(t*p1/100),c2=Math.round(t*p2/100);
-const r={t,p:[p1,p2,100],a:[c1,c2-c1,t-c2]};return r.a.every(x=>x>0)?r:null}
-function pjPrev(f){const c=pjCalc(f),e=f.querySelector('#pjp');if(!e)return;e.textContent=c?LBL.map((l,k)=>tr(l[0],l[1])+' '+money(c.a[k])).join(' · '):''}
-function projForm(){const td=TD();return`<form class="tpc tpj" novalidate><h3>${tr('New project with instalments','নতুন কাজ (কিস্তিসহ)')}</h3><label>${tr('Customer name','গ্রাহকের নাম')}<input name="n"></label><label>${tr('Work (optional)','কাজের নাম (ঐচ্ছিক)')}<input name="w"></label><label>${tr('Total contract amount (BDT)','মোট কাজের টাকা')}<input name="t" inputmode="numeric"></label><div class="tpjg"><label>${tr('Advance %','অগ্রিম %')}<input name="p1" inputmode="numeric" value="30"></label><label>${tr('Mid-work total %','অর্ধেক কাজে মোট %')}<input name="p2" inputmode="numeric" value="75"></label></div><div class="tpjg"><label>${tr('Advance date','অগ্রিমের তারিখ')}<input name="d1" type="date" value="${td}"></label><label>${tr('Mid-work date','অর্ধেক কাজের তারিখ')}<input name="d2" type="date"></label></div><label>${tr('Final payment date (work end)','শেষ পেমেন্টের তারিখ (কাজ শেষ)')}<input name="d3" type="date"></label><p class="note" id="pjp" style="margin:2px 0 10px"></p><button class="btn" type="submit">${tr('Create project','কাজ তৈরি করুন')}</button></form>`}
-async function mkProj(f){const c=pjCalc(f),n=f.elements.n.value.trim(),w=f.elements.w.value.trim(),d=[1,2,3].map(k=>f.elements['d'+k].value);
-if(!n||!c)return alert(tr('Enter name, total and valid percentages (e.g. 30 and 75).','নাম, মোট টাকা ও সঠিক শতাংশ দিন (যেমন ৩০ ও ৭৫)।'));
-if(d.some(x=>!/^\d{4}-\d{2}-\d{2}$/.test(x))||!(d[0]<=d[1]&&d[1]<=d[2]))return alert(tr('Select all three dates, in order.','তিনটি তারিখ ক্রমানুসারে দিন।'));
+function pjCalc(f){const t=nm(f.elements.t.value),a=nm(f.elements.a.value);return t>0&&a>0&&a<=t?{t,a}:null}
+function pjPrev(f){const e=f.querySelector('#pjp');if(!e)return;const t=nm(f.elements.t.value),a=nm(f.elements.a.value);
+e.textContent=t>0&&a>0?(a>t?'First payment is more than the total.':pctF(a/t*100)+' of total · '+mE(t-a)+' left to request after this'):''}
+function pjHint(x){const h=x.closest('.pjn').querySelector('.pjh'),a=nm(x.value),T=+x.dataset.t,Lf=+x.dataset.l;
+h.textContent=a>0?(a>Lf?'More than the '+mE(Lf)+' left to request':pctF(a/T*100)+' of total'):'';h.className='pjh'+(a>Lf?' er':'')}
+function projForm(){return`<form class="tpc tpj" novalidate><h3>New project</h3><label>Customer name<input name="n" autocomplete="off"></label><label>Total contract amount (BDT)<input name="t" inputmode="numeric" autocomplete="off"></label><label>First payment amount (BDT)<input name="a" inputmode="numeric" autocomplete="off"></label><p class="note" id="pjp" style="margin:2px 0 10px;min-height:1.3em"></p><button class="btn" type="submit">Create project</button></form>`}
+async function mkProj(f){const c=pjCalc(f),n=f.elements.n.value.trim();
+if(!n||!c)return alert('Enter the customer name, the total amount and a first payment that is not more than the total.');
 const bt=f.querySelector('button[type=submit]');bt.disabled=true;
-try{const F=await fb(),b=F.writeBatch(F.db),proj='PRJ-'+ymd()+'-'+rnd(4,'0123456789'),used=new Set();
-c.a.forEach((amt,k)=>{let no;do{no='INV-'+ymd()+'-'+rnd(4,'0123456789')}while(used.has(no));used.add(no);const id=no+'-'+rnd(10);
-b.set(F.doc(F.db,'invoices',id),{invoiceNo:no,customerName:n,note:(w?w+' — ':'')+LBL[k][0]+' '+c.p[k]+'% / '+LBL[k][1]+' '+bnD(c.p[k])+'%',amount:amt,payState:'unpaid',createdAt:F.serverTimestamp(),proj,stage:k+1,pct:c.p[k],due:d[k],projTotal:c.t,work:w})});
-await b.commit();paintF()}catch(x){alert(x.code||x.message);bt.disabled=false}}
+try{const F=await fb(),no='INV-'+ymd()+'-'+rnd(4,'0123456789'),id=no+'-'+rnd(10),proj='PRJ-'+ymd()+'-'+rnd(4,'0123456789');
+await F.setDoc(F.doc(F.db,'invoices',id),{invoiceNo:no,customerName:n,note:'Payment 1 · '+pctF(c.a/c.t*100),amount:c.a,payState:'unpaid',createdAt:F.serverTimestamp(),proj,stage:1,projTotal:c.t});paintF()}catch(x){alert(x.code||x.message);bt.disabled=false}}
+async function addPay(id,t){const p=projs().find(x=>x.id===id);if(!p)return;const inp=t.closest('.pj').querySelector('.pja2'),a=nm(inp.value);
+if(!(a>0))return alert('Enter the payment amount.');if(a>p.left)return alert('That is more than the '+mE(p.left)+' left to request.');
+const k=Math.max(0,...p.st.map(i=>i.stage||0))+1,no='INV-'+ymd()+'-'+rnd(4,'0123456789'),iid=no+'-'+rnd(10);
+try{const F=await fb();await F.setDoc(F.doc(F.db,'invoices',iid),{invoiceNo:no,customerName:p.name,note:'Payment '+k+' · '+pctF(a/p.total*100),amount:a,payState:'unpaid',createdAt:F.serverTimestamp(),proj:id,stage:k,projTotal:p.total});inp.value='';pjHint(inp)}catch(e){alert(e.code||e.message)}}
+async function editAmt(id){const i=A.im[id];if(!i||i.payState!=='unpaid')return;const p=projs().find(x=>x.id===i.proj);if(!p)return;const mx=p.left+i.amount;
+const v=prompt('New amount (BDT), up to '+mx+':',String(i.amount));if(v===null)return;const a=nm(v);
+if(!(a>0)||a>mx)return alert('Enter an amount between 1 and '+mx+'.');
+try{const F=await fb();await F.updateDoc(F.doc(F.db,'invoices',id),{amount:a,note:'Payment '+(i.stage||1)+' · '+pctF(a/p.total*100),updatedAt:F.serverTimestamp()})}catch(e){alert(e.code||e.message)}}
 function projList(){const P=projs();
-if(!P.length)return`<p class="note">${tr('No projects yet. Create one above.','এখনও কোনো কাজ নেই। ওপরে নতুন কাজ তৈরি করুন।')}</p>`;
-const act=P.filter(p=>p.rem>0).length,rem=P.reduce((s,p)=>s+Math.max(0,p.rem),0),od=P.reduce((s,p)=>s+p.odAmt,0);
-const sm=`<div class="pjs"><div><span class="tpl">${tr('Active','চলমান')}</span><b>${bn(act)}</b></div><div><span class="tpl">${tr('To receive','মোট পাবেন')}</span><b>${money(rem)}</b></div><div class="${od?'bad':''}"><span class="tpl">${tr('Overdue','দেরি হয়েছে')}</span><b>${money(od)}</b></div></div>`;
-return sm+P.map(p=>{const pc=p.total?Math.min(100,Math.round(p.paid/p.total*100)):0,
-ch={od:['r',tr('Overdue','দেরি')],pen:['p',tr('Awaiting approval','অনুমোদন বাকি')],ok:['s',tr('Completed','সম্পূর্ণ')],'':['',tr('Running','চলমান')]}[p.cl];
-const rows=p.st.map(i=>{const lb=LBL[(i.stage||1)-1]||['Instalment','কিস্তি'];
-const stt={ok:`✓ ${tr('Paid','পরিশোধিত')} ${i._pay?dd(i._pay.createdAt):''}`,pen:`⏳ ${tr('Awaiting your approval','আপনার অনুমোদন বাকি')}`,od:`⚠ ${bn(i._days)} ${tr('days overdue','দিন দেরি')}`,td:tr('Due today','আজই শেষ দিন'),up:''}[i._s];
-const act2=i._s==='ok'?(i._pay?`<button class="btn o sm" data-a="rc" data-id="${i._pay.id}">⬇ ${tr('Receipt','রসিদ')}</button>`:''):i._s==='pen'?'':`<button class="btn sm" data-a="lk" data-id="${esc(i.id)}">${tr('Copy payment link','পেমেন্ট লিংক কপি')}</button><button class="btn o sm" data-a="ed" data-id="${esc(i.id)}">${tr('Change date','তারিখ বদলান')}</button>`;
-return`<div class="pji ${i._s}"><span class="dt"></span><b>${tr(lb[0],lb[1])} · ${bn(i.pct)}%</b><span class="pa">${money(i.amount)}</span><div class="ps"><small>${tr('Due','তারিখ')}: ${dd(i.due)}</small>${stt?` <small class="s">${stt}</small>`:''}</div>${act2?`<div class="pe">${act2}</div>`:''}</div>`}).join('');
+if(!P.length)return'<p class="note">No projects yet. Create one above.</p>';
+const act=P.filter(p=>p.rem>0).length,rem=P.reduce((s,p)=>s+Math.max(0,p.rem),0),got=P.reduce((s,p)=>s+p.paid,0),od=P.reduce((s,p)=>s+p.odAmt,0);
+const sm=`<div class="pjs"><div><span class="tpl">Active</span><b>${act}</b></div><div><span class="tpl">To receive</span><b>${mE(rem)}</b></div>${od?`<div class="bad"><span class="tpl">Overdue</span><b>${mE(od)}</b></div>`:`<div><span class="tpl">Received</span><b style="color:#1e7a3c">${mE(got)}</b></div>`}</div>`;
+return sm+P.map(p=>{const pc=p.total?Math.min(100,p.paid/p.total*100):0,
+ch={od:['r','Overdue'],pen:['p','Awaiting approval'],ok:['s','Completed'],'':['',pctF(pc)+' received']}[p.cl];
+const rows=p.st.map(i=>{const stt={ok:'✓ Paid '+(i._pay?dE(i._pay.createdAt):''),pen:'⏳ Awaiting your approval',od:'⚠ '+i._days+' days overdue',td:'Due today',up:'Not paid yet'}[i._s];
+const act2=i._s==='ok'?(i._pay?`<button class="btn o sm" data-a="rc" data-id="${i._pay.id}">⬇ Receipt</button>`:''):i._s==='pen'?'':`<button class="btn sm" data-a="lk" data-id="${esc(i.id)}">Copy payment link</button><button class="btn o sm" data-a="ea" data-id="${esc(i.id)}">Edit amount</button><button class="btn o sm" data-a="di" data-id="${esc(i.id)}">Delete</button>`;
+return`<div class="pji ${i._s}"><span class="dt"></span><b>Payment ${i.stage||1} · ${p.total?pctF(i.amount/p.total*100):''}</b><span class="pa">${mE(i.amount)}</span><div class="ps"><small>Requested ${dE(i.createdAt)}</small> <small class="s">${stt}</small></div>${act2?`<div class="pe">${act2}</div>`:''}</div>`}).join('');
+const req=p.left>0?`<div class="pjn"><div class="pjr"><input class="pja2" inputmode="numeric" autocomplete="off" placeholder="Next payment amount (BDT)" data-p="${esc(p.id)}" data-t="${p.total}" data-l="${p.left}"><button class="btn sm" data-a="pr" data-id="${esc(p.id)}">Create link</button></div><div class="pjh2"><span class="pjh"></span><button type="button" class="pjf" data-a="pf" data-id="${esc(p.id)}">Use all ${mE(p.left)}</button></div></div>`:(p.cl==='ok'?'':'<div class="pjh2"><small>The full contract amount has been invoiced.</small></div>');
 const canDel=p.st.every(i=>i.payState==='unpaid');
-return`<div class="tpc pj ${p.cl}"><div class="tpr"><div><b>${esc(p.name)}</b>${p.work?`<div class="tpl">${esc(p.work)}</div>`:''}</div><span class="tpchip ${ch[0]}">${ch[1]}</span></div>${p.odAmt?`<div class="pjw">⚠ ${tr('Overdue','দেরি')}: ${money(p.odAmt)} · ${bn(p.odDays)} ${tr('days','দিন')}</div>`:''}<div class="pjs"><div><span class="tpl">${tr('Total','মোট')}</span><b>${money(p.total)}</b></div><div><span class="tpl">${tr('Received','পেয়েছেন')}</span><b style="color:#1e7a3c">${money(p.paid)}</b></div><div class="${p.odAmt?'bad':''}"><span class="tpl">${tr('Remaining','বাকি')}</span><b>${money(Math.max(0,p.rem))}</b></div></div><div class="pjb"><i style="width:${pc}%"></i></div>${rows}${canDel?`<div class="tpbt"><button class="btn o sm" data-a="dp" data-id="${esc(p.id)}">${tr('Delete project','কাজ মুছুন')}</button></div>`:''}</div>`}).join('')}
-async function editDue(id){const i=A.im[id];if(!i)return;const v=prompt(tr('New due date (YYYY-MM-DD):','নতুন তারিখ (YYYY-MM-DD):'),i.due||'');if(v===null)return;const t=v.trim();
-if(!/^\d{4}-\d{2}-\d{2}$/.test(t)||isNaN(Date.parse(t)))return alert(tr('Use the format YYYY-MM-DD, e.g. 2026-12-25.','এই ফরম্যাটে দিন: YYYY-MM-DD, যেমন 2026-12-25।'));
-try{const F=await fb();await F.updateDoc(F.doc(F.db,'invoices',id),{due:t,updatedAt:F.serverTimestamp()})}catch(e){alert(e.code||e.message)}}
-async function delProj(id){const ls=A.I.filter(i=>i.proj===id);if(ls.some(i=>i.payState!=='unpaid'))return alert(tr('Cannot delete: a payment has been made or is pending.','মুছা যাবে না: পেমেন্ট এসেছে বা অপেক্ষমাণ।'));
-if(!confirm(tr('Delete this project and its invoices?','এই কাজ ও এর ইনভয়েসগুলো মুছবেন?')))return;
+return`<div class="tpc pj ${p.cl}"><div class="tpr"><div><b>${esc(p.name)}</b>${p.work?`<div class="tpl">${esc(p.work)}</div>`:''}</div><span class="tpchip ${ch[0]}">${ch[1]}</span></div>${p.odAmt?`<div class="pjw">⚠ Overdue: ${mE(p.odAmt)} · ${p.odDays} days</div>`:''}<div class="pjs"><div><span class="tpl">Total</span><b>${mE(p.total)}</b></div><div><span class="tpl">Received · ${pctF(pc)}</span><b style="color:#1e7a3c">${mE(p.paid)}</b></div><div class="${p.odAmt?'bad':''}"><span class="tpl">Remaining</span><b>${mE(Math.max(0,p.rem))}</b></div></div><div class="pjb"><i style="width:${pc}%"></i></div>${rows}${req}${canDel?`<div class="tpbt"><button class="btn o sm" data-a="dp" data-id="${esc(p.id)}">Delete project</button></div>`:''}</div>`}).join('')}
+async function delProj(id){const ls=A.I.filter(i=>i.proj===id);if(ls.some(i=>i.payState!=='unpaid'))return alert('Cannot delete: a payment has been made or is pending.');
+if(!confirm('Delete this project and its invoices?'))return;
 try{const F=await fb(),b=F.writeBatch(F.db);ls.forEach(i=>b.delete(F.doc(F.db,'invoices',i.id)));await b.commit()}catch(e){alert(e.code||e.message)}}
 function paintT(){const e=q('#at');if(!e)return;const od=projs().filter(p=>p.cl==='od').length;const n=s=>A.P.filter(p=>p.status===s).length;
-e.innerHTML=[['pending',tr('Pending','অপেক্ষমাণ'),n('pending')],['approved',tr('Approved','অনুমোদিত'),n('approved')],['rejected',tr('Rejected','বাতিল'),n('rejected')],['all',tr('All History','সব হিস্ট্রি'),A.P.length],['proj',tr('Projects','কাজ/কিস্তি'),projs().length],['inv',tr('Invoices','ইনভয়েস'),A.I.length]].map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}">${t[1]} <span>${bn(t[2])}</span></button>`).join('')}
+e.innerHTML=[['pending',te('Pending','অপেক্ষমাণ'),n('pending')],['approved',te('Approved','অনুমোদিত'),n('approved')],['rejected',te('Rejected','বাতিল'),n('rejected')],['all',te('All History','সব হিস্ট্রি'),A.P.length],['proj',te('Projects','কাজ/কিস্তি'),projs().length],['inv',te('Invoices','ইনভয়েস'),A.I.length]].map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}">${t[1]} <span>${bE(t[2])}</span></button>`).join('')}
 function paintF(){const e=q('#af');if(!e)return;
-if(A.tab==='proj')e.innerHTML=projForm();else if(A.tab==='inv')e.innerHTML=`<form class="tpc tpi" novalidate><h3 style="margin:0 0 10px">${tr('Create new invoice','নতুন ইনভয়েস তৈরি')}</h3><label>${tr('Customer name','গ্রাহকের নাম')}<input name="n"></label><label>${tr('Details (e.g. 30% advance)','বিবরণ (যেমন ৩০% অগ্রিম)')}<input name="d"></label><label>${tr('Amount (BDT)','পরিমাণ (টাকা)')}<input name="a" inputmode="numeric"></label><button class="btn" type="submit">${tr('Create invoice','ইনভয়েস তৈরি করুন')}</button></form>`;
-else e.innerHTML=`<div class="tpc tpfl"><input id="as" type="search" placeholder="${tr('Search name, invoice, Trx ID, mobile, receipt…','নাম, ইনভয়েস, Trx ID, মোবাইল, রসিদ খুঁজুন…')}" value="${esc(A.s)}"><div class="tpt">${['',...PC.M.map(a=>a[0])].map(m=>`<button data-a="meth" data-v="${m}" class="${A.m===m?'on':''}">${m||tr('All methods','সব মাধ্যম')}</button>`).join('')}</div><div class="tpdr"><label>${tr('From','থেকে')}<input id="af1" type="date" value="${A.f}"></label><label>${tr('To','পর্যন্ত')}<input id="af2" type="date" value="${A.t}"></label></div></div>`}
+if(A.tab==='proj')e.innerHTML=projForm();else if(A.tab==='inv')e.innerHTML=`<form class="tpc tpi" novalidate><h3 style="margin:0 0 10px">${te('Create new invoice','নতুন ইনভয়েস তৈরি')}</h3><label>${te('Customer name','গ্রাহকের নাম')}<input name="n"></label><label>${te('Details (e.g. 30% advance)','বিবরণ (যেমন ৩০% অগ্রিম)')}<input name="d"></label><label>${te('Amount (BDT)','পরিমাণ (টাকা)')}<input name="a" inputmode="numeric"></label><button class="btn" type="submit">${te('Create invoice','ইনভয়েস তৈরি করুন')}</button></form>`;
+else e.innerHTML=`<div class="tpc tpfl"><input id="as" type="search" placeholder="${te('Search name, invoice, Trx ID, mobile, receipt…','নাম, ইনভয়েস, Trx ID, মোবাইল, রসিদ খুঁজুন…')}" value="${esc(A.s)}"><div class="tpt">${['',...PC.M.map(a=>a[0])].map(m=>`<button data-a="meth" data-v="${m}" class="${A.m===m?'on':''}">${m||te('All methods','সব মাধ্যম')}</button>`).join('')}</div><div class="tpdr"><label>${te('From','থেকে')}<input id="af1" type="date" value="${A.f}"></label><label>${te('To','পর্যন্ত')}<input id="af2" type="date" value="${A.t}"></label></div></div>`}
 function flt(){const s=A.s.trim().toLowerCase(),f=A.f?new Date(A.f+'T00:00:00+06:00').getTime():0,t=A.t?new Date(A.t+'T23:59:59+06:00').getTime():0;
 return A.P.filter(p=>{const ms=p.createdAt&&p.createdAt.toMillis?p.createdAt.toMillis():0;return(A.tab==='all'||p.status===A.tab)&&(!A.m||p.method===A.m)&&(!s||[p.customerName,p.invoiceNo,p.trxId,p.mobile,p.receiptNo,p.method].join(' ').toLowerCase().includes(s))&&(!f||ms>=f)&&(!t||ms<=t)})}
-function paintL(){const e=q('#al');if(!e)return;e.className=A.fresh?'an':'';if(A.tab==='proj'){e.innerHTML=projList();return}
-if(A.tab==='inv'){e.innerHTML=A.I.length?A.I.map(i=>`<div class="tpc"><div class="tpr"><b>${esc(i.invoiceNo)}</b>${chip(i.payState)}</div><div>${esc(i.customerName)}${i.note?' · '+esc(i.note):''}</div><div class="tpamt" style="font-size:24px">${money(i.amount)}</div><div class="tpbt"><button class="btn sm" data-a="lk" data-id="${esc(i.id)}">${tr('Copy payment link','পেমেন্ট লিংক কপি')}</button><button class="btn o sm" data-a="cd" data-id="${esc(i.id)}">${tr('Copy code','কোড কপি')}</button>${i.payState==='unpaid'?`<button class="btn o sm" data-a="di" data-id="${esc(i.id)}">${tr('Delete','মুছুন')}</button>`:''}</div></div>`).join(''):`<p class="note">${tr('No invoices yet.','এখনও কোনো ইনভয়েস নেই।')}</p>`;return}
+function paintL(){const e=q('#al');if(!e)return;e.className=A.fresh?'an':'';if(A.tab==='proj'){const keep={},ae=document.activeElement,fk=ae&&ae.classList&&ae.classList.contains('pja2')?ae.dataset.p:null;e.querySelectorAll('.pja2').forEach(x=>{if(x.value)keep[x.dataset.p]=x.value});e.innerHTML=projList();e.querySelectorAll('.pja2').forEach(x=>{if(keep[x.dataset.p]){x.value=keep[x.dataset.p];pjHint(x)}if(fk&&x.dataset.p===fk)x.focus()});return}
+if(A.tab==='inv'){e.innerHTML=A.I.length?A.I.map(i=>`<div class="tpc"><div class="tpr"><b>${esc(i.invoiceNo)}</b>${chipE(i.payState)}</div><div>${esc(i.customerName)}${i.note?' · '+esc(i.note):''}</div><div class="tpamt" style="font-size:24px">${mE(i.amount)}</div><div class="tpbt"><button class="btn sm" data-a="lk" data-id="${esc(i.id)}">${te('Copy payment link','পেমেন্ট লিংক কপি')}</button><button class="btn o sm" data-a="cd" data-id="${esc(i.id)}">${te('Copy code','কোড কপি')}</button>${i.payState==='unpaid'?`<button class="btn o sm" data-a="di" data-id="${esc(i.id)}">${te('Delete','মুছুন')}</button>`:''}</div></div>`).join(''):`<p class="note">${te('No invoices yet.','এখনও কোনো ইনভয়েস নেই।')}</p>`;return}
 const L_=flt();e.innerHTML=L_.length?L_.map(p=>{const inv=A.im[p.invoiceId],ok=inv&&inv.amount===p.amount;
-return`<div class="tpc"><div class="tpr"><b>${esc(p.customerName)}</b>${chip(p.status)}</div><div class="tpk"><div><div class="tpl">${tr('Invoice','ইনভয়েস')}</div>${esc(p.invoiceNo)}</div><div><div class="tpl">${tr('Paid amount','জমা দেওয়া পরিমাণ')}</div><b>${money(p.amount)}</b> <span class="${ok?'tpy':'tpn'}">${inv?(ok?'✓ '+tr('matches bill','বিলের সমান'):'✗ '+tr('bill is ','বিল ')+money(inv.amount)):'?'}</span></div><div><div class="tpl">${tr('Method','মাধ্যম')}</div>${esc(p.method)}</div><div><div class="tpl">Transaction ID</div><b>${esc(p.trxId)}</b> <button class="tpcp" data-a="cp" data-v="${esc(p.trxId)}">⧉</button></div><div><div class="tpl">${tr('Sender mobile','প্রেরকের মোবাইল')}</div>${esc(p.mobile)}</div><div><div class="tpl">${tr('Submitted','জমার সময়')}</div>${dt(p.createdAt)}</div>${p.receiptNo?`<div><div class="tpl">${tr('Receipt No','রসিদ নং')}</div>${esc(p.receiptNo)}</div>`:''}${p.note?`<div><div class="tpl">${tr('Reason','কারণ')}</div>${esc(p.note)}</div>`:''}</div><div class="tpbt">${p.status==='pending'?`<button class="btn sm" data-a="ap" data-id="${p.id}">✓ ${tr('Approve','অনুমোদন')}</button><button class="btn o sm" data-a="rj" data-id="${p.id}">✕ ${tr('Reject','বাতিল')}</button>`:''}${p.status==='approved'?`<button class="btn sm" data-a="rc" data-id="${p.id}">⬇ ${tr('Receipt PNG','রসিদ PNG')}</button>`:''}${p.status==='rejected'?`<button class="btn o sm" data-a="rel" data-id="${p.id}">${tr('Release Trx ID','Trx ID মুক্ত করুন')}</button>`:''}</div></div>`}).join(''):`<p class="note">${tr('Nothing found.','কিছু পাওয়া যায়নি।')}</p>`}
+return`<div class="tpc"><div class="tpr"><b>${esc(p.customerName)}</b>${chipE(p.status)}</div><div class="tpk"><div><div class="tpl">${te('Invoice','ইনভয়েস')}</div>${esc(p.invoiceNo)}</div><div><div class="tpl">${te('Paid amount','জমা দেওয়া পরিমাণ')}</div><b>${mE(p.amount)}</b> <span class="${ok?'tpy':'tpn'}">${inv?(ok?'✓ '+te('matches bill','বিলের সমান'):'✗ '+te('bill is ','বিল ')+mE(inv.amount)):'?'}</span></div><div><div class="tpl">${te('Method','মাধ্যম')}</div>${esc(p.method)}</div><div><div class="tpl">Transaction ID</div><b>${esc(p.trxId)}</b> <button class="tpcp" data-a="cp" data-v="${esc(p.trxId)}">⧉</button></div><div><div class="tpl">${te('Sender mobile','প্রেরকের মোবাইল')}</div>${esc(p.mobile)}</div><div><div class="tpl">${te('Submitted','জমার সময়')}</div>${dtE(p.createdAt)}</div>${p.receiptNo?`<div><div class="tpl">${te('Receipt No','রসিদ নং')}</div>${esc(p.receiptNo)}</div>`:''}${p.note?`<div><div class="tpl">${te('Reason','কারণ')}</div>${esc(p.note)}</div>`:''}</div><div class="tpbt">${p.status==='pending'?`<button class="btn sm" data-a="ap" data-id="${p.id}">✓ ${te('Approve','অনুমোদন')}</button><button class="btn o sm" data-a="rj" data-id="${p.id}">✕ ${te('Reject','বাতিল')}</button>`:''}${p.status==='approved'?`<button class="btn sm" data-a="rc" data-id="${p.id}">⬇ ${te('Receipt PNG','রসিদ PNG')}</button>`:''}${p.status==='rejected'?`<button class="btn o sm" data-a="rel" data-id="${p.id}">${te('Release Trx ID','Trx ID মুক্ত করুন')}</button>`:''}</div></div>`}).join(''):`<p class="note">${te('Nothing found.','কিছু পাওয়া যায়নি।')}</p>`}
 async function decide(id,ok){const p=A.P.find(x=>x.id===id);if(!p||p.status!=='pending')return;let note='';
-if(ok){if(!confirm(tr('Approve this payment? Confirm that you received the money.','এই পেমেন্ট অনুমোদন করবেন? টাকা পেয়েছেন কিনা নিশ্চিত করুন।')))return}
-else{const r=prompt(tr('Reason for rejection (shown to the customer):','বাতিলের কারণ (গ্রাহককে দেখানো হবে):'),'');if(r===null)return;note=r.trim()}
+if(ok){if(!confirm(te('Approve this payment? Confirm that you received the money.','এই পেমেন্ট অনুমোদন করবেন? টাকা পেয়েছেন কিনা নিশ্চিত করুন।')))return}
+else{const r=prompt(te('Reason for rejection (shown to the customer):','বাতিলের কারণ (গ্রাহককে দেখানো হবে):'),'');if(r===null)return;note=r.trim()}
 try{const F=await fb(),db=F.db;
 if(ok){for(let k=0;k<6;k++){const no='TR-'+ymd()+'-'+rnd(5,'0123456789');try{const b=F.writeBatch(db);
 b.update(F.doc(db,'payments',id),{status:'approved',receiptNo:no,reviewedAt:F.serverTimestamp(),reviewedBy:A.u.email});
@@ -1626,21 +1638,21 @@ b.update(F.doc(db,'invoices',p.invoiceId),{payState:'paid',updatedAt:F.serverTim
 b.set(F.doc(db,'receipts',no),{payId:id,createdAt:F.serverTimestamp()});await b.commit();return}catch(e){if(k===5||e.code!=='permission-denied')throw e}}}
 else{const b=F.writeBatch(db);b.update(F.doc(db,'payments',id),{status:'rejected',note,reviewedAt:F.serverTimestamp(),reviewedBy:A.u.email});
 b.update(F.doc(db,'invoices',p.invoiceId),{payState:'unpaid',rejectNote:note,updatedAt:F.serverTimestamp()});await b.commit()}}
-catch(e){alert(tr('Action failed: ','কাজটি ব্যর্থ: ')+(e.code||e.message))}}
+catch(e){alert(te('Action failed: ','কাজটি ব্যর্থ: ')+(e.code||e.message))}}
 async function adm(a,t){const id=t.dataset.id,v=t.dataset.v;
 if(a==='back'){location.hash='#top';return}
 if(a==='lang'){const b=q('.lang button[data-l="'+(L==='bn'?'en':'bn')+'"]');if(b)b.click();setTimeout(paintA,60);return}
-if(a==='out'){const F=await fb();F.signOut(F.auth);return}
+if(a==='out'){const w=q('#tradm .tpfx');if(w)w.classList.add('fo');await new Promise(r=>setTimeout(r,330));const F=await fb();F.signOut(F.auth);return}
 if(a==='tab'){A.tab=v;paintT();paintF();A.fresh=1;paintL();A.fresh=0}
 else if(a==='meth'){A.m=v;paintF();paintL()}
 else if(a==='cp')copy(v,t);
 else if(a==='lk')copy(location.origin+location.pathname+'?i='+id+'#bill-payment',t);
 else if(a==='cd')copy(id,t);
-else if(a==='ed')editDue(id);else if(a==='dp')delProj(id);
+else if(a==='ea')editAmt(id);else if(a==='dp')delProj(id);else if(a==='pr')addPay(id,t);else if(a==='pf'){const x=t.closest('.pj').querySelector('.pja2');x.value=x.dataset.l;pjHint(x)}
 else if(a==='ap')decide(id,1);else if(a==='rj')decide(id,0);
 else if(a==='rc')receiptPNG(A.P.find(x=>x.id===id));
-else if(a==='rel'){const p=A.P.find(x=>x.id===id);if(p&&confirm(tr('Release this Transaction ID so it can be used again?','এই Transaction ID আবার ব্যবহারযোগ্য করবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'trx',p.trxId))}catch(e){alert(e.code||e.message)}}}
-else if(a==='di'&&confirm(tr('Delete this invoice?','ইনভয়েস মুছবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'invoices',id))}catch(e){alert(e.code||e.message)}}}
+else if(a==='rel'){const p=A.P.find(x=>x.id===id);if(p&&confirm(te('Release this Transaction ID so it can be used again?','এই Transaction ID আবার ব্যবহারযোগ্য করবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'trx',p.trxId))}catch(e){alert(e.code||e.message)}}}
+else if(a==='di'&&confirm(te('Delete this invoice?','ইনভয়েস মুছবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'invoices',id))}catch(e){alert(e.code||e.message)}}}
 
 /* ---------- events ---------- */
 document.addEventListener('click',e=>{
@@ -1650,6 +1662,7 @@ if(a==='m'){C.m=t.dataset.v;paintC()}else if(a==='cp')copy(t.dataset.v,t);
 else if(a==='rc')receiptPNG(C.pay);
 else if(a==='reset'){e.preventDefault();if(C.un){C.un();C.un=null}C.inv=null;C.pay=null;C.id='';C.err='';C.m=null;C.d={};try{localStorage.removeItem('tr_inv')}catch(x){}paintC()}});
 document.addEventListener('input',e=>{const t=e.target;if(t.id==='as'){A.s=t.value;paintL()}else if(t.id==='af1'){A.f=t.value;paintL()}else if(t.id==='af2'){A.t=t.value;paintL()}
+else if(t.classList&&t.classList.contains('pja2'))pjHint(t);
 else if(t.closest&&t.closest('.tpj'))pjPrev(t.closest('.tpj'));
 else if(t.name==='trx'&&t.closest('.tpf'))t.value=t.value.toUpperCase().replace(/[^A-Z0-9]/g,'')});
 document.addEventListener('submit',async e=>{const f=e.target;
@@ -1657,10 +1670,10 @@ if(f.classList.contains('tpl2')){e.preventDefault();startC(f.elements.code.value
 else if(f.classList.contains('tpf')){e.preventDefault();submitC(f)}
 else if(f.classList.contains('tpal')){e.preventDefault();A.err='';const b=f.querySelector('button');b.disabled=true;
 try{const F=await fb();await F.signInWithEmailAndPassword(F.auth,f.elements.e.value.trim(),f.elements.p.value)}
-catch(x){A.err=tr('Wrong email or password.','ইমেইল বা পাসওয়ার্ড ভুল।');if(x.code==='auth/too-many-requests')A.err=tr('Too many attempts. Try again later.','অনেকবার চেষ্টা হয়েছে। পরে আবার চেষ্টা করুন।');paintA()}}
+catch(x){A.err=te('Wrong email or password.','ইমেইল বা পাসওয়ার্ড ভুল।');if(x.code==='auth/too-many-requests')A.err=te('Too many attempts. Try again later.','অনেকবার চেষ্টা হয়েছে। পরে আবার চেষ্টা করুন।');paintA()}}
 else if(f.classList.contains('tpj')){e.preventDefault();mkProj(f)}
 else if(f.classList.contains('tpi')){e.preventDefault();const n=f.elements.n.value.trim(),d=f.elements.d.value.trim(),a=Math.round(Number(f.elements.a.value.replace(/[,\s]/g,'')));
-if(!n||!(a>0))return alert(tr('Enter customer name and a valid amount.','গ্রাহকের নাম ও সঠিক পরিমাণ দিন।'));
+if(!n||!(a>0))return alert(te('Enter customer name and a valid amount.','গ্রাহকের নাম ও সঠিক পরিমাণ দিন।'));
 const no='INV-'+ymd()+'-'+rnd(4,'0123456789'),id=no+'-'+rnd(10);
 try{const F=await fb();await F.setDoc(F.doc(F.db,'invoices',id),{invoiceNo:no,customerName:n,note:d,amount:a,payState:'unpaid',createdAt:F.serverTimestamp()});f.reset()}catch(x){alert(x.code||x.message)}}});
 document.addEventListener('click',e=>{if(e.target.closest('.lang button'))setTimeout(()=>{paintC();if(A.open)paintA()},80)});
