@@ -584,6 +584,23 @@ html.tpo body>*:not(#tradm):not(script):not(style){display:none!important}
 .trc{color:var(--mu)}
 .trmore{flex:none;align-self:center;margin:6px 0 4px;padding:9px 20px;border-radius:999px;border:1px solid var(--grey);background:var(--card);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
 .trmore:disabled{opacity:.6}
+#tradm{animation:none}
+#tradm.lg{background:radial-gradient(900px 520px at 6% -4%,rgba(201,162,75,.30),transparent 62%),radial-gradient(800px 520px at 100% 22%,rgba(217,119,69,.22),transparent 62%),radial-gradient(760px 520px at 30% 112%,rgba(23,43,58,.20),transparent 62%),var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+#tradm .tpnb{display:block}
+#tradm .tpnb .tpi{width:100%;border-radius:40px;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+#tradm .tpnb .tpi.open{border-radius:32px}
+#tradm .tph{display:flex;align-items:center;gap:8px;min-height:72px;padding:0 12px 0 0}
+#tradm .tph .tpih{flex:1;min-width:0;width:auto;align-self:stretch;padding:0 8px 0 26px;font-size:17px;text-align:left;justify-content:flex-start}
+#tradm .tph .tpbell,#tradm .tph .tpmb{flex:none;position:relative;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);box-shadow:none;color:#E3C27A;display:grid;place-items:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .15s ease,background-color .25s ease}
+#tradm .tph .tpbell:active,#tradm .tph .tpmb:active{transform:scale(.92)}
+#tradm .tph .tpbell b{top:-3px;right:-3px}
+#tradm .tpg{display:flex;flex-direction:column;gap:10px;margin:0 0 14px}
+#tradm .tpd{flex-direction:row;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-height:62px;padding:0 24px;border-radius:999px;border:1px solid rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08);background:rgba(10,10,10,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#f1efe9;box-shadow:0 8px 22px rgba(0,0,0,.18);-webkit-tap-highlight-color:transparent}
+#tradm .tpd::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#C9A24B}
+#tradm .tpd .note{flex:1;min-width:0;margin:0;text-align:left;color:#e9e4d8;font-size:15px}
+#tradm .tpd b{flex:none;font-size:19px;color:#E3C27A;white-space:nowrap}
+#tradm .tpd:hover{transform:none;box-shadow:0 10px 26px rgba(0,0,0,.26)}
+#tradm .tpd:active{transform:scale(.98)}
 #tradm .tpnb{display:flex;gap:10px;align-items:flex-start;position:relative}
 #tradm .tpnb .tpi{flex:1;min-width:0}
 #tradm .tpbell{position:relative;flex:none;width:54px;height:54px;border-radius:50%;background:rgba(10,10,10,.9);border:1px solid rgba(255,255,255,.08);color:#E3C27A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.22);-webkit-tap-highlight-color:transparent;transition:transform .15s ease}
@@ -829,7 +846,7 @@ upd();
 (function(){const lb=document.createElement('div');lb.id='lb';document.body.appendChild(lb);
 const m=document.querySelector('main'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 addEventListener('hashchange',()=>{if(rm)return;lb.classList.remove('go');void lb.offsetWidth;lb.classList.add('go');
-m.animate([{opacity:0,filter:'blur(10px)',transform:'translateY(16px) scale(.99)'},{opacity:1,filter:'blur(0)',transform:'none'}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)'})})})();
+(function(){var hv=location.hash==='#colour-catalog',fr=hv?[{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}]:[{opacity:0,filter:'blur(10px)',transform:'translateY(16px) scale(.99)'},{opacity:1,filter:'blur(0)',transform:'none'}];var an=m.animate(fr,{duration:700,easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'});an.pause();requestAnimationFrame(function(){requestAnimationFrame(function(){an.play();an.onfinish=function(){try{an.cancel()}catch(x){}}})})})()})})();
 </script><script>T.en.team_cap="The Teksoi Rong team.";T.bn.team_cap="টেকসই রং-এর দল।";render();</script><script>
 (function(){
 try{document.designMode='off'}catch(e){}
@@ -1690,9 +1707,10 @@ const dE=x=>{if(!x)return'—';const d=typeof x==='string'?new Date(x+'T12:00:00
 const pctF=x=>{const v=Math.round(x*10)/10;return(v%1?v.toFixed(1):String(v))+'%'};
 const chipE=s=>{const m={unpaid:['','Unpaid'],pending:['p','Pending'],paid:['s','Success'],approved:['s','Success'],rejected:['r','Rejected']}[s]||['',s];return`<span class="tpchip ${m[0]}">${m[1]}</span>`};
 const ael=()=>{let e=q('#tradm');if(!e){e=document.createElement('div');e.id='tradm';document.body.appendChild(e)}return e};
-async function openA(){const e=ael();e.style.display='block';document.documentElement.style.overflow='hidden';document.documentElement.classList.add('tpo');A.open=true;
+async function openA(){const e=ael(),first=!A.open;e.style.display='block';document.documentElement.style.overflow='hidden';
+if(first&&!matchMedia('(prefers-reduced-motion:reduce)').matches){try{e.animate([{opacity:0,filter:'blur(10px)',transform:'translateY(18px) scale(.985)'},{opacity:1,filter:'blur(0)',transform:'none'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)'})}catch(x){}clearTimeout(A.tpo);A.tpo=setTimeout(()=>{if(A.open)document.documentElement.classList.add('tpo')},700)}else document.documentElement.classList.add('tpo');A.open=true;
 if(OK()&&!A.init){A.init=true;try{const F=await fb();F.onAuthStateChanged(F.auth,u=>{A.u=u;A.ready=true;u?watch():unwatch();paintA()})}catch(x){A.init=false;A.ready=true}}paintA()}
-function closeA(){document.documentElement.classList.remove('tpo');const e=q('#tradm');if(e){e.style.display='none';e.classList.remove('lg');A.pop=0}A.open=false;document.documentElement.style.overflow=''}
+function closeA(){clearTimeout(A.tpo);document.documentElement.classList.remove('tpo');const e=q('#tradm');if(e){e.style.display='none';e.classList.remove('lg');A.pop=0}A.open=false;document.documentElement.style.overflow=''}
 function unwatch(){A.un.forEach(f=>f());A.un=[];A.P=[];A.I=[];A.R=[];A.X={};A.E=[];A.rl=0;A.shown=0;A.pop=0}
 function startRev(){if(A.rl)return;A.rl=1;fb().then(F=>{const db=F.db;A.un.push(F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(2000)),s=>{A.rerr='';A.R=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rev')paintL()},e=>{A.rerr=e.code||'error';if(A.tab==='rev')paintL()}))}).catch(()=>{A.rl=0})}
 async function watch(){unwatch();if(A.tab==='rev')setTimeout(startRev,0);const F=await fb(),db=F.db;
@@ -1771,10 +1789,10 @@ try{new Notification(ti,o)}catch(e){try{navigator.serviceWorker.getRegistration(
 function ntCheck(){try{ntInit();ntItems().forEach(i=>{if(A.nn[i.id])return;if(!i.real){A.nn[i.id]=1;return}A.nn[i.id]=1;if(i.t>A.t0)ntFire(i.ti,i.bo,i.id)})}catch(e){}}
 const ago=t=>{const m=Math.max(0,Math.round((Date.now()-t)/60000));return m<1?'now':m<60?m+'m':m<1440?Math.round(m/60)+'h':Math.round(m/1440)+'d'};
 function ntHTML(){ntInit();const L=ntItems().slice(0,40),un=L.filter(i=>i.t>A.ls).length,P='Notification' in window?Notification.permission:'unsupported';
-return`<button class="tpbell${un?' ring':''}" data-a="nt" aria-label="Notifications">${BELL}${un?'<b>'+(un>9?'9+':un)+'</b>':''}</button><div class="tpnp${A.no?' open':''}"><div class="tpnh"><b>Notifications</b>${L.length?'<button data-a="ntr">Mark all read</button>':''}</div>${P==='default'?'<button class="tpne" data-a="nte">Turn on browser alerts</button>':P==='denied'?'<div class="tpnx">Browser alerts are blocked. Allow them in the site settings.</div>':''}${L.length?L.map(i=>`<button class="tpnit${i.t>A.ls?' new':''}" data-a="tab" data-v="${i.tab}"><span><b>${i.ti}</b><em>${esc(i.bo)}</em></span><small>${ago(i.t)}</small></button>`).join(''):'<div class="tpnx">No notifications yet.</div>'}</div>`}
+const NB=`<button class="tpbell${un?' ring':''}" data-a="nt" aria-label="Notifications">${BELL}${un?'<b>'+(un>9?'9+':un)+'</b>':''}</button>`,NP=`<div class="tpnp${A.no?' open':''}"><div class="tpnh"><b>Notifications</b>${L.length?'<button data-a="ntr">Mark all read</button>':''}</div>${P==='default'?'<button class="tpne" data-a="nte">Turn on browser alerts</button>':P==='denied'?'<div class="tpnx">Browser alerts are blocked. Allow them in the site settings.</div>':''}${L.length?L.map(i=>`<button class="tpnit${i.t>A.ls?' new':''}" data-a="tab" data-v="${i.tab}"><span><b>${i.ti}</b><em>${esc(i.bo)}</em></span><small>${ago(i.t)}</small></button>`).join(''):'<div class="tpnx">No notifications yet.</div>'}</div>`;return{b:NB,p:NP}}
 async function ntEnable(){try{if(!('Notification' in window)){alert('This browser does not support notifications.');return}try{navigator.serviceWorker&&navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}const p=await Notification.requestPermission();paintT();if(p==='granted')ntFire('Notifications are on','You will be alerted about new requests.','tr-test')}catch(e){}}
-function islandHTML(TT,od){const cur=TT.find(t=>t[0]===A.tab)||TT[0],bd=t=>t[2]===''?'':' <span>'+bE(t[2])+'</span>';
-return`<div class="tpnb"><div class="tpi${A.mo?' open':''}"><button class="tpih" data-a="mt" aria-label="Menu"><span class="tpil">${cur[1]}${bd(cur)}</span><span class="tpbg"><i></i><i></i></span></button><div class="tpim"><div class="tpin">${TT.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}"><i class="tl">${t[1]}</i>${bd(t)}</button>`).join('')}</div></div></div>${ntHTML()}</div>`}
+function islandHTML(TT,od){const cur=TT.find(t=>t[0]===A.tab)||TT[0],bd=t=>t[2]===''?'':' <span>'+bE(t[2])+'</span>',N=ntHTML();
+return`<div class="tpnb"><div class="tpi${A.mo?' open':''}"><div class="tph"><button class="tpih" data-a="mt" aria-label="Menu"><span class="tpil">${cur[1]}${bd(cur)}</span></button>${N.b}<button class="tpmb" data-a="mt" aria-label="Menu"><span class="tpbg"><i></i><i></i></span></button></div><div class="tpim"><div class="tpin">${TT.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}"><i class="tl">${t[1]}</i>${bd(t)}</button>`).join('')}</div></div></div>${N.p}</div>`}
 function paintT(){const e=q('#at');if(!e)return;ntCheck();const od=projs().filter(p=>p.cl==='od').length;const n=s=>A.P.filter(p=>p.status===s).length;
 const TT=[['dash',te('Dashboard','ড্যাশবোর্ড'),''],['pending',te('Pending','অপেক্ষমাণ'),n('pending')],['approved',te('Approved','অনুমোদিত'),n('approved')],['rejected',te('Rejected','বাতিল'),n('rejected')],['all',te('All History','সব হিস্ট্রি'),A.P.length],['newp',te('New Project','নতুন প্রজেক্ট'),''],['proj',te('Projects','চলমান প্রজেক্ট'),projs().filter(p=>p.cl!=='ok').length],['done',te('Completed','সম্পন্ন প্রজেক্ট'),projs().filter(p=>p.cl==='ok').length],['apt',te('Appointments','অ্যাপয়েন্টমেন্ট'),inbCnt('apt')],['cmp',te('Complaints','অভিযোগ'),inbCnt('cmp')],['qst',te('Questions','প্রশ্ন'),inbCnt('qst')],['cust',te('Customers','কাস্টমার'),''],['rep',te('Reports','রিপোর্ট'),''],['rev',te('Reviews','মতামত'),A.rl?A.R.length:'']];e.innerHTML=islandHTML(TT,od);return;[].map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}">${t[1]}${t[2]===''?'':' <span>'+bE(t[2])+'</span>'}</button>`).join('')}
 function paintF(){const e=q('#af');if(!e)return;
