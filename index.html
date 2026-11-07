@@ -77,7 +77,7 @@ header{border-bottom:1px solid #C9A24B88;box-shadow:none}footer{border-top:1px s
 .tag,.hero .tag,.cta .tag{color:var(--gold)}.tag::before{background:var(--gold)}
 .g>.c:nth-child(n){--k:#C9A24B}.c{border-top-width:3px;border-radius:12px}.c:hover{border-color:#C9A24B;box-shadow:0 14px 30px #c9a24b33}
 .cta{background:#0B0B0B;color:#fff;border-top:1px solid #C9A24B88;border-bottom:1px solid #C9A24B88}.fg{border-color:var(--grey)}.fg svg{filter:sepia(.6) saturate(1.1)}
-#sp{position:fixed;inset:0;z-index:999;background:#0B0B0B;display:grid;place-items:center;transition:opacity .55s ease}#sp.out{opacity:0;pointer-events:none}#sp .in{text-align:center;padding:20px}
+#sp{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.18);-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);display:grid;place-items:center;transition:opacity 1.1s ease,backdrop-filter 1.1s ease,-webkit-backdrop-filter 1.1s ease,background-color 1.1s ease}#sp.out{opacity:0;background:rgba(0,0,0,0);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0);pointer-events:none}#sp .in{text-align:center;padding:20px}
 #sp img{display:none}#sp .lg{position:relative;margin:0 auto}#sp .lg i{position:absolute;background-repeat:no-repeat;opacity:0;transform:scale(.94);animation:tf 1.4s .25s ease-out forwards}@keyframes tf{to{opacity:1;transform:none}}#sp .sm{display:none}
 #sp .ln{height:3px;width:0;margin:22px auto 14px;background:linear-gradient(90deg,transparent,#E6C777,#B8862F,transparent);animation:lw 1s 1.2s ease forwards}@keyframes lw{to{width:min(60vw,240px)}}
 #sp p{color:#E6C777;letter-spacing:.2em;font-size:12px;text-transform:uppercase;opacity:0;filter:blur(10px);margin:0;animation:fi .9s 1.7s forwards}@keyframes fi{to{opacity:1;filter:blur(0)}}
@@ -579,7 +579,7 @@ for(let k=0;k<6;k++){const m=document.createElement('div');m.className='sm';cons
 sp.querySelector('.in').insertBefore(box,sp.querySelector('.ln'))};im.src=lsrc})();
 sp.querySelector('p').textContent=T[L].tagline;
 let done=false;const end=()=>{if(done)return;done=true;sp.classList.add('out');setTimeout(()=>sp.remove(),1000)};
-sp.onclick=end;setTimeout(end,1900);
+sp.onclick=end;setTimeout(end,3200);
 })();
 </script><script>
 (function(){
@@ -595,7 +595,7 @@ function reset(){document.querySelectorAll('.rv.in').forEach(e=>{e.classList.rem
 const pt=document.createElement('div');pt.id='pt';pt.innerHTML='<i class="a"></i><i class="b"></i>';document.body.appendChild(pt);
 addEventListener('hashchange',()=>{pt.classList.remove('go');void pt.offsetWidth;pt.classList.add('go');reset();arm()});
 const r2=render;render=function(){r2();arm()};
-arm();setTimeout(()=>{hold=false;pend.forEach(e=>io.observe(e));pend=[]},window.__spSkipped?60:1800);
+arm();setTimeout(()=>{hold=false;pend.forEach(e=>io.observe(e));pend=[]},window.__spSkipped?60:2900);
 })();
 </script><script>
 (function(){
@@ -622,7 +622,7 @@ upd();
 (function(){const lb=document.createElement('div');lb.id='lb';document.body.appendChild(lb);
 const m=document.querySelector('main'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 addEventListener('hashchange',()=>{if(rm)return;lb.classList.remove('go');void lb.offsetWidth;lb.classList.add('go');
-m.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:380,easing:'cubic-bezier(.2,.7,.2,1)'})})})();
+m.animate([{opacity:0,filter:'blur(10px)',transform:'translateY(16px) scale(.99)'},{opacity:1,filter:'blur(0)',transform:'none'}],{duration:600,easing:'cubic-bezier(.2,.7,.2,1)'})})})();
 </script><script>T.en.team_cap="The Teksoi Rong team.";T.bn.team_cap="টেকসই রং-এর দল।";render();</script><script>
 (function(){
 try{document.designMode='off'}catch(e){}
