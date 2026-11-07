@@ -574,6 +574,16 @@ html.tpo body>*:not(#tradm):not(script):not(style){display:none!important}
 #tradm .tpin button:active{transform:scale(.95)}
 #tradm .tpin button.on{background:linear-gradient(135deg,#E3C27A,#B8872F);color:#1a1405;border-color:transparent;font-weight:600}
 #tradm .tpin button.on span{background:rgba(0,0,0,.15);color:#1a1405}
+#tradm .tpin{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start}
+#tradm .tpin button{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:46px;padding:8px 14px;border-radius:16px;text-align:left;font-size:14px;line-height:1.2}
+#tradm .tpin button .tl{min-width:0;font-style:normal;overflow-wrap:anywhere}
+#tradm .tpin button span{margin-left:0;flex:none}
+.trs{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:14px}
+.trst{--p:90%;font-size:20px;letter-spacing:2px;line-height:1;background:linear-gradient(90deg,#C9A24B var(--p),rgba(150,140,120,.35) var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.tra{font-size:18px;font-weight:700;color:var(--tx)}
+.trc{color:var(--mu)}
+.trmore{flex:none;align-self:center;margin:6px 0 4px;padding:9px 20px;border-radius:999px;border:1px solid var(--grey);background:var(--card);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
+.trmore:disabled{opacity:.6}
 #tradm .tpnb{display:flex;gap:10px;align-items:flex-start;position:relative}
 #tradm .tpnb .tpi{flex:1;min-width:0}
 #tradm .tpbell{position:relative;flex:none;width:54px;height:54px;border-radius:50%;background:rgba(10,10,10,.9);border:1px solid rgba(255,255,255,.08);color:#E3C27A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.22);-webkit-tap-highlight-color:transparent;transition:transform .15s ease}
@@ -915,15 +925,16 @@ function pickReview(){
 
 (function(){
 
- window.trItemsHTML=function(){return (window.TR_APPROVED_REVIEWS||[]).map(function(r){return '<div class="trv" data-r="'+(Number(r.rating)||0)+'" onclick="this.classList.toggle(\'x\')"><div class="trh"><b>'+esc2(r.name)+'</b><span>'+stars(r.rating)+'</span></div><p>'+esc2(r.text)+'</p></div>'}).join('')};
- window.trUpdate=function(){var l=document.querySelector('.trl');if(!l)return false;
-  var R=(window.TR_APPROVED_REVIEWS||[]);
-  var avg=R.length?(R.reduce(function(x,r){return x+r.rating},0)/R.length).toFixed(2):'';
-  var st=l.scrollTop;l.innerHTML=window.trItemsHTML();l.scrollTop=st;
-  var a=document.querySelector('.tra'),n=document.querySelector('.trn');
-  if(a){a.dataset.avg=avg;a.textContent=avg}
-  if(n)n.textContent=R.length;
-  return true};
+ window.trStat=function(){var R=window.TR_APPROVED_REVIEWS||[],S=window.TR_STATS,avg=S&&S.avg!=null?S.avg:(R.length?R.reduce(function(x,r){return x+r.rating},0)/R.length:0),n=S&&S.n?S.n:R.length;return{avg:avg,n:n}};
+  window.trSumHTML=function(){var s=window.trStat(),a=s.avg.toFixed(2);return '<span class="trst" style="--p:'+Math.max(0,Math.min(100,s.avg/5*100))+'%" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span><span class="tra" data-avg="'+a+'">'+a+'</span><span class="trc">(<span class="trn">'+s.n+'</span> '+tr('reviews','মতামত')+')</span>'};
+  window.trItemsHTML=function(){var R=window.TR_APPROVED_REVIEWS||[],h=R.map(function(r){return '<div class="trv" data-r="'+(Number(r.rating)||0)+'" onclick="this.classList.toggle(\'x\')"><div class="trh"><b>'+esc2(r.name)+'</b><span>'+stars(r.rating)+'</span></div><p>'+esc2(r.text)+'</p></div>'}).join('');if(window.TR_MORE){var left=window.TR_STATS&&window.TR_STATS.n?Math.max(0,window.TR_STATS.n-R.length):0;h+='<button type="button" class="trmore" onclick="trMore(this)">'+tr('Show more reviews','আরও মতামত দেখুন')+(left?' ('+left+')':'')+'</button>'}return h};
+  window.trUpdate=function(){var l=document.querySelector('.trl');if(!l)return false;
+   var st=l.scrollTop;l.innerHTML=window.trItemsHTML();l.scrollTop=st;
+   var s=window.trStat(),a=document.querySelector('.tra'),n=document.querySelector('.trn'),g=document.querySelector('.trst');
+   if(a){a.dataset.avg=s.avg.toFixed(2);a.textContent=s.avg.toFixed(2)}
+   if(n)n.textContent=s.n;
+   if(g)g.style.setProperty('--p',Math.max(0,Math.min(100,s.avg/5*100))+'%');
+   return true};
 })();
 const main=$('main'),cta=$('.cta');
 const sv=d=>`<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
@@ -1262,7 +1273,7 @@ function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
 function build(h){const s=$('#pg-'+h);if(!s)return;let x='';
 if(['book-appointment','complaint','ask-question'].includes(h)){const d=FORMS(h);x=`<div class="w">${head(['Support','সহায়তা'],d.title,d.intro)}${formHTML(h)}</div>`}
 else if(h==='reviews'){const R=(window.TR_APPROVED_REVIEWS||[]),avg=R.length?(R.reduce((a,r)=>a+r.rating,0)/R.length).toFixed(2):null,one=pickReview();
-x=`<div class="w trw">${head(['Reviews','মতামত'],['Customer Reviews','গ্রাহকের মতামত'])}${R.length?`<p class="trs"><span class="tra" data-avg="${avg}">${avg}</span></p><div class="trl">${trItemsHTML()}</div>`:`<div class="c" style="margin-bottom:18px"><p>${tr('No published reviews yet. Be the first to share your experience.','এখনও কোনো প্রকাশিত মতামত নেই। আপনিই প্রথম অভিজ্ঞতা জানান।')}</p></div>`}<h3 style="margin:34px 0 14px">${tr('Write a review','মতামত লিখুন')}</h3>${formHTML('review')}</div>`}
+x=`<div class="w trw">${head(['Reviews','মতামত'],['Customer Reviews','গ্রাহকের মতামত'])}${R.length?`<p class="trs">${trSumHTML()}</p><div class="trl">${trItemsHTML()}</div>`:`<div class="c" style="margin-bottom:18px"><p>${tr('No published reviews yet. Be the first to share your experience.','এখনও কোনো প্রকাশিত মতামত নেই। আপনিই প্রথম অভিজ্ঞতা জানান।')}</p></div>`}<h3 style="margin:34px 0 14px">${tr('Write a review','মতামত লিখুন')}</h3>${formHTML('review')}</div>`}
 
 else if(h==='colour-catalog'){x=ccBuild()}
 else if(h==='visualizer'){x=`<div class="w">${head(['Visualizer','ভিজ্যুয়ালাইজার'],['See Your Home in New Colours','আপনার বাড়ির নতুন রং দেখুন'],['Upload a photo of your home, tap a wall, then pick a colour to preview it.','আপনার বাড়ির ছবি আপলোড করুন, দেয়ালে চাপুন, তারপর রং বেছে নিয়ে দেখুন।'])}<label class="btn" style="cursor:pointer;margin-bottom:14px">${tr('Upload a photo','ছবি আপলোড করুন')}<input type="file" id="vzf" accept="image/*" hidden></label><div class="vzwrap"><canvas id="vzc" style="display:none"></canvas><div id="vzph">${tr('Your photo will appear here','আপনার ছবি এখানে দেখা যাবে')}</div></div><p id="vzh" class="note">${tr('Upload a photo to start.','শুরু করতে ছবি আপলোড করুন।')}</p><div class="vzctl"><label>${tr('Tolerance (how much area is selected)','টলারেন্স (কতটা জায়গা নির্বাচিত হবে)')}<input type="range" id="vzt" min="10" max="90" value="40"></label><button type="button" id="vzr" class="btn o sm">${tr('Reset','রিসেট')}</button></div><div id="vz-sel" class="selbar"></div>${swatches('viz')}<p class="note">${tr('This is a smart colour preview that runs on your phone. Your photo is not uploaded anywhere. Results are approximate.','এটি আপনার ফোনেই চলা স্মার্ট রং প্রিভিউ। আপনার ছবি কোথাও আপলোড হয় না। ফলাফল আনুমানিক।')}</p></div>`}
@@ -1688,7 +1699,7 @@ async function watch(){unwatch();if(A.tab==='rev')setTimeout(startRev,0);const F
 const er=e=>{if(e.code==='permission-denied'){A.err='denied';F.signOut(F.auth)}else{A.err='load';paintA()}};
 const qy=c=>F.query(F.collection(db,c),F.orderBy('createdAt','desc'),F.limit(1000));
 A.un=[F.onSnapshot(qy('payments'),s=>{A.P=s.docs.map(d=>Object.assign({id:d.id},d.data()));paintT();paintL()},er),
-F.onSnapshot(qy('invoices'),s=>{A.I=s.docs.map(d=>Object.assign({id:d.id},d.data()));A.im=Object.fromEntries(A.I.map(x=>[x.id,x]));paintT();paintL()},er),...Object.keys(INBK).map(k=>F.onSnapshot(F.query(F.collection(db,INBK[k]),F.orderBy('createdAt','desc'),F.limit(500)),s=>{A.X=A.X||{};A.X[k]=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab===k)paintL()},()=>{})),F.onSnapshot(F.query(F.collection(db,'expenses'),F.orderBy('createdAt','desc'),F.limit(1000)),s=>{A.E=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rep')paintL()},()=>{})]}
+F.onSnapshot(qy('invoices'),s=>{A.I=s.docs.map(d=>Object.assign({id:d.id},d.data()));A.im=Object.fromEntries(A.I.map(x=>[x.id,x]));paintT();paintL()},er),...Object.keys(INBK).map(k=>F.onSnapshot(F.query(F.collection(db,INBK[k]),F.orderBy('createdAt','desc'),F.limit(500)),s=>{A.X=A.X||{};A.X[k]=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab===k)paintL()},()=>{})),F.onSnapshot(F.query(F.collection(db,'expenses'),F.orderBy('createdAt','desc'),F.limit(1000)),s=>{A.E=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rep')paintL()},()=>{}),F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(30)),s=>{A.RN=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT()},()=>{})]}
 function paintA(){const e=ael();if(!A.open)return;const im=q('header .nav img'),logo=im?im.src:'';
 e.classList.toggle('lg',!A.u);
 if(!OK()||!A.u){
@@ -1753,7 +1764,7 @@ A.P.filter(p=>p.status==='pending').forEach(p=>add('p',p.id,p,'New payment reque
 (X.apt||[]).forEach(r=>add('a',r.id,r,'New appointment',(r.name||'')+(r.date?' \u00b7 '+r.date:''),'apt'));
 (X.cmp||[]).forEach(r=>add('c',r.id,r,'New complaint',(r.name||'')+' \u00b7 '+(r.type||''),'cmp'));
 (X.qst||[]).forEach(r=>add('q',r.id,r,'New question',(r.name||'')+': '+String(r.q||'').slice(0,60),'qst'));
-if(A.rl)A.R.filter(r=>r.source!=='import').forEach(r=>add('r',r.id,r,'New review',(r.name||'')+' \u00b7 '+r.rating+'/5','rev'));
+(A.RN||[]).filter(r=>r.source!=='import').forEach(r=>add('r',r.id,r,'New review',(r.name||'')+' \u00b7 '+r.rating+'/5','rev'));
 return o.sort((a,b)=>b.t-a.t)}
 function ntFire(ti,bo,id){if(!('Notification' in window)||Notification.permission!=='granted')return;const o={body:bo,tag:id||'tr',icon:(q('header .nav img')||{}).src};
 try{new Notification(ti,o)}catch(e){try{navigator.serviceWorker.getRegistration().then(r=>r&&r.showNotification(ti,o))}catch(x){}}}
@@ -1763,7 +1774,7 @@ function ntHTML(){ntInit();const L=ntItems().slice(0,40),un=L.filter(i=>i.t>A.ls
 return`<button class="tpbell${un?' ring':''}" data-a="nt" aria-label="Notifications">${BELL}${un?'<b>'+(un>9?'9+':un)+'</b>':''}</button><div class="tpnp${A.no?' open':''}"><div class="tpnh"><b>Notifications</b>${L.length?'<button data-a="ntr">Mark all read</button>':''}</div>${P==='default'?'<button class="tpne" data-a="nte">Turn on browser alerts</button>':P==='denied'?'<div class="tpnx">Browser alerts are blocked. Allow them in the site settings.</div>':''}${L.length?L.map(i=>`<button class="tpnit${i.t>A.ls?' new':''}" data-a="tab" data-v="${i.tab}"><span><b>${i.ti}</b><em>${esc(i.bo)}</em></span><small>${ago(i.t)}</small></button>`).join(''):'<div class="tpnx">No notifications yet.</div>'}</div>`}
 async function ntEnable(){try{if(!('Notification' in window)){alert('This browser does not support notifications.');return}try{navigator.serviceWorker&&navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}const p=await Notification.requestPermission();paintT();if(p==='granted')ntFire('Notifications are on','You will be alerted about new requests.','tr-test')}catch(e){}}
 function islandHTML(TT,od){const cur=TT.find(t=>t[0]===A.tab)||TT[0],bd=t=>t[2]===''?'':' <span>'+bE(t[2])+'</span>';
-return`<div class="tpnb"><div class="tpi${A.mo?' open':''}"><button class="tpih" data-a="mt" aria-label="Menu"><span class="tpil">${cur[1]}${bd(cur)}</span><span class="tpbg"><i></i><i></i></span></button><div class="tpim"><div class="tpin">${TT.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}">${t[1]}${bd(t)}</button>`).join('')}</div></div></div>${ntHTML()}</div>`}
+return`<div class="tpnb"><div class="tpi${A.mo?' open':''}"><button class="tpih" data-a="mt" aria-label="Menu"><span class="tpil">${cur[1]}${bd(cur)}</span><span class="tpbg"><i></i><i></i></span></button><div class="tpim"><div class="tpin">${TT.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}"><i class="tl">${t[1]}</i>${bd(t)}</button>`).join('')}</div></div></div>${ntHTML()}</div>`}
 function paintT(){const e=q('#at');if(!e)return;ntCheck();const od=projs().filter(p=>p.cl==='od').length;const n=s=>A.P.filter(p=>p.status===s).length;
 const TT=[['dash',te('Dashboard','ড্যাশবোর্ড'),''],['pending',te('Pending','অপেক্ষমাণ'),n('pending')],['approved',te('Approved','অনুমোদিত'),n('approved')],['rejected',te('Rejected','বাতিল'),n('rejected')],['all',te('All History','সব হিস্ট্রি'),A.P.length],['newp',te('New Project','নতুন প্রজেক্ট'),''],['proj',te('Projects','চলমান প্রজেক্ট'),projs().filter(p=>p.cl!=='ok').length],['done',te('Completed','সম্পন্ন প্রজেক্ট'),projs().filter(p=>p.cl==='ok').length],['apt',te('Appointments','অ্যাপয়েন্টমেন্ট'),inbCnt('apt')],['cmp',te('Complaints','অভিযোগ'),inbCnt('cmp')],['qst',te('Questions','প্রশ্ন'),inbCnt('qst')],['cust',te('Customers','কাস্টমার'),''],['rep',te('Reports','রিপোর্ট'),''],['rev',te('Reviews','মতামত'),A.rl?A.R.length:'']];e.innerHTML=islandHTML(TT,od);return;[].map(t=>`<button data-a="tab" data-v="${t[0]}" class="${A.tab===t[0]?'on':''}${t[0]==='proj'&&od?' od':''}">${t[1]}${t[2]===''?'':' <span>'+bE(t[2])+'</span>'}</button>`).join('')}
 function paintF(){const e=q('#af');if(!e)return;
@@ -1896,9 +1907,22 @@ try {
  const cfg={apiKey:'AIzaSyAr080zC1lbD2HjOgPeuKugjWsy_uvQ6A0',authDomain:'teksoi-rong-efed8.firebaseapp.com',projectId:'teksoi-rong-efed8',appId:'1:1057575247574:web:ba5993b2557c8787e0b377'};
  const app=A.getApps().length?A.getApp():A.initializeApp(cfg);
  const db=F.getFirestore(app);
- F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(100)),snap=>{
-  window.TR_APPROVED_REVIEWS=snap.docs.map(d=>{const x=d.data({serverTimestamps:'estimate'});return{name:String(x.name||''),rating:Number(x.rating)||5,text:String(x.text||''),t:(x.createdAt&&x.createdAt.toMillis)?x.createdAt.toMillis():0}}).filter(x=>x.name&&x.text&&x.rating>=1&&x.rating<=5).sort((p,q)=>q.t-p.t);
-  if(location.hash==='#reviews'&&!(window.trUpdate&&window.trUpdate()))window.dispatchEvent(new Event('hashchange'));
+ const PAGE=100,col=F.collection(db,'reviews');
+ let live=[],extra=[],liveLast=null,extraLast=null,done=false,tm=0;
+ const ok=x=>x.name&&x.text&&x.rating>=1&&x.rating<=5;
+ const norm=d=>{const x=d.data({serverTimestamps:'estimate'});return{id:d.id,name:String(x.name||''),rating:Number(x.rating)||5,text:String(x.text||''),t:(x.createdAt&&x.createdAt.toMillis)?x.createdAt.toMillis():0}};
+ const merge=()=>{const seen={},o=[];live.concat(extra).forEach(x=>{if(!seen[x.id]){seen[x.id]=1;o.push(x)}});window.TR_APPROVED_REVIEWS=o.sort((p,q)=>q.t-p.t)};
+ const refresh=()=>{if(location.hash==='#reviews'&&!(window.trUpdate&&window.trUpdate()))window.dispatchEvent(new Event('hashchange'))};
+ // Total count and average over ALL reviews (needs the updated Firestore rules; falls back to the loaded ones).
+ const stats=async()=>{try{const r=await F.getAggregateFromServer(col,{n:F.count(),avg:F.average('rating')}),d=r.data();if(d&&d.n>0){window.TR_STATS={n:d.n,avg:Number(d.avg)||0};refresh()}}catch(e){}};
+ window.trMore=async function(btn){if(btn){btn.disabled=true}try{const cur=extraLast||liveLast;if(!cur){done=true;window.TR_MORE=false;refresh();return}
+  const s2=await F.getDocs(F.query(col,F.orderBy('createdAt','desc'),F.startAfter(cur),F.limit(PAGE)));
+  extra=extra.concat(s2.docs.map(norm).filter(ok));if(s2.docs.length)extraLast=s2.docs[s2.docs.length-1];
+  done=s2.docs.length<PAGE;window.TR_MORE=!done;merge();refresh()}catch(e){if(btn)btn.disabled=false}};
+ F.onSnapshot(F.query(col,F.orderBy('createdAt','desc'),F.limit(PAGE)),snap=>{
+  live=snap.docs.map(norm).filter(ok);liveLast=snap.docs.length?snap.docs[snap.docs.length-1]:null;
+  if(!extra.length)window.TR_MORE=snap.docs.length>=PAGE;
+  merge();refresh();clearTimeout(tm);tm=setTimeout(stats,600);
  },()=>{window.TR_APPROVED_REVIEWS=window.TR_APPROVED_REVIEWS||[]});
 } catch(e) { window.TR_APPROVED_REVIEWS=window.TR_APPROVED_REVIEWS||[]; }
 </script>
