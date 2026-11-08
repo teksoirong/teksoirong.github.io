@@ -828,6 +828,36 @@ html[data-theme=dark] #tkac .lgcard{box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 
 #tkac .lgrows{margin:0 0 22px;text-align:left}
 #tkac .lgrow{display:flex;justify-content:space-between;gap:16px;padding:12px 2px;border-bottom:1px solid var(--lbd);font-size:14px}
 #tkac .lgrow span{color:var(--lm);flex:none}#tkac .lgrow b{font-weight:600;text-align:right;word-break:break-word}
+#tkac .pfw{min-height:100vh;min-height:100dvh;display:flex;justify-content:center;align-items:flex-start;padding:clamp(14px,5vh,56px) 14px 28px;box-sizing:border-box}
+#tkac .pfc{width:min(440px,100%);box-sizing:border-box;padding:22px 24px 18px;border-radius:34px;background:var(--lc);box-shadow:0 24px 60px rgba(70,50,10,.14),0 2px 6px rgba(70,50,10,.06);color:var(--lt)}
+html[data-theme=dark] #tkac .pfc{box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px #2e2a1c}
+#tkac .pft{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;margin-bottom:18px}
+#tkac .pft b{text-align:center;font-size:17px;font-weight:600}
+#tkac.lgm button.pfb,#tkac.lgm button.pfk{width:40px;height:40px;padding:0;border-radius:50%;background:none;color:var(--lt);display:grid;place-items:center;box-shadow:none;letter-spacing:0}
+#tkac.lgm button.pfk{color:#B8862F}
+#tkac .pfu{display:flex;align-items:center;gap:18px;margin:6px 0 22px}
+#tkac .pfa{position:relative;flex:none;width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,#F2D58A,#D9A94F);color:#141414;display:grid;place-items:center;font-size:36px;font-weight:800}
+#tkac .pfa img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+#tkac.lgm button.pfcam{position:absolute;right:-2px;bottom:-2px;width:30px;height:30px;padding:0;border-radius:50%;background:var(--lc);color:var(--lt);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25);letter-spacing:0}
+#tkac .pfi{min-width:0}#tkac .pfi b{display:block;font-size:20px;font-weight:700;line-height:1.25;word-break:break-word}
+#tkac .pfi small{display:block;margin:3px 0 12px;font-size:13.5px;color:var(--lm);word-break:break-all}
+#tkac.lgm button.pfed{padding:10px 20px;border-radius:9px;background:linear-gradient(135deg,#F2D58A,#D9A94F);color:#141414;font-size:14px;font-weight:700;letter-spacing:0;box-shadow:0 6px 14px rgba(201,162,75,.35)}
+#tkac.lgm button.pfr{display:flex;align-items:center;gap:16px;width:100%;padding:13px 2px;border-radius:0;background:none;color:var(--lt);font-size:16px;font-weight:500;letter-spacing:0;text-align:left;box-shadow:none}
+#tkac.lgm button.pfr:hover{color:#B8862F}
+#tkac .pfr span{flex:1}#tkac .pfr em{font-style:normal;font-size:11px;font-weight:700;color:#B8862F;background:rgba(201,162,75,.16);padding:2px 8px;border-radius:99px}
+#tkac .pfr svg:last-child{opacity:.55;flex:none}
+#tkac.lgm button.pfr.out{color:#d62d20}
+#tkac .pfd{height:1px;background:var(--lbd);margin:8px 0}
+#tkac .pfv{text-align:center;margin:26px 0 4px;font-size:12.5px;color:var(--lm)}
+#tkac .pfok{margin:0 0 10px;padding:10px 12px;border-radius:10px;background:rgba(46,160,90,.14);color:#1d7a43;font-size:13.5px}
+html[data-theme=dark] #tkac .pfok{color:#6fd49b}
+#tkac .pfh{margin:20px 0 12px;font-size:18px;font-weight:700}
+#tkac .pfbig{display:flex;justify-content:center;margin:4px 0 8px}#tkac .pfbig .pfa{width:104px;height:104px;font-size:42px}
+#tkac.lgm .pff{display:block;position:relative;margin:0 0 12px}
+#tkac.lgm .pff small{position:absolute;left:14px;top:7px;font-size:11px;color:var(--lm);pointer-events:none}
+#tkac.lgm .pff input{display:block;width:100%;box-sizing:border-box;margin:0;height:56px;padding:20px 14px 4px;border:1px solid var(--lbd);border-radius:8px;background:var(--lc);color:var(--lt);font:inherit;font-size:16px;outline:0}
+#tkac.lgm .pff input:focus{border-color:#C9A24B;box-shadow:0 0 0 3px rgba(201,162,75,.22)}
+#tkac.lgm .pff input[readonly]{opacity:.6;background:transparent}
 </style>
 <style id="tkcards">
 /* thinner + raised "pop-out" cards */
@@ -1879,10 +1909,28 @@ const hist=(a,ad)=>{const h=srt(a.filter(r=>r.type==='bill'||r.type==='payment')
 const inp=(i,p,t,x)=>`<input id="${i}" ${t?'type="'+t+'" ':''}placeholder="${p}" ${x||''}>`;
 const hd2=r=>`<div class="lgh"><a class="lgb" data-k="close"><b>${tr('Teksoi Rong','টেকসই রং')}</b><small>← ${tr('Back to website','ওয়েবসাইটে ফিরুন')}</small></a><div class="lgn">${r}</div></div>`;
 const ft2=()=>`<div class="lgcp">© ${new Date().getFullYear()} Teksoi Rong</div>`;
-const lgu=u=>{const m=S.me||{},nm=m.name||u.displayName||tr('My Account','আমার অ্যাকাউন্ট'),ph=m.phone||'',em=m.email||(/@phone\.teksoirong\.app$/.test(u.email||'')?'':(u.email||'')),ar=m.address||'';
-const row=(l,v)=>v?`<div class="lgrow"><span>${l}</span><b>${E(v)}</b></div>`:'';
-return `<div class="lgp">${hd2(`<button type="button" class="lgad" data-k="out">${tr('Logout','লগআউট')}</button>`)}<div class="lgs"><div class="lgcard"><div class="lgav">${E(String(nm).trim().charAt(0).toUpperCase()||'?')}</div><h2>${E(nm)}</h2><p class="lgsub">${tr('Your account is ready. Billing and project updates will appear here soon.','আপনার অ্যাকাউন্ট তৈরি হয়ে গেছে। বিল ও প্রজেক্টের তথ্য শীঘ্রই এখানে দেখা যাবে।')}</p><div class="lgrows">${row(tr('Mobile','মোবাইল'),ph)}${row(tr('Email','ইমেইল'),em)}${row(tr('Address','ঠিকানা'),ar)}</div><button type="button" class="lgbtn" data-k="close">${tr('Back to website','ওয়েবসাইটে ফিরুন')}</button></div></div>${ft2()}</div>`};
+const lgu=u=>{const m=S.me||{},lp=/@phone\.teksoirong\.app$/.test(u.email||''),nm=m.name||u.displayName||'',ph=m.phone||(lp?(u.email||'').split('@')[0]:''),em=m.email||(lp?'':(u.email||'')),ar=m.address||'',ed=S.v==='e';
+const ic=p=>`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`,chev=ic('<path d="M9 5l7 7-7 7"/>');
+const av=m.photo?`<img src="${E(m.photo)}" alt="">`:E((nm.trim().charAt(0)||'?').toUpperCase()),cam=`<button type="button" class="pfcam" data-k="photo" aria-label="Photo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 012-2h2l1.5-2h7L17 6h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg></button>`;
+const back=`<button type="button" class="pfb" data-k="${ed?'pv':'close'}" aria-label="Back">${ic('<path d="M15 5l-7 7 7 7"/>')}</button>`;
+const note=(S.note?`<div class="pfok">${E(S.note)}</div>`:'')+(S.msg?`<div class="lgmsg">${E(S.msg)}</div>`:'');
+const fld=(i,l,v,t,ro)=>`<label class="pff"><small>${l}</small><input id="${i}" ${t?'type="'+t+'" ':''}value="${E(v)}"${ro?' readonly':''} autocomplete="off"></label>`;
+const row=(k,v,i,l,x,c)=>`<button type="button" class="pfr${c?' '+c:''}" data-k="${k}"${v?` data-v="${v}"`:''}>${ic(i)}<span>${l}</span>${x||''}${c==='out'?'':chev}</button>`;
+let body;
+if(ed)body=`<div class="pft">${back}<b>${tr('Edit Profile','প্রোফাইল এডিট')}</b><button type="button" class="pfk" data-k="save" aria-label="Save">${ic('<path d="M5 12.5l4.5 4.5L19 7.5"/>')}</button></div><div class="pfbig"><div class="pfa">${av}${cam}</div></div>${note}<h3 class="pfh">${tr('Your Information','আপনার তথ্য')}</h3>${fld('en',tr('Full name','পুরো নাম'),nm)}${fld('ep',tr('Mobile','মোবাইল'),ph,'tel',lp)}${fld('ee',tr('Email','ইমেইল'),em,'email',!lp)}${fld('ea',tr('Address','ঠিকানা'),ar)}`;
+else body=`<div class="pft">${back}<b>${tr('My Profile','আমার প্রোফাইল')}</b><span></span></div>${note}<div class="pfu"><div class="pfa">${av}${cam}</div><div class="pfi"><b>${E(nm||tr('My Account','আমার অ্যাকাউন্ট'))}</b><small>${E(em||ph)}</small><button type="button" class="pfed" data-k="edit">${tr('Edit Profile','প্রোফাইল এডিট')}</button></div></div>`
++row('m','bill','<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/>',tr('Bill & Payment','বিল ও পেমেন্ট'),`<em>${tr('Soon','শীঘ্রই')}</em>`)
++row('m','apt','<rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/>',tr('Book appointment','অ্যাপয়েন্টমেন্ট'))
++'<div class="pfd"></div>'
++row('lang','','<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',tr('Language','ভাষা'))
++row('theme','','<path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/>',tr('Display (Light / Dark)','ডিসপ্লে (লাইট / ডার্ক)'))
++row('m','contact','<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',tr('Contact Us','যোগাযোগ'))
++'<div class="pfd"></div>'
++row('out','','<path d="M10 4H6a2 2 0 00-2 2v12a2 2 0 002 2h4M15 8l4 4-4 4M19 12H9"/>',tr('Log Out','লগ আউট'),'','out')
++`<div class="pfv">${tr('Teksoi Rong','টেকসই রং')}</div>`;
+return `<div class="pfw"><div class="pfc">${body}<input type="file" id="tkph" accept="image/*" hidden></div></div>`};
 const lgo=()=>`<div class="lgp">${hd2('')}<div class="lgs"><div class="lgcard"><h2>${tr('Opening Admin Panel…','অ্যাডমিন প্যানেল খুলছে…')}</h2><p class="lgsub">${tr('If it does not open, press the button below.','না খুললে নিচের বাটনে চাপুন।')}</p><button type="button" class="lgbtn" data-k="panel">${tr('Open Admin Panel','অ্যাডমিন প্যানেল খুলুন')}</button></div></div>${ft2()}</div>`;
+const phUp=inp=>{const f=inp.files&&inp.files[0];if(!f||!S.u)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=async()=>{const c=document.createElement('canvas');c.width=c.height=240;const x=c.getContext('2d'),q=Math.min(im.width,im.height);x.drawImage(im,(im.width-q)/2,(im.height-q)/2,q,q,0,0,240,240);const d=c.toDataURL('image/jpeg',.82);try{await F.setDoc(F.doc(F.db,'customers',S.u.uid),{photo:d},{merge:true});S.me=Object.assign({},S.me,{photo:d});S.note=tr('Photo updated','ছবি আপডেট হয়েছে')}catch(e){S.msg=tr('Could not save the photo.','ছবি সেভ করা যায়নি।')}paint()};im.src=r.result};r.readAsDataURL(f)};
 const goAdmin=()=>{location.hash='#admin';setTimeout(()=>{const e=document.getElementById('tradm');if(!e||getComputedStyle(e).display==='none'){if(window.__trOpenAdmin){close();window.__trOpenAdmin()}}},600)};
 const lgv=(T,msg)=>{const up=T==='up',ad=T==='ad';
 const T2=up?tr('Create Account','অ্যাকাউন্ট খুলুন'):ad?tr('Admin Login','অ্যাডমিন লগইন'):tr('Customer Login','কাস্টমার লগইন');
@@ -1901,19 +1949,28 @@ return `<div class="lgp"><div class="lgh"><a class="lgb" data-k="close"><b>${tr(
 <div class="lgcp">© ${new Date().getFullYear()} Teksoi Rong &nbsp;|&nbsp; <a data-k="close">${tr('Home','হোম')}</a></div></div>`};
 function paint(){if(!el)return;const sv={};el.querySelectorAll('input[id]').forEach(i=>{sv[i.id]=i.value});const keep=(S._pt===S.tab)?sv:null;const u=S.u,msg=S.msg?`<div class="m">${E(S.msg)}</div>`:'',ad=u&&u.email===AD;let h='<div class="c'+(ad?' ad':'')+'"><div style="text-align:right"><button class="o" data-k="close">× Close</button></div>';
 if(!u){h=lgv(S.tab,S.msg)}else if(ad){h=lgo()}else{h=lgu(u)}
-const y=el.scrollTop;el.classList.add('lgm');el.innerHTML=h;if(keep&&!u)for(const k in keep){const e=el.querySelector('#'+k);if(e&&keep[k])e.value=keep[k]}S._pt=S.tab;el.scrollTop=y}
+const y=el.scrollTop;el.classList.add('lgm');el.innerHTML=h;if(keep&&(!u||S.v==='e'))for(const k in keep){const e=el.querySelector('#'+k);if(e&&keep[k])e.value=keep[k]}S._pt=S.tab;el.scrollTop=y}
 function unsub(){S.un.forEach(f=>f());S.un=[];S.rows=[];S.cs=[]}
 function watch(u){unsub();S.me=null;if(u.email===AD)return;(async()=>{try{const d=await F.getDoc(F.doc(F.db,'customers',u.uid));if(d.exists())S.me=d.data()}catch(e){}paint()})()}
-async function open(){if(!el){const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);el=document.createElement('div');el.id='tkac';el.addEventListener('click',click);el.addEventListener('change',e=>{if(e.target.id==='tt'){const p=e.target.value==='proj';el.querySelectorAll('.pj').forEach(x=>x.style.display=p?'block':'none');el.querySelectorAll('.am').forEach(x=>x.style.display=p?'none':'')}});document.body.appendChild(el)}el.style.display='block';document.body.style.overflow='hidden';paint();
+async function open(){if(!el){const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);el=document.createElement('div');el.id='tkac';el.addEventListener('click',click);el.addEventListener('change',e=>{if(e.target.id==='tkph'){phUp(e.target);return}if(e.target.id==='tt'){const p=e.target.value==='proj';el.querySelectorAll('.pj').forEach(x=>x.style.display=p?'block':'none');el.querySelectorAll('.am').forEach(x=>x.style.display=p?'none':'')}});document.body.appendChild(el)}el.style.display='block';document.body.style.overflow='hidden';paint();
 if(!S.on){S.on=true;try{F=await fb();F.onAuthStateChanged(F.auth,u=>{S.u=u;S.msg='';u?watch(u):unsub();paint();if(u&&u.email===AD&&location.hash==='#account')goAdmin()})}catch(e){S.on=false;S.msg='Could not connect.';paint()}}}
 function close(){if(el)el.style.display='none';document.body.style.overflow=''}
 const v=i=>{const e=el.querySelector('#'+i);return e?e.value.trim():''};
-const EM={'auth/email-already-in-use':'Already registered. Please login.','auth/weak-password':'Password must be at least 6 characters.','auth/invalid-email':'Invalid email or mobile.','auth/invalid-credential':'Wrong login or password. Use the same email/mobile you registered with.','auth/user-not-found':'No account found.','auth/wrong-password':'Wrong login or password.','auth/too-many-requests':'Too many tries. Try later.'};
-async function click(e){if(e.target===el){location.hash='#home';close();return}const t=e.target.closest('[data-k]');if(!t)return;e.preventDefault();const k=t.dataset.k;S.msg='';
+const EM={'auth/email-already-in-use':'Already registered. Please login.','auth/weak-password':'Password must be at least 6 characters.','auth/invalid-email':'Invalid email or mobile.','auth/invalid-credential':'Wrong login or password. Use the same email/mobile you registered with.','auth/user-not-found':'No account found.','auth/wrong-password':'Wrong login or password.','auth/too-many-requests':'Too many tries. Try later.','permission-denied':'Could not save (permission denied). Please try again later.'};
+async function click(e){if(e.target===el){location.hash='#home';close();return}const t=e.target.closest('[data-k]');if(!t)return;e.preventDefault();const k=t.dataset.k;S.msg='';S.note='';
 const bad=m=>{S.msg=m;paint()};
 try{if(k==='close'){location.hash='#home';close();return}
 if(k==='eye'){const i=el.querySelector('#tp');if(i){const h=i.type==='password';i.type=h?'text':'password';t.textContent=h?tr('Hide','লুকান'):tr('Show','দেখুন')}return}
 if(k==='lang'){const b=document.querySelector('.lang button[data-l="'+(L==='bn'?'en':'bn')+'"]');if(b)b.click();setTimeout(paint,80);return}
+if(k==='edit'){S.v='e';paint();return}
+if(k==='pv'){S.v='p';paint();return}
+if(k==='photo'){const i=el.querySelector('#tkph');if(i)i.click();return}
+if(k==='m'){const w=t.dataset.v;if(w==='bill'){S.note=tr('Bill & payment details are coming soon.','বিল ও পেমেন্টের তথ্য শীঘ্রই আসছে।');paint()}else location.hash=w==='apt'?'#book-appointment':'#contact';return}
+if(k==='theme'){const b=document.getElementById('th');if(b)b.click();setTimeout(paint,60);return}
+if(k==='save'){if(!S.u)return;const lp=/@phone\.teksoirong\.app$/.test(S.u.email||'');const nm=v('en'),ar=v('ea');let ph=v('ep'),em=v('ee');if(lp)ph=(S.u.email||'').split('@')[0];else em=S.u.email||em;
+if(nm.length<2)return bad(tr('Please enter your name.','নাম লিখুন।'));if(!PH.test(ph))return bad(tr('Enter a valid 11-digit mobile number.','সঠিক ১১ সংখ্যার মোবাইল নম্বর দিন।'));if(em&&!/^\S+@\S+\.\S+$/.test(em))return bad(tr('Email is not valid.','ইমেইল সঠিক নয়।'));if(ar.length<5)return bad(tr('Please enter your address.','ঠিকানা লিখুন।'));
+await F.setDoc(F.doc(F.db,'customers',S.u.uid),{name:nm,phone:ph,email:em,address:ar,contact:em||ph},{merge:true});try{await F.updateProfile(S.u,{displayName:nm})}catch(x){}
+S.me=Object.assign({},S.me,{name:nm,phone:ph,email:em,address:ar});S.v='p';S.note=tr('Profile updated.','প্রোফাইল আপডেট হয়েছে।');paint();return}
 if(k==='tin'||k==='tup'||k==='tad'){S.tab=k.slice(1);paint();return}
 if(k==='panel'){location.hash='#admin';close();return}
 if(k==='go'){const pw=el.querySelector('#tp').value;
@@ -1921,7 +1978,7 @@ if(S.tab==='up'){const nm=v('tn'),ph=v('tph'),em=v('tem'),ad=v('tad');if(nm.leng
 const c=await F.createUserWithEmailAndPassword(F.auth,em||toEm(ph),pw);try{await F.updateProfile(c.user,{displayName:nm})}catch(x){}await F.setDoc(F.doc(F.db,'customers',c.user.uid),{name:nm,contact:em||ph,phone:ph,email:em,address:ad,createdAt:F.serverTimestamp()})}
 else{const id=v('ti');if(!id||!pw)return bad('Please fill all fields.');const isA=toEm(id).toLowerCase()===AD;if(S.tab==='ad'&&!isA)return bad(tr('This is not an admin account. Customers: please use Sign in.','এটি অ্যাডমিন অ্যাকাউন্ট নয়। কাস্টমার হলে সাইন ইন করুন।'));if(S.tab!=='ad'&&isA)return bad(tr('This is an admin account. Please use Admin Login.','এটি অ্যাডমিন অ্যাকাউন্ট। অনুগ্রহ করে Admin Login ব্যবহার করুন।'));await F.signInWithEmailAndPassword(F.auth,toEm(id),pw)}return}
 if(k==='fp'){const id=v('ti');if(!id||PH.test(id))return bad(PH.test(id)?'Mobile accounts: ask the admin to reset your password.':'Type your email above first.');await F.sendPasswordResetEmail(F.auth,id);return bad('Reset link sent. Check inbox and spam.')}
-if(k==='out'){S.sel='';await F.signOut(F.auth);return}
+if(k==='out'){S.sel='';S.v='p';await F.signOut(F.auth);return}
 if(k==='sel'){S.sel=t.dataset.id;paint();return}if(k==='bk'){S.sel='';paint();return}
 if(k==='add'){const ty=v('tt'),o={uid:S.sel,type:ty,date:v('td')||TD(),note:v('tm').slice(0,200),createdAt:F.serverTimestamp()};
 if(ty==='proj'){if(!o.note)return bad('Write the project title in Note.');o.stage=v('ts');o.progress=Math.max(0,Math.min(100,Math.round(+v('tg')||0)));o.amount=0}
