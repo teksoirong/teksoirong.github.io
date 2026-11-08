@@ -2656,4 +2656,11 @@ html:root[data-theme=dark] body{background:#1A1A1A!important}
 /* soft rounded + subtle border like the reference */
 html #tkw,html #tradm .tpd{border-radius:10px!important;border-width:1px!important;border-style:solid!important}
 html #tradm .tpnp,html #tkac .lgcard,html #tradm .lgc{border-radius:24px!important;border-width:1px!important;border-style:solid!important}
+</style><style id="lightfix">
+/* light/dark contrast fixes */
+html:root:root #tradm .tpab b,html:root:root #tradm .tpab .tpem{color:var(--tx)!important}
+html:root:root .trbd{background:var(--bt,#2B2B2B)!important;background-image:none!important;color:var(--bf,#fff)!important}
+html:root[data-theme=dark]:root .trbd{background:#262626!important;color:#F2F2EF!important}
+html:root:root .xd-p .xd-o.act,html:root:root .xd-p .xd-o:hover,html:root:root .xd-p .xd-o[aria-selected=true]{background:color-mix(in srgb,var(--tx) 14%,transparent)!important;background-image:none!important;color:var(--tx)!important;border:0!important;box-shadow:none!important}
+html:root:root .xd-p .xd-o[aria-selected=true]::after{color:var(--tx)!important}
 </style></body></html>
