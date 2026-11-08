@@ -2663,4 +2663,23 @@ html:root:root .trbd{background:var(--bt,#2B2B2B)!important;background-image:non
 html:root[data-theme=dark]:root .trbd{background:#262626!important;color:#F2F2EF!important}
 html:root:root .xd-p .xd-o.act,html:root:root .xd-p .xd-o:hover,html:root:root .xd-p .xd-o[aria-selected=true]{background:color-mix(in srgb,var(--tx) 14%,transparent)!important;background-image:none!important;color:var(--tx)!important;border:0!important;box-shadow:none!important}
 html:root:root .xd-p .xd-o[aria-selected=true]::after{color:var(--tx)!important}
-</style></body></html>
+</style><script id="trfit4">
+/* Reviews: show exactly 4 reviews, scroll for the rest */
+(function(){
+ var N=4,raf=0;
+ function fit(){raf=0;
+  document.querySelectorAll('.trl').forEach(function(l){
+   var c=l.querySelectorAll(':scope > .trv');
+   if(c.length<=N){l.style.maxHeight='';return}
+   var a=c[0].getBoundingClientRect(),z=c[N-1].getBoundingClientRect();
+   var h=Math.ceil(z.bottom-a.top)+2;
+   if(h>40){l.style.maxHeight=h+'px'}
+  })}
+ function sched(){if(!raf)raf=requestAnimationFrame(fit)}
+ new MutationObserver(sched).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
+ window.addEventListener('resize',sched);window.addEventListener('load',sched);
+ document.addEventListener('click',function(){setTimeout(sched,60)},true);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sched);
+ sched();
+})();
+</script></body></html>
