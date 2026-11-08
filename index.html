@@ -543,6 +543,20 @@ input.bad+.dpk .dpk-b{border-color:#c0392b}
 .trh span{color:#C9A24B;font-size:12px;letter-spacing:1px;white-space:nowrap}
 .trv p{margin:3px 0 0;font-size:12.5px;line-height:1.45;color:var(--tx);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .trv.x p{display:block;-webkit-line-clamp:unset}
+.trx{margin-top:6px;cursor:default}
+.trbd{display:inline-block;font-size:10.5px;font-weight:700;color:#111;background:var(--gold,#C9A24B);border-radius:999px;padding:1px 8px;margin-right:4px;line-height:1.5}
+.trv .trad{margin:6px 0 4px;padding:7px 10px;border-left:3px solid var(--gold,#C9A24B);background:color-mix(in srgb,var(--gold,#C9A24B) 12%,transparent);border-radius:6px}
+.trv .trad p,.trv .trrp p{display:block;-webkit-line-clamp:unset;overflow:visible;margin:4px 0 0;font-size:12.5px;white-space:pre-wrap;word-break:break-word}
+.trrb{margin:4px 0 0;padding:5px 12px;border-radius:999px;border:1px solid var(--grey);background:transparent;color:var(--tx);font:inherit;font-size:12px;cursor:pointer}
+.trrb.on{border-color:var(--gold,#C9A24B)}
+.trth{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.trrp{padding:7px 10px;border:1px solid var(--grey);border-radius:8px;font-size:12.5px}
+.trrp.tm{border-color:var(--gold,#C9A24B)}
+.trrp b{font-size:12.5px;color:var(--tx)}
+.trf input,.trf textarea{display:block;width:100%;box-sizing:border-box;background:transparent;color:var(--tx);border:1px solid var(--grey);border-radius:8px;padding:8px 10px;font:inherit;font-size:13px;margin:0 0 6px}
+.trfm{font-size:12px;color:var(--mu);min-height:0;margin:0 0 6px}
+.trsb{padding:7px 18px;border-radius:999px;border:0;background:var(--gold,#C9A24B);color:#111;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.trsb:disabled{opacity:.6}
 </style>
 <style id="tpglass">
 #tradm{background:radial-gradient(900px 520px at 6% -4%,rgba(201,162,75,.30),transparent 62%),radial-gradient(800px 520px at 100% 22%,rgba(217,119,69,.22),transparent 62%),radial-gradient(760px 520px at 30% 112%,rgba(23,43,58,.20),transparent 62%),var(--bg);}
@@ -584,6 +598,68 @@ html.tpo body>*:not(#tradm):not(script):not(style){display:none!important}
 .trc{color:var(--mu)}
 .trmore{flex:none;align-self:center;margin:6px 0 4px;padding:9px 20px;border-radius:999px;border:1px solid var(--grey);background:var(--card);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
 .trmore:disabled{opacity:.6}
+/* ---- admin login (glass card) ---- */
+#tradm.lg{background:radial-gradient(60% 46% at 50% 0%,rgba(196,48,70,.55),transparent 70%),radial-gradient(70% 55% at 100% 100%,rgba(112,146,255,.7),transparent 70%),radial-gradient(60% 55% at 0% 85%,rgba(125,45,75,.5),transparent 70%),linear-gradient(160deg,#170f2e,#2b1236 48%,#11153a)}
+#tradm .lgc.tpal{max-width:340px!important;padding:34px 28px 28px;border-radius:36px;background:linear-gradient(160deg,rgba(255,255,255,.17),rgba(255,255,255,.05));-webkit-backdrop-filter:blur(26px) saturate(1.4);backdrop-filter:blur(26px) saturate(1.4);border:1px solid rgba(255,255,255,.22);box-shadow:0 30px 80px rgba(0,0,0,.45);color:#fff}
+#tradm .lgc .lga{width:92px;height:92px;margin:0 auto 12px;border-radius:50%;background:rgba(255,255,255,.26);display:grid;place-items:center;color:rgba(255,255,255,.6)}
+#tradm .lgc .lga svg{width:62px;height:62px;margin-top:8px}
+#tradm .lgc h2{margin:0 0 24px;font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-align:center;color:rgba(255,255,255,.85)}
+#tradm .lgc label.lgf{display:flex;align-items:center;gap:14px;margin:0 0 22px;padding:0 2px 8px;border-bottom:1.5px solid rgba(255,255,255,.85);font-size:15px}
+#tradm .lgc .lgi{flex:none;display:grid;place-items:center;color:#fff}
+#tradm .lgc .lgf input{flex:1;min-width:0;width:auto;margin:0;padding:6px 0;background:none;border:0;border-radius:0;outline:none;box-shadow:none;color:#fff;font-size:16px;letter-spacing:.02em}
+#tradm .lgc .lgf input::placeholder{color:rgba(255,255,255,.78);opacity:1}
+#tradm .lgc .lgf input:-webkit-autofill{-webkit-text-fill-color:#fff;transition:background-color 99999s ease-out}
+#tradm .lgc .lgr{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 24px;font-size:12.5px;color:rgba(255,255,255,.88)}
+#tradm .lgc label.lgk{display:flex;align-items:center;gap:8px;margin:0;font-size:12.5px;font-weight:400;cursor:pointer}
+#tradm .lgc .lgk input{width:auto;margin:0;padding:0;accent-color:#7b8cf0}
+#tradm .lgc .lgfp{background:none;border:0;padding:0;color:rgba(255,255,255,.88);font:italic inherit;font-size:12.5px;cursor:pointer}
+#tradm .lgc .btn.lgbtn{width:100%;margin:0;padding:15px 12px;border:0;border-radius:16px;font-size:15px;font-weight:700;letter-spacing:.16em;color:#fff;background:linear-gradient(100deg,#3b0a3a,#3a2a8f 55%,#5f7be8);box-shadow:0 12px 28px rgba(40,30,130,.5)}
+#tradm .lgc .msg{margin-top:14px;padding:9px 12px;border-radius:12px;background:rgba(0,0,0,.28);color:#fff;font-size:12.5px;text-align:center}
+#tradm .lgc .lgx{color:#fff;border-color:rgba(255,255,255,.4)}
+/* ---- same size and style for every site button ---- */
+body>*:not(#tradm) .btn{padding:8px 17px;font-size:13.5px;border-radius:9px;font-weight:700;box-shadow:0 4px 12px #b8862f33}
+body>*:not(#tradm) .btn.o{border-width:1.5px;box-shadow:none}
+/* ---- desktop header spreads across the full width ---- */
+@media(min-width:900px){.w{max-width:1360px;padding-left:clamp(24px,4vw,64px);padding-right:clamp(24px,4vw,64px)}header .w.nav{max-width:none;padding-left:clamp(24px,3vw,56px);padding-right:clamp(24px,3vw,56px)}}
+@media(min-width:1180px){
+header .w.nav{flex-wrap:nowrap;height:68px;min-height:68px;padding-top:0;row-gap:0;gap:14px}
+header .nav nav{display:flex!important;order:0;flex:1 1 auto;min-width:0;justify-content:center;margin:0;padding:0;border:0;overflow:visible;gap:clamp(14px,1.6vw,30px);font-size:14.5px;font-weight:600;white-space:nowrap}
+header .nav nav a[href="#terms-and-conditions"]{display:none}
+header .menu{display:none!important}
+header .nav .lang{margin-left:0}
+.hero{padding-top:112px!important}}
+/* header: 900px+ (also phones in desktop mode) */
+@media(min-width:900px){
+header .w.nav{flex-wrap:nowrap;height:68px;min-height:68px;padding-top:0;row-gap:0;gap:12px}
+.nav img{height:44px}
+.nav .hm{margin-left:auto!important}
+.nav .ib,.nav #th,.nav .hb{width:40px;height:40px;margin:0}
+.nav .hb{border:1px solid #C9A24B88;border-radius:50%;background:none}
+.nav .hb:hover{background:#ffffff14;border-color:#E6C777}
+.nav .hb span{left:12px;right:12px}
+.nav .hb span:nth-child(1){top:15px}.nav .hb span:nth-child(2){top:22px}
+body.am .nav .hb span:nth-child(1),body.am .nav .hb span:nth-child(2){top:18px}
+.nav .lang button{height:38px;padding:0 14px;font-size:13.5px}
+.nav .hd-cta{display:inline-flex!important;align-items:center;min-height:40px}
+}
+@media(min-width:1180px){.nav .hm{margin-left:0!important}}
+/* login follows the site theme: black + gold (dark) or cream + gold (light) */
+#tradm.lg[data-at]{-webkit-backdrop-filter:none;backdrop-filter:none}
+#tradm.lg[data-at=dark]{--lt:#F5F0E3;--ls:rgba(245,240,227,.72);--lline:rgba(230,199,119,.75);--lglass:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.03));--lbd:rgba(201,162,75,.45);--lav:rgba(201,162,75,.2);--lic:#E6C777;--tx:#F5F0E3;--card:#161616;--mu:rgba(245,240,227,.7);color-scheme:dark;background:radial-gradient(60% 46% at 50% 0%,rgba(201,162,75,.38),transparent 70%),radial-gradient(70% 55% at 100% 100%,rgba(217,119,69,.22),transparent 70%),radial-gradient(60% 55% at 0% 85%,rgba(201,162,75,.16),transparent 70%),#0B0B0B}
+#tradm.lg[data-at=light]{--lt:#1d1b16;--ls:rgba(29,27,22,.65);--lline:rgba(150,110,30,.7);--lglass:linear-gradient(160deg,rgba(255,255,255,.85),rgba(255,255,255,.5));--lbd:rgba(184,134,47,.4);--lav:rgba(201,162,75,.2);--lic:#9a7420;--tx:#1d1b16;--card:#fff;--mu:rgba(29,27,22,.62);color-scheme:light;background:radial-gradient(60% 46% at 50% 0%,rgba(201,162,75,.30),transparent 70%),radial-gradient(70% 55% at 100% 100%,rgba(217,119,69,.20),transparent 70%),radial-gradient(60% 55% at 0% 85%,rgba(201,162,75,.14),transparent 70%),#FBF8F1}
+#tradm.lg .lgc.tpal{background:var(--lglass);border-color:var(--lbd);color:var(--lt)}
+#tradm.lg .lgc .lga{background:var(--lav);color:var(--lic)}
+#tradm.lg .lgc h2{color:var(--ls)}
+#tradm.lg .lgc label.lgf{border-bottom-color:var(--lline)}
+#tradm.lg .lgc .lgi{color:var(--lic)}
+#tradm.lg .lgc .lgf input{color:var(--lt)}
+#tradm.lg .lgc .lgf input::placeholder{color:var(--ls)}
+#tradm.lg .lgc .lgf input:-webkit-autofill{-webkit-text-fill-color:var(--lt)}
+#tradm.lg .lgc .lgr,#tradm.lg .lgc .lgfp{color:var(--ls)}
+#tradm.lg .lgc .lgk input{accent-color:#B8862F}
+#tradm.lg .lgc .btn.lgbtn{background:linear-gradient(135deg,#E6C777,#B8862F);color:#111;box-shadow:0 10px 26px rgba(184,134,47,.4)}
+#tradm.lg .lgc .msg{background:rgba(201,162,75,.16);color:var(--lt)}
+#tradm.lg .lgc .lgx{color:var(--lt);border-color:var(--lbd)}
 #tradm{animation:none}
 #tradm.lg{background:radial-gradient(900px 520px at 6% -4%,rgba(201,162,75,.30),transparent 62%),radial-gradient(800px 520px at 100% 22%,rgba(217,119,69,.22),transparent 62%),radial-gradient(760px 520px at 30% 112%,rgba(23,43,58,.20),transparent 62%),var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
 #tradm .tpnb{display:block}
@@ -988,9 +1064,16 @@ function pickReview(){
 (function(){
 
  window.trStat=function(){var R=window.TR_APPROVED_REVIEWS||[],S=window.TR_STATS,avg=S&&S.avg!=null?S.avg:(R.length?R.reduce(function(x,r){return x+r.rating},0)/R.length:0),n=S&&S.n?S.n:R.length;return{avg:avg,n:n}};
-  window.trSumHTML=function(){var s=window.trStat(),a=s.avg.toFixed(2);return '<span class="trst" style="--p:'+Math.max(0,Math.min(100,s.avg/5*100))+'%" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span><span class="tra" data-avg="'+a+'">'+a+'</span><span class="trc">(<span class="trn">'+s.n+'</span> '+tr('reviews','মতামত')+')</span>'};
-  window.trItemsHTML=function(){var R=window.TR_APPROVED_REVIEWS||[],h=R.map(function(r){return '<div class="trv" data-r="'+(Number(r.rating)||0)+'" onclick="this.classList.toggle(\'x\')"><div class="trh"><b>'+esc2(r.name)+'</b><span>'+stars(r.rating)+'</span></div><p>'+esc2(r.text)+'</p></div>'}).join('');if(window.TR_MORE){var left=window.TR_STATS&&window.TR_STATS.n?Math.max(0,window.TR_STATS.n-R.length):0;h+='<button type="button" class="trmore" onclick="trMore(this)">'+tr('Show more reviews','আরও মতামত দেখুন')+(left?' ('+left+')':'')+'</button>'}return h};
-  window.trUpdate=function(){var l=document.querySelector('.trl');if(!l)return false;
+  window.trSumHTML=function(){var s=window.trStat(),a=s.avg.toFixed(2);return '<span class="trst" style="--p:'+Math.max(0,Math.min(100,s.avg/5*100))+'%" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span><span class="tra" data-avg="'+a+'">'+a+'</span>'};
+  window.trItemsHTML=function(){var R=window.TR_APPROVED_REVIEWS||[],h=R.map(function(r){return '<div class="trv" data-r="'+(Number(r.rating)||0)+'" onclick="this.classList.toggle(\'x\')"><div class="trh"><b>'+esc2(r.name)+'</b><span>'+stars(r.rating)+'</span></div><p>'+esc2(r.text)+'</p>'+window.trRepHTML(r)+'</div>'}).join('');if(window.TR_MORE){var left=window.TR_STATS&&window.TR_STATS.n?Math.max(0,window.TR_STATS.n-R.length):0;h+='<button type="button" class="trmore" onclick="trMore(this)">'+tr('Show more reviews','আরও মতামত দেখুন')+(left?' ('+left+')':'')+'</button>'}return h};
+  window.trRepHTML=function(r){var S=(window.TR_RP||{})[r.id]||{},L=S.list||[],id=esc2(r.id),h='<div class="trx" onclick="event.stopPropagation()">';
+   if(r.reply&&r.reply.text)h+='<div class="trad"><span class="trbd">\u2713 '+tr('Teksoi Rong Team','টেকসই রং টিম')+'</span><p>'+esc2(r.reply.text)+'</p></div>';
+   h+='<button type="button" class="trrb'+(S.open?' on':'')+'" data-id="'+id+'" onclick="trTog(this.dataset.id)">\uD83D\uDCAC '+(L.length?tr('Replies','রিপ্লাই')+' ('+L.length+')':tr('Reply','রিপ্লাই'))+'</button>';
+   if(S.open){h+='<div class="trth">'+L.map(function(x){return '<div class="trrp'+(x.admin?' tm':'')+'"><b>'+esc2(x.name)+(x.admin?' <span class="trbd">'+tr('Team','টিম')+'</span>':'')+'</b><p>'+esc2(x.text)+'</p></div>'}).join('')
+    +'<div class="trf" data-id="'+id+'"><input class="trfn" maxlength="80" placeholder="'+tr('Your name','আপনার নাম')+'" value="'+esc2(S.dn||'')+'"><textarea class="trft" rows="2" maxlength="500" placeholder="'+tr('Write a reply or ask a question…','রিপ্লাই লিখুন বা প্রশ্ন করুন…')+'">'+esc2(S.dt||'')+'</textarea><div class="trfm">'+esc2(S.msg||'')+'</div><button type="button" class="trsb" data-id="'+id+'" onclick="trSend(this.dataset.id)"'+(S.busy?' disabled':'')+'>'+tr('Send','পাঠান')+'</button></div></div>'}
+   return h+'</div>'};
+  window.trUpdate=function(force){var l=document.querySelector('.trl');if(!l)return false;
+   if(!force){var ae=document.activeElement;if(ae&&ae.closest&&ae.closest('.trf'))return true}
    var st=l.scrollTop;l.innerHTML=window.trItemsHTML();l.scrollTop=st;
    var s=window.trStat(),a=document.querySelector('.tra'),n=document.querySelector('.trn'),g=document.querySelector('.trst');
    if(a){a.dataset.avg=s.avg.toFixed(2);a.textContent=s.avg.toFixed(2)}
@@ -1751,6 +1834,7 @@ const te=(a,b)=>a,bE=n=>String(n),mE=n=>'৳ '+Number(n).toLocaleString('en-US')
 const dE=x=>{if(!x)return'—';const d=typeof x==='string'?new Date(x+'T12:00:00+06:00'):(x.toDate?x.toDate():new Date(x));return d.toLocaleDateString('en-GB',{timeZone:'Asia/Dhaka',day:'numeric',month:'short',year:'numeric'})};
 const pctF=x=>{const v=Math.round(x*10)/10;return(v%1?v.toFixed(1):String(v))+'%'};
 const chipE=s=>{const m={unpaid:['','Unpaid'],pending:['p','Pending'],paid:['s','Success'],approved:['s','Success'],rejected:['r','Rejected']}[s]||['',s];return`<span class="tpchip ${m[0]}">${m[1]}</span>`};
+addEventListener('hashchange',e=>{if(location.hash==='#admin'){try{A.from=new URL(e.oldURL).hash}catch(x){A.from=''}}});
 const atTheme=()=>{if(A.at)return A.at;let v;try{v=localStorage.getItem('tr-at')}catch(x){}if(v==='light'||v==='dark')return v;const r=document.documentElement.dataset.theme;return r||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')};
 const ael=()=>{let e=q('#tradm');if(!e){e=document.createElement('div');e.id='tradm';document.body.appendChild(e)}e.dataset.at=atTheme();return e};
 async function openA(){const e=ael(),first=!A.open;e.style.display='block';document.documentElement.style.overflow='hidden';
@@ -1758,18 +1842,18 @@ if(first&&!matchMedia('(prefers-reduced-motion:reduce)').matches){try{e.animate(
 if(OK()&&!A.init){A.init=true;try{const F=await fb();F.onAuthStateChanged(F.auth,u=>{A.u=u;A.ready=true;u?watch():unwatch();paintA()})}catch(x){A.init=false;A.ready=true}}paintA()}
 function closeA(){clearTimeout(A.tpo);document.documentElement.classList.remove('tpo');const e=q('#tradm');if(e){e.style.display='none';e.classList.remove('lg');A.pop=0}A.open=false;document.documentElement.style.overflow=''}
 function unwatch(){A.un.forEach(f=>f());A.un=[];A.P=[];A.I=[];A.R=[];A.X={};A.E=[];A.rl=0;A.shown=0;A.pop=0}
-function startRev(){if(A.rl)return;A.rl=1;fb().then(F=>{const db=F.db;A.un.push(F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(2000)),s=>{A.rerr='';A.R=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rev')paintL()},e=>{A.rerr=e.code||'error';if(A.tab==='rev')paintL()}))}).catch(()=>{A.rl=0})}
+function startRev(){if(A.rl)return;A.rl=1;fb().then(F=>{const db=F.db;A.un.push(F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(2000)),s=>{A.rerr='';A.R=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rev'&&!revTyping())paintL()},e=>{A.rerr=e.code||'error';if(A.tab==='rev')paintL()}))}).catch(()=>{A.rl=0})}
 async function watch(){unwatch();if(A.tab==='rev')setTimeout(startRev,0);const F=await fb(),db=F.db;
 const er=e=>{if(e.code==='permission-denied'){A.err='denied';F.signOut(F.auth)}else{A.err='load';paintA()}};
 const qy=c=>F.query(F.collection(db,c),F.orderBy('createdAt','desc'),F.limit(1000));
 A.un=[F.onSnapshot(qy('payments'),s=>{A.P=s.docs.map(d=>Object.assign({id:d.id},d.data()));paintT();paintL()},er),
-F.onSnapshot(qy('invoices'),s=>{A.I=s.docs.map(d=>Object.assign({id:d.id},d.data()));A.im=Object.fromEntries(A.I.map(x=>[x.id,x]));paintT();paintL()},er),...Object.keys(INBK).map(k=>F.onSnapshot(F.query(F.collection(db,INBK[k]),F.orderBy('createdAt','desc'),F.limit(500)),s=>{A.X=A.X||{};A.X[k]=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab===k)paintL()},()=>{})),F.onSnapshot(F.query(F.collection(db,'expenses'),F.orderBy('createdAt','desc'),F.limit(1000)),s=>{A.E=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rep')paintL()},()=>{}),F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(30)),s=>{A.RN=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT()},()=>{})]}
+F.onSnapshot(qy('invoices'),s=>{A.I=s.docs.map(d=>Object.assign({id:d.id},d.data()));A.im=Object.fromEntries(A.I.map(x=>[x.id,x]));paintT();paintL()},er),...Object.keys(INBK).map(k=>F.onSnapshot(F.query(F.collection(db,INBK[k]),F.orderBy('createdAt','desc'),F.limit(500)),s=>{A.X=A.X||{};A.X[k]=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab===k)paintL()},()=>{})),F.onSnapshot(F.query(F.collection(db,'expenses'),F.orderBy('createdAt','desc'),F.limit(1000)),s=>{A.E=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rep')paintL()},()=>{}),F.onSnapshot(F.query(F.collection(db,'reviews'),F.orderBy('createdAt','desc'),F.limit(30)),s=>{A.RN=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT()},()=>{}),F.onSnapshot(F.query(F.collection(db,'rreplies'),F.orderBy('createdAt','desc'),F.limit(500)),s=>{A.RP=s.docs.map(d=>Object.assign({id:d.id},d.data({serverTimestamps:'estimate'})));paintT();if(A.tab==='rev'&&!revTyping())paintL()},()=>{})]}
 function paintA(){const e=ael();if(!A.open)return;const im=q('header .nav img'),logo=im?im.src:'';
 e.classList.toggle('lg',!A.u);
 if(!OK()||!A.u){
 const bt='<button type="button" class="lgb lgx" data-a="back" aria-label="Close">✕</button>';
 if(OK()&&!A.ready)e.innerHTML='<div class="lgw"><div class="tpsp"></div></div>';
-else e.innerHTML=`<div class="lgw"><form class="lgc tpal${A.pop?' np':''}" novalidate>${bt}${logo?`<img class="lgl" src="${logo}" alt="Teksoi Rong">`:''}<h2>Admin Login</h2>${OK()?`<label>Email<input name="e" type="email" autocomplete="username"></label><label>Password<input name="p" type="password" autocomplete="current-password"></label><button class="btn" type="submit">Login</button>${A.err?`<div class="msg err">${A.err==='denied'?'This account is not authorised as admin.':A.err==='load'?'Could not load data.':esc(A.err)}</div>`:''}`:'<p style="margin:0">Firebase is not configured yet. See the setup guide.</p>'}</form></div>`;
+else e.innerHTML=`<div class="lgw"><form class="lgc tpal${A.pop?' np':''}" novalidate>${bt}<div class="lga"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path fill="currentColor" d="M32 8c-7 0-12 5.500-12 13 0 5 2.400 9.200 6 11.400C16.600 35 10 41.200 10 49v7h44v-7c0-7.800-6.600-14-16-16.600 3.600-2.200 6-6.400 6-11.400 0-7.500-5-13-12-13z"/></svg></div><h2>Admin Login</h2>${OK()?`<label class="lgf"><span class="lgi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.200l-8 5-8-5V6l8 5 8-5v2.200z"/></svg></span><input name="e" type="email" placeholder="Email ID" autocomplete="username" aria-label="Email"></label><label class="lgf"><span class="lgi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18 8h-1V6a5 5 0 00-10 0v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2zM9 6a3 3 0 016 0v2H9V6z"/></svg></span><input name="p" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password"></label><div class="lgr"><label class="lgk"><input type="checkbox" name="rm" checked> Remember me</label><button type="button" class="lgfp" data-a="fp">Forgot Password?</button></div><button class="btn lgbtn" type="submit">LOGIN</button>${A.err?`<div class="msg err">${A.err==='denied'?'This account is not authorised as admin.':A.err==='load'?'Could not load data.':esc(A.err)}</div>`:''}`:'<p style="margin:0">Firebase is not configured yet. See the setup guide.</p>'}</form></div>`;
 A.pop=1;return}
 const bar=`<div class="tpab"><img src="${logo}" alt="Teksoi Rong"><b>Admin Panel</b><span class="grow"></span><span class="tpem">${esc(A.u.email)}</span><button class="tpcap tpic" data-a="at" aria-label="Theme">${atTheme()==='dark'?'\u2600\uFE0F':'\uD83C\uDF19'}</button><button class="tpcap" data-a="out">Logout</button><button class="tpcap tpic" data-a="back" aria-label="Close">✕</button></div>`;
 e.innerHTML=`<div class="tpfx${A.shown?'':' fi'}">`+bar+`<div class="w tpaw"><div id="at" class="tpt"></div><div id="af"></div><div id="al"></div></div></div>`;paintT();paintF();A.fresh=!A.shown;paintL();A.fresh=0;A.shown=1}
@@ -1829,6 +1913,7 @@ A.P.filter(p=>p.status==='pending').forEach(p=>add('p',p.id,p,'New payment reque
 (X.cmp||[]).forEach(r=>add('c',r.id,r,'New complaint',(r.name||'')+' \u00b7 '+(r.type||''),'cmp'));
 (X.qst||[]).forEach(r=>add('q',r.id,r,'New question',(r.name||'')+': '+String(r.q||'').slice(0,60),'qst'));
 (A.RN||[]).filter(r=>r.source!=='import').forEach(r=>add('r',r.id,r,'New review',(r.name||'')+' \u00b7 '+r.rating+'/5','rev'));
+(A.RP||[]).filter(r=>!r.admin).forEach(r=>add('x',r.id,r,'New reply',(r.name||'')+': '+String(r.text||'').slice(0,60),'rev'));
 return o.sort((a,b)=>b.t-a.t)}
 function ntFire(ti,bo,id){if(!('Notification' in window)||Notification.permission!=='granted')return;const o={body:bo,tag:id||'tr',icon:(q('header .nav img')||{}).src};
 try{new Notification(ti,o)}catch(e){try{navigator.serviceWorker.getRegistration().then(r=>r&&r.showNotification(ti,o))}catch(x){}}}
@@ -1863,6 +1948,18 @@ else{const b=F.writeBatch(db);b.update(F.doc(db,'payments',id),{status:'rejected
 b.update(F.doc(db,'invoices',p.invoiceId),{payState:'unpaid',rejectNote:note,updatedAt:F.serverTimestamp()});await b.commit()}}
 catch(e){alert(te('Action failed: ','কাজটি ব্যর্থ: ')+(e.code||e.message))}}
 const revMs=r=>r.createdAt&&r.createdAt.toMillis?r.createdAt.toMillis():0;
+const revTyping=()=>{const a=document.activeElement;return !!(a&&a.id==='rpt')};
+const repMap=()=>{const m={};(A.RP||[]).forEach(x=>{(m[x.reviewId]=m[x.reviewId]||[]).push(x)});Object.keys(m).forEach(k=>m[k].sort((a,b)=>revMs(a)-revMs(b)));return m};
+const repBlock=(r,m)=>{const ad=r.adminReply&&r.adminReply.text?`<div style="margin:8px 0;padding:8px 10px;border-left:3px solid #C9A24B;background:#C9A24B1a;border-radius:6px"><b style="color:#C9A24B;font-size:11px">TEAM REPLY</b><div style="white-space:pre-wrap;word-break:break-word">${esc(r.adminReply.text)}</div></div>`:'';
+const th=(m[r.id]||[]).map(x=>`<div style="margin:6px 0 0 10px;padding:6px 9px;border:1px solid var(--grey);border-radius:8px"><div class="tpr"><b>${esc(x.name)}${x.admin?' \u00b7 TEAM':''}</b><button class="btn o sm" data-a="rpd" data-id="${esc(x.id)}">Delete</button></div><div style="white-space:pre-wrap;word-break:break-word">${esc(x.text)}</div></div>`).join('');
+return ad+th};
+const repEd=r=>{if(A.ro!==r.id)return'';const has=r.adminReply&&r.adminReply.text;return`<div style="margin-top:10px"><textarea id="rpt" rows="3" maxlength="1000" placeholder="Write a reply\u2026" style="width:100%;box-sizing:border-box">${esc(has?r.adminReply.text:'')}</textarea><div class="tpbt"><button class="btn sm" data-a="rps" data-id="${esc(r.id)}">Publish as team reply</button><button class="btn o sm" data-a="rpth" data-id="${esc(r.id)}">Answer in thread</button>${has?`<button class="btn o sm" data-a="rpx" data-id="${esc(r.id)}">Remove team reply</button>`:''}<button class="btn o sm" data-a="rpo" data-id="${esc(r.id)}">Cancel</button></div></div>`};
+async function repSave(id){const e=q('#rpt'),tx=(e?e.value:'').trim();if(tx.length<2||tx.length>1000){alert('Reply must be 2\u20131000 characters.');return}
+try{const F=await fb();await F.updateDoc(F.doc(F.db,'reviews',id),{adminReply:{text:tx,at:F.serverTimestamp()}});A.ro='';paintL()}catch(er){alert('Failed: '+(er.code||er.message))}}
+async function repThread(id){const e=q('#rpt'),tx=(e?e.value:'').trim();if(tx.length<2||tx.length>500){alert('Thread reply must be 2\u2013500 characters.');return}
+try{const F=await fb();await F.addDoc(F.collection(F.db,'rreplies'),{reviewId:id,name:'\u099f\u09c7\u0995\u09b8\u0987 \u09b0\u0982 \u099f\u09bf\u09ae',text:tx,createdAt:F.serverTimestamp(),admin:true});A.ro='';paintL()}catch(er){alert('Failed: '+(er.code||er.message))}}
+async function repClear(id){if(!confirm('Remove the team reply from this review?'))return;try{const F=await fb();await F.updateDoc(F.doc(F.db,'reviews',id),{adminReply:F.deleteField()});A.ro='';paintL()}catch(er){alert('Failed: '+(er.code||er.message))}}
+async function repDel(id){if(!confirm('Delete this reply? This cannot be undone.'))return;try{const F=await fb();await F.deleteDoc(F.doc(F.db,'rreplies',id))}catch(er){alert('Failed: '+(er.code||er.message))}}
 const revStars=n=>{n=Math.max(0,Math.min(5,Math.round(Number(n)||0)));return '\u2605'.repeat(n)+'\u2606'.repeat(5-n)};
 const INBK={apt:'appointments',cmp:'complaints',qst:'questions'},INBS={apt:['new','confirmed','visited','cancelled'],cmp:['open','working','resolved'],qst:['new','answered']},INBL={new:'New',confirmed:'Confirmed',visited:'Visit done',cancelled:'Cancelled',open:'Open',working:'In progress',resolved:'Resolved',answered:'Answered'};
 function inbCnt(k){return((A.X&&A.X[k])||[]).filter(r=>r.status===(k==='cmp'?'open':'new')).length}
@@ -1924,7 +2021,7 @@ const k=(A.rq||'').trim().toLowerCase(),all=A.R.slice().sort((a,b)=>revMs(b)-rev
 const imp=A.R.filter(x=>x.source==='import').length,ban=imp<OLDREV.length?`<div class="tpc"><div class="note" style="margin:0 0 8px">Old reviews saved in the website code: ${OLDREV.length-imp} not yet in the database.</div><div class="tpbt"><button class="btn sm" data-a="rimp">Import old reviews to database</button></div></div>`:'';
 const hd=ban+`<p class="note" style="margin:0 0 10px">${f.length===all.length?all.length+' reviews':f.length+' of '+all.length+' reviews'} \u00b7 newest first</p>`;
 if(!f.length)return hd+`<p class="note">${all.length?'No review matches your search.':'No reviews yet.'}</p>`;
-return hd+sh.map(r=>`<div class="tpc"><div class="tpr"><b>${esc(r.name)}</b><span style="color:#C9A24B;white-space:nowrap">${revStars(r.rating)}</span></div><div style="margin:6px 0;white-space:pre-wrap;word-break:break-word">${esc(r.text)}</div><div class="note" style="margin:0">${r.createdAt?dtE(r.createdAt):''}</div><div class="tpbt"><button class="btn o sm" data-a="rd" data-id="${esc(r.id)}">Delete</button></div></div>`).join('')+(f.length>n?`<div class="tpbt"><button class="btn o sm" data-a="rmore">Show more (${f.length-n} left)</button></div>`:'')}
+const rm=repMap();return hd+sh.map(r=>`<div class="tpc"><div class="tpr"><b>${esc(r.name)}</b><span style="color:#C9A24B;white-space:nowrap">${revStars(r.rating)}</span></div><div style="margin:6px 0;white-space:pre-wrap;word-break:break-word">${esc(r.text)}</div><div class="note" style="margin:0">${r.createdAt?dtE(r.createdAt):''}</div>${repBlock(r,rm)}<div class="tpbt"><button class="btn sm" data-a="rpo" data-id="${esc(r.id)}">${r.adminReply&&r.adminReply.text?'Edit reply':'Reply'}</button><button class="btn o sm" data-a="rd" data-id="${esc(r.id)}">Delete</button></div>${repEd(r)}</div>`).join('')+(f.length>n?`<div class="tpbt"><button class="btn o sm" data-a="rmore">Show more (${f.length-n} left)</button></div>`:'')}
 async function rdel(id){const r=A.R.find(x=>x.id===id);if(!r)return;
 if(!confirm('Delete the review by '+(r.name||'this person')+'? This cannot be undone.'))return;
 try{const F=await fb();await F.deleteDoc(F.doc(F.db,'reviews',id))}catch(e){alert(e.code==='permission-denied'?'Delete is not allowed yet. Publish the updated Firestore rules (admin delete for reviews).':'Delete failed: '+(e.code||e.message))}}
@@ -1934,7 +2031,10 @@ try{const F=await fb(),base=Date.UTC(2022,0,1);for(let i=0;i<OLDREV.length;i+=40
 OLDREV.slice(i,i+400).forEach((r,j)=>{const n=i+j;b.set(F.doc(F.db,'reviews','legacy-'+String(n+1).padStart(4,'0')),{name:String(r.name),rating:Math.round(Number(r.rating))||5,text:String(r.text),status:'approved',source:'import',createdAt:F.Timestamp.fromMillis(base+n*60000)})});await b.commit()}
 alert('Import finished.')}catch(e){alert(e.code==='permission-denied'?'Not allowed. Publish the updated Firestore rules first.':'Import failed: '+(e.code||e.message))}t.disabled=false}
 async function adm(a,t){const id=t.dataset.id,v=t.dataset.v;
-if(a==='back'){location.hash='#top';return}
+if(a==='back'){const f=A.from;A.from='';if(f&&f!=='#admin'&&f!=='#'&&history.length>1)history.back();else location.hash='#top';return}
+if(a==='fp'){const f=t.closest('form'),em=f?f.elements.e.value.trim():'';let m=f&&f.querySelector('.msg');if(f&&!m){m=document.createElement('div');m.className='msg';f.appendChild(m)}const say=(x,er)=>{if(m){m.className='msg'+(er?' err':'');m.textContent=x}};
+if(!em){say('Type your email above first.',1);return}t.disabled=true;
+try{const F=await fb();await F.sendPasswordResetEmail(F.auth,em);say('If this email has an account, a reset link has been sent.')}catch(x){say(x.code==='auth/invalid-email'?'That email address is not valid.':'Could not send the reset email. Try again later.',1)}t.disabled=false;return}
 if(a==='per'){A.per=v;paintL();return}
 if(a==='at'){const n=atTheme()==='dark'?'light':'dark';A.at=n;try{localStorage.setItem('tr-at',n)}catch(x){}const o=q('#tradm');if(o)o.dataset.at=n;t.textContent=n==='dark'?'\u2600\uFE0F':'\uD83C\uDF19';return}
 if(a==='lang'){const b=q('.lang button[data-l="'+(L==='bn'?'en':'bn')+'"]');if(b)b.click();setTimeout(paintA,60);return}
@@ -1948,7 +2048,7 @@ else if(a==='rimp')impRev(t);else if(a==='mt'){A.mo=!A.mo;const k=q('#at .tpi');
 else if(a==='ap')decide(id,1);else if(a==='rj')decide(id,0);
 else if(a==='rc')receiptPNG(A.P.find(x=>x.id===id));
 else if(a==='rel'){const p=A.P.find(x=>x.id===id);if(p&&confirm(te('Release this Transaction ID so it can be used again?','এই Transaction ID আবার ব্যবহারযোগ্য করবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'trx',p.trxId))}catch(e){alert(e.code||e.message)}}}
-else if(a==='rd'){await rdel(id)}else if(a==='rmore'){A.rn=(A.rn||100)+100;paintL()}
+else if(a==='rpo'){A.ro=A.ro===id?'':id;paintL();if(A.ro){const e=q('#rpt');if(e)e.focus()}}else if(a==='rps'){await repSave(id)}else if(a==='rpth'){await repThread(id)}else if(a==='rpx'){await repClear(id)}else if(a==='rpd'){await repDel(id)}else if(a==='rd'){await rdel(id)}else if(a==='rmore'){A.rn=(A.rn||100)+100;paintL()}
 else if(a==='di'&&confirm(te('Delete this invoice?','ইনভয়েস মুছবেন?'))){try{const F=await fb();await F.deleteDoc(F.doc(F.db,'invoices',id))}catch(e){alert(e.code||e.message)}}}
 
 /* ---------- events ---------- */
@@ -1965,8 +2065,8 @@ else if(t.name==='trx'&&t.closest('.tpf'))t.value=t.value.toUpperCase().replace(
 document.addEventListener('submit',async e=>{const f=e.target;
 if(f.classList.contains('tpl2')){e.preventDefault();startC(f.elements.code.value)}
 else if(f.classList.contains('tpf')){e.preventDefault();submitC(f)}
-else if(f.classList.contains('tpal')){e.preventDefault();A.err='';const b=f.querySelector('button');b.disabled=true;
-try{const F=await fb();await F.signInWithEmailAndPassword(F.auth,f.elements.e.value.trim(),f.elements.p.value)}
+else if(f.classList.contains('tpal')){e.preventDefault();A.err='';const b=f.querySelector('button[type=submit]');b.disabled=true;
+try{const F=await fb();try{await F.setPersistence(F.auth,f.elements.rm&&!f.elements.rm.checked?F.browserSessionPersistence:F.browserLocalPersistence)}catch(x){}await F.signInWithEmailAndPassword(F.auth,f.elements.e.value.trim(),f.elements.p.value)}
 catch(x){A.err=te('Wrong email or password.','ইমেইল বা পাসওয়ার্ড ভুল।');if(x.code==='auth/too-many-requests')A.err=te('Too many attempts. Try again later.','অনেকবার চেষ্টা হয়েছে। পরে আবার চেষ্টা করুন।');paintA()}}
 else if(f.classList.contains('tpj')){e.preventDefault();mkProj(f)}
 else if(f.classList.contains('tpi')){e.preventDefault();const n=f.elements.n.value.trim(),d=f.elements.d.value.trim(),a=Math.round(Number(f.elements.a.value.replace(/[,\s]/g,'')));
@@ -1999,9 +2099,32 @@ try {
  const PAGE=100,col=F.collection(db,'reviews');
  let live=[],extra=[],liveLast=null,extraLast=null,done=false,tm=0;
  const ok=x=>x.name&&x.text&&x.rating>=1&&x.rating<=5;
- const norm=d=>{const x=d.data({serverTimestamps:'estimate'});return{id:d.id,name:String(x.name||''),rating:Number(x.rating)||5,text:String(x.text||''),t:(x.createdAt&&x.createdAt.toMillis)?x.createdAt.toMillis():0}};
+ const norm=d=>{const x=d.data({serverTimestamps:'estimate'});return{id:d.id,name:String(x.name||''),rating:Number(x.rating)||5,text:String(x.text||''),t:(x.createdAt&&x.createdAt.toMillis)?x.createdAt.toMillis():0,reply:(x.adminReply&&x.adminReply.text)?{text:String(x.adminReply.text)}:null}};
  const merge=()=>{const seen={},o=[];live.concat(extra).forEach(x=>{if(!seen[x.id]){seen[x.id]=1;o.push(x)}});window.TR_APPROVED_REVIEWS=o.sort((p,q)=>q.t-p.t)};
- const refresh=()=>{if(location.hash==='#reviews'&&!(window.trUpdate&&window.trUpdate()))window.dispatchEvent(new Event('hashchange'))};
+ window.TR_RP=window.TR_RP||{};
+ const rp=id=>{let s=window.TR_RP[id];if(!s){let n='';try{n=localStorage.getItem('tr_rp_name')||''}catch(e){}s=window.TR_RP[id]={open:false,list:null,busy:false,msg:'',dn:n,dt:''}}return s};
+ const upd=()=>{if(window.trUpdate)window.trUpdate(true)};
+ let rpOn=false;
+ const startRP=()=>{if(rpOn)return;rpOn=true;
+  try{F.onSnapshot(F.query(F.collection(db,'rreplies'),F.orderBy('createdAt','desc'),F.limit(300)),snap=>{
+   const by={};snap.docs.forEach(d=>{const x=d.data({serverTimestamps:'estimate'});if(!x.reviewId||!x.text)return;(by[x.reviewId]=by[x.reviewId]||[]).push({id:d.id,name:String(x.name||''),text:String(x.text||''),admin:x.admin===true,t:(x.createdAt&&x.createdAt.toMillis)?x.createdAt.toMillis():Date.now()})});
+   Object.keys(window.TR_RP).forEach(k=>{if(!by[k])window.TR_RP[k].list=[]});
+   Object.keys(by).forEach(k=>{by[k].sort((a,b)=>a.t-b.t);rp(k).list=by[k]});
+   if(location.hash==='#reviews')upd()
+  },()=>{rpOn=false})}catch(e){rpOn=false}};
+ window.trTog=function(id){startRP();const s=rp(id);s.open=!s.open;s.msg='';upd()};
+ window.trSend=async function(id){const s=rp(id),name=(s.dn||'').trim(),text=(s.dt||'').trim();
+  const bad=m=>{s.msg=m;upd()};
+  if(name.length<2||name.length>80||text.length<3||text.length>500)return bad(tr('Name must be 2–80 and reply 3–500 characters.','নাম ২–৮০ এবং রিপ্লাই ৩–৫০০ অক্ষরের মধ্যে হতে হবে।'));
+  try{if(Date.now()-(+localStorage.getItem('tr_last_rp')||0)<20000)return bad(tr('Please wait a few seconds before sending another reply.','আরেকটি রিপ্লাই পাঠানোর আগে কয়েক সেকেন্ড অপেক্ষা করুন।'))}catch(e){}
+  s.busy=true;s.msg='';upd();
+  try{await F.addDoc(F.collection(db,'rreplies'),{reviewId:id,name,text,createdAt:F.serverTimestamp(),admin:false});
+   try{localStorage.setItem('tr_last_rp',String(Date.now()));localStorage.setItem('tr_rp_name',name)}catch(e){}
+   s.dt='';s.msg=tr('Posted.','প্রকাশিত হয়েছে।')}catch(e){s.msg=tr('Could not post right now. Please try again later.','এই মুহূর্তে পাঠানো যায়নি। পরে আবার চেষ্টা করুন।')}
+  s.busy=false;upd()};
+ document.addEventListener('input',e=>{const t=e.target,f=t&&t.closest&&t.closest('.trf');if(!f)return;const s=rp(f.dataset.id);if(t.classList.contains('trfn'))s.dn=t.value;else if(t.classList.contains('trft'))s.dt=t.value});
+ addEventListener('hashchange',()=>{if(location.hash==='#reviews')startRP()});
+ const refresh=()=>{if(location.hash==='#reviews'){startRP();if(!(window.trUpdate&&window.trUpdate()))window.dispatchEvent(new Event('hashchange'))}};
  // Total count and average over ALL reviews (needs the updated Firestore rules; falls back to the loaded ones).
  const stats=async()=>{try{const r=await F.getAggregateFromServer(col,{n:F.count(),avg:F.average('rating')}),d=r.data();if(d&&d.n>0){window.TR_STATS={n:d.n,avg:Number(d.avg)||0};refresh()}}catch(e){}};
  window.trMore=async function(btn){if(btn){btn.disabled=true}try{const cur=extraLast||liveLast;if(!cur){done=true;window.TR_MORE=false;refresh();return}
