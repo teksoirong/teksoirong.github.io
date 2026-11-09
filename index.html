@@ -416,6 +416,82 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
  #am .amtop{margin-bottom:22px}
  #am.amsq .amcta{display:none}
 }
+</style><style id="pccss">
+/* ===== Smart Paint Calculator — all colours come from the theme variables (light + dark) ===== */
+.pc{--pce:#b3261e}
+:root[data-theme=dark] .pc{--pce:#ff8a80}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .pc{--pce:#ff8a80}}
+.pc .pcl{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:24px}
+.pc .pcin{display:grid;gap:18px;min-width:0}
+.pc .pcc{background:var(--card);border:1px solid color-mix(in srgb,var(--tx) 10%,transparent);border-radius:18px;padding:22px;box-shadow:0 10px 32px color-mix(in srgb,var(--tx) 6%,transparent)}
+.pc .pcch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 14px}
+.pc .pcch h3{margin:0;font-size:19px;line-height:1.2}
+.pc .pcch small,.pc .pcdl small,.pc .pcn small,.pc .pcgl small{display:block;font-size:12.5px;font-weight:500;color:var(--mu);line-height:1.3;margin-top:2px}
+.pc .pcact{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pc .pcg{padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--tx) 16%,transparent);background:transparent;color:var(--tx);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:border-color .2s}
+.pc .pcg:hover{border-color:var(--tx)}
+.pc .pcsvg{display:block;width:100%;max-width:250px;height:auto;margin:2px auto 14px;color:var(--tx)}
+.pc .pcsvg path{stroke:color-mix(in srgb,var(--tx) 60%,transparent);stroke-width:1.5;stroke-linejoin:round}
+.pc .pcsvg .f1{fill:color-mix(in srgb,var(--tx) 5%,transparent)}
+.pc .pcsvg .f2{fill:color-mix(in srgb,var(--tx) 10%,transparent)}
+.pc .pcsvg .f3{fill:color-mix(in srgb,var(--tx) 15%,transparent)}
+.pc .pcsvg text{fill:var(--tx);font-size:11px;font-weight:600;font-family:inherit}
+.pc .pcd{padding:14px 0;border-top:1px solid color-mix(in srgb,var(--tx) 8%,transparent)}
+.pc .pcc>.pcd:first-child,.pc .pcsvg+.pcd{border-top:0;padding-top:4px}
+.pc .pcdl b{font-size:15px}
+.pc .pcdf{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.pc label.pcf{display:block;position:relative;gap:0;font-weight:500;margin:0}
+.pc .pcf input{display:block;width:100%;height:52px;box-sizing:border-box;padding:0 58px 0 14px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;font-size:19px;font-weight:600;font-variant-numeric:tabular-nums;outline:none;transition:border-color .2s,box-shadow .2s}
+.pc .pcf input::placeholder{color:color-mix(in srgb,var(--tx) 32%,transparent);font-weight:500}
+.pc .pcf input:focus{border-color:var(--tx);box-shadow:0 0 0 3px color-mix(in srgb,var(--tx) 14%,transparent)}
+.pc .pcf input.bad{border-color:var(--pce);box-shadow:0 0 0 3px color-mix(in srgb,var(--pce) 18%,transparent)}
+.pc .pcf>span{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--mu);pointer-events:none}
+.pc .pcp{margin-top:10px}
+.pc .pcp input{padding:0 74px 0 38px}
+.pc .pcp>i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;font-size:19px;font-weight:700;color:var(--mu);pointer-events:none}
+.pc .pce{min-height:0;margin-top:6px;font-size:12.5px;line-height:1.4;color:var(--pce)}
+.pc .pce:empty{display:none}
+.pc .pcnote{margin:0;padding:0 4px}
+.pc .pcc .note{margin:10px 0 0}
+.pc .pcres{position:sticky;top:92px;min-width:0}
+.pc .pcrc{padding:22px}
+.pc .pcrl{display:grid}
+.pc .pcr{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 14px;padding:11px 0;border-bottom:1px solid color-mix(in srgb,var(--tx) 8%,transparent)}
+.pc .pcr:last-child{border-bottom:0}
+.pc .pcn b{font-size:15px;font-weight:600}
+.pc .pcv{font-size:16px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pc .pcb{grid-column:1/-1;display:block;height:4px;border-radius:4px;background:color-mix(in srgb,var(--tx) 8%,transparent);position:relative;overflow:hidden}
+.pc .pcb::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w,0%);background:var(--tx);opacity:.78;border-radius:4px;transition:width .35s ease}
+.pc .pcsum{margin-top:6px;padding:4px 14px;border-radius:14px;background:color-mix(in srgb,var(--tx) 6%,transparent)}
+.pc .pcsum .pcr:first-child{border-bottom:1px solid color-mix(in srgb,var(--tx) 10%,transparent)}
+.pc .pcsum .tot .pcv{font-size:18px}
+.pc .pcgt{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;padding:18px 20px;border-radius:16px;background:var(--tx);color:var(--bg)}
+.pc .pcgl span{font-size:14px;font-weight:600}
+.pc .pcgl small{color:var(--bg);opacity:.72}
+.pc .pcgt strong{margin-left:auto;font-size:clamp(28px,4.6vw,38px);line-height:1.05;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums;text-align:right;overflow-wrap:anywhere}
+.pc .pch{min-height:20px;margin:12px 0 0;font-size:13px;line-height:1.45;color:var(--mu)}
+.pc .pch:empty{min-height:0;margin:0}
+.pc .pcbar{display:none}
+.pc .pcct{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+@media(max-width:899px){
+ .pc .pcl{grid-template-columns:minmax(0,1fr)}
+ .pc .pcres{position:static}
+ .pc .pcbar{display:flex;justify-content:space-between;align-items:center;gap:14px;position:sticky;bottom:12px;z-index:20;margin-top:18px;padding:12px 18px;border-radius:16px;background:var(--tx);color:var(--bg);box-shadow:0 12px 30px rgba(0,0,0,.28)}
+ .pc .pcbar small{display:block;font-size:11.5px;opacity:.72;line-height:1.2}
+ .pc .pcbar b{display:block;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .pc .pcbar>div:last-child{text-align:right}
+}
+@media(max-width:480px){
+ .pc .pcv{white-space:normal;overflow-wrap:anywhere;max-width:62vw}
+ .pc .pcbar>div{min-width:0}
+ .pc .pcbar b{white-space:normal;overflow-wrap:anywhere;font-size:15px}
+ .pc .pcc{padding:18px 16px;border-radius:16px}
+ .pc .pcch{flex-wrap:wrap}
+ .pc .pcf input{height:50px;font-size:18px;padding-right:54px}
+ .pc .pcp input{padding-left:36px}
+ .pc .pcgt{padding:16px}
+}
+@media(prefers-reduced-motion:reduce){.pc .pcb::after,.pc .pcf input,.pc .pcg{transition:none}}
 </style><style id="ptcss">.ptg{display:flex;flex-wrap:wrap;gap:8px;font-weight:400}.ptc{display:block;position:relative;gap:0;font-size:14px;font-weight:600}.ptc input{position:absolute;opacity:0;width:0;height:0;padding:0;margin:0;border:0}.ptc span{display:inline-block;padding:8px 15px;border:1px solid var(--bd);border-radius:99px;background:var(--card);color:var(--tx);cursor:pointer;transition:.2s;user-select:none}.ptc span:hover{border-color:#8A8A86}.ptc input:checked+span{background:linear-gradient(135deg,#BEBEBA,#5A5A57);color:#111;border-color:transparent}.ptc input:focus-visible+span{outline:2px solid #8A8A86;outline-offset:2px}</style><style id="xdcss">
 :root{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}
 select.xd-n{position:absolute!important;opacity:0;pointer-events:none;width:1px!important;height:1px!important;padding:0!important;border:0!important;margin:0;overflow:hidden}
@@ -1628,10 +1704,87 @@ const adv=`<div class="g">${d.adv.p.map(p=>card(p[t],p[2+t])).join('')}</div>`;
 const gen=`<div class="g">${d.gen.p.map(p=>card(p[t],p[2+t])).join('')}</div>`;
 const svc=d.svc.p.map(p=>`<details class="c" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:700">${p[t]}</summary><ul style="margin:10px 0 0 18px">${p[2+t].map(x=>`<li style="margin:4px 0">${x}</li>`).join('')}</ul></details>`).join('');
 return `<div class="w">${head(['Terms','শর্তাবলী'],['Terms & Conditions','শর্তাবলী (Terms & Conditions)'],d.intro)}${sec(d.adv.t[t])}${adv}${sec(d.pay.t[t])}${pay}${sec(d.svc.t[t])}${svc}${sec(d.gen.t[t])}${gen}<p style="margin-top:26px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn sm" href="#request-quote">${tr('Request a quotation','কোটেশনের অনুরোধ')}</a><a class="btn o sm" href="#contact">${tr('Contact us','যোগাযোগ করুন')}</a></p></div>`}
-const PGS=['book-appointment','complaint','ask-question','reviews','colour-catalog','furniture-painting','contact','bill-payment','terms-and-conditions'];
+const PGS=['book-appointment','complaint','ask-question','reviews','colour-catalog','furniture-painting','contact','bill-payment','terms-and-conditions','paint-calculator'];
 PGS.forEach(p=>{const s=document.createElement('section');s.id='pg-'+p;s.style.display='none';main.insertBefore(s,p==='contact'?$('#quote'):cta)});
 const HIDE=['#founder','.hero','#services','#why','#projects','#process','#about','#testi','#areas','#faq','#quote','.cta','#svcpg'];
 const head=(a,b,c)=>`<div class="tag">${tr(a[0],a[1])}</div><h2>${tr(b[0],b[1])}</h2>${c?`<p style="max-width:720px;color:var(--mu)">${tr(c[0],c[1])}</p>`:''}`;
+/* ===== Smart Paint Calculator (#paint-calculator) =====
+   Measurements are kept as whole numbers of 1/100 inch, so every area is exact (no floating-point drift).
+   Total SFT = 2 x (Length + Width) x Height + (Length x Width).  Walls: N/S use Length, E/W use Width. */
+const PCX={L:{f:'',i:''},W:{f:'',i:''},H:{f:'',i:''},p:''};
+const PCBN='০১২৩৪৫৬৭৮৯';
+function pcNorm(s){return String(s==null?'':s).replace(/[০-৯]/g,c=>String(PCBN.indexOf(c))).trim()}
+function pcParse(raw,kind){const s=pcNorm(raw);if(s==='')return{st:'empty'};
+ if(!/^\d*\.?\d*$/.test(s)||!/\d/.test(s))return{st:'bad',err:'num'};
+ if(kind==='ft'&&!/^\d+$/.test(s))return{st:'bad',err:'ftint'};
+ const v=Math.round(parseFloat(s)*100);
+ if(kind==='ft'&&v>99900)return{st:'bad',err:'big'};
+ if(kind==='in'&&v>=1200)return{st:'bad',err:'inrange'};
+ if(kind==='pr'&&v>10000000)return{st:'bad',err:'prbig'};
+ if(kind==='pr'&&v===0)return{st:'bad',err:'przero'};
+ return{st:'ok',v}}
+function pcDim(d){const f=pcParse(d.f,'ft'),i=pcParse(d.i,'in');
+ if(f.st==='bad')return{st:'bad',err:f.err,fld:'f'};
+ if(i.st==='bad')return{st:'bad',err:i.err,fld:'i'};
+ if(f.st==='empty'&&i.st==='empty')return{st:'empty'};
+ const c=(f.st==='ok'?f.v*12:0)+(i.st==='ok'?i.v:0);
+ if(c===0)return{st:'bad',err:'zero',fld:f.st==='ok'?'f':'i'};
+ return{st:'ok',c}}
+/* returns areas in 1/100 SFT, grand total in 1/100 BDT (paisa); null where inputs are missing */
+function pcCalc(s){const D={L:pcDim(s.L),W:pcDim(s.W),H:pcDim(s.H)},pr=pcParse(s.p,'pr'),ok=k=>D[k].st==='ok',DEN=14400;
+ const area=(a,b)=>ok(a)&&ok(b)?Math.round(D[a].c*D[b].c/DEN):null;
+ const parts={N:area('L','H'),S:area('L','H'),E:area('W','H'),Wt:area('W','H'),C:area('L','W')};
+ let total=null,T=null,grand=null;
+ if(ok('L')&&ok('W')&&ok('H')){T=2*(D.L.c+D.W.c)*D.H.c+D.L.c*D.W.c;total=Math.round(T/DEN)}
+ if(T!==null&&pr.st==='ok'){const Dn=1440000n;grand=Number((BigInt(T)*BigInt(pr.v)*2n+Dn)/(2n*Dn))}
+ return{D,pr,parts,total,T,grand,price:pr.st==='ok'?pr.v:null}}
+window.pcCalc=pcCalc;window.PCSTATE=PCX;
+const PCERR={num:['Enter a valid positive number.','সঠিক ধনাত্মক সংখ্যা লিখুন।'],ftint:['Whole feet only. Put the rest in the inches box.','ফুট শুধু পূর্ণসংখ্যা হবে। বাকিটুকু ইঞ্চির ঘরে দিন।'],big:['Too large. Maximum is 999 ft.','অনেক বড়। সর্বোচ্চ ৯৯৯ ফুট।'],inrange:['Inches must be less than 12. Put full feet in the feet box.','ইঞ্চি ১২-এর কম হতে হবে। পূর্ণ ফুট ফুটের ঘরে দিন।'],zero:['The measurement must be greater than zero.','মাপ শূন্যের চেয়ে বেশি হতে হবে।'],prbig:['This price looks too high. Please check it.','দামটি অনেক বেশি মনে হচ্ছে। অনুগ্রহ করে দেখে নিন।'],przero:['The price must be greater than zero.','দাম শূন্যের চেয়ে বেশি হতে হবে।']};
+const pcN=(v,fx)=>new Intl.NumberFormat(L==='bn'?'bn-BD':'en-IN',{minimumFractionDigits:fx,maximumFractionDigits:2}).format(v);
+const pcSft=h=>h===null?'—':pcN(h/100,h%100===0?0:2)+' '+tr('SFT','বর্গফুট');
+const pcTk=h=>h===null?'—':'৳'+pcN(h/100,h%100===0?0:2);
+function pcBuild(){const b=L==='bn',sec=(en,bnt)=>b?en:bnt;
+ const dim=(k,en,bnt)=>`<div class="pcd" role="group" aria-labelledby="pc-${k}-l"><div class="pcdl" id="pc-${k}-l"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcdf"><label class="pcf"><input id="pc-${k}-f" data-pc="${k}.f" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="next" maxlength="3" placeholder="0" value="${esc2(PCX[k].f)}" aria-label="${tr(en+' (feet)',bnt+' (ফুট)')}" aria-describedby="pc-${k}-e"><span>${tr('ft','ফুট')}</span></label><label class="pcf"><input id="pc-${k}-i" data-pc="${k}.i" type="text" inputmode="decimal" autocomplete="off" enterkeyhint="next" maxlength="5" placeholder="0" value="${esc2(PCX[k].i)}" aria-label="${tr(en+' (inches)',bnt+' (ইঞ্চি)')}" aria-describedby="pc-${k}-e"><span>${tr('in','ইঞ্চি')}</span></label></div><div class="pce" id="pc-${k}-e"></div></div>`;
+ const row=(k,en,bnt,bar)=>`<div class="pcr"><div class="pcn"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcv" data-pcv="${k}">—</div>${bar?'<i class="pcb"></i>':''}</div>`;
+ const bi=(en,bnt)=>b?en:bnt;
+ return `<div class="w pc"><p class="note"><a href="#home">${tr('Home','হোম')}</a> / ${tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর')}</p>${head(['Smart tool','স্মার্ট টুল'],['Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['Enter your room size in feet and inches. The four walls, the ceiling and your total paint cost are calculated instantly as you type.','আপনার ঘরের মাপ ফুট ও ইঞ্চিতে লিখুন। লেখার সাথে সাথেই চার দেয়াল, সিলিং এবং মোট রঙের খরচ হিসাব হয়ে যাবে।'])}
+<div class="pcl"><div class="pcin">
+<div class="pcc"><div class="pcch"><div><h3>${tr('Room size','ঘরের মাপ')}</h3><small>${bi('Room size','ঘরের মাপ')} · ${bi('feet & inches','ফুট ও ইঞ্চি')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="example">${tr('Try an example','উদাহরণ দেখুন')}</button><button type="button" class="pcg" data-pcact="reset">${tr('Reset','মুছে ফেলুন')}</button></div></div>
+<svg class="pcsvg" viewBox="0 0 240 150" role="img" aria-label="${tr('Room with length, width and height','দৈর্ঘ্য, প্রস্থ ও উচ্চতাসহ ঘর')}"><path class="f1" d="M30 50h100v75H30z"/><path class="f2" d="M130 50l55-28v75l-55 28z"/><path class="f3" d="M30 50l55-28h100l-55 28z"/><text x="80" y="143" text-anchor="middle">${tr('Length','দৈর্ঘ্য')}</text><text x="17" y="88" text-anchor="middle" transform="rotate(-90 17 88)">${tr('Height','উচ্চতা')}</text><text x="190" y="116" text-anchor="start">${tr('Width','প্রস্থ')}</text></svg>
+${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্থ')}${dim('H','Height','উচ্চতা')}</div>
+<div class="pcc"><div class="pcd"><div class="pcdl" id="pc-p-l"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><label class="pcf pcp"><i>৳</i><input id="pc-p" data-pc="p" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="${tr('e.g. 7','যেমন ৭')}" value="${esc2(PCX.p)}" aria-label="${tr('Price per square foot in taka','প্রতি বর্গফুটের দাম (টাকা)')}" aria-describedby="pc-p-e"><span>/ ${tr('SFT','বর্গফুট')}</span></label><div class="pce" id="pc-p-e"></div><p class="note">${tr('Type the rate you want to use, in taka per square foot.','আপনার পছন্দমতো প্রতি বর্গফুটের দাম (টাকায়) লিখুন।')}</p></div></div>
+<p class="note pcnote">${tr('North & South walls use the Length. East & West walls use the Width. Ceiling = Length × Width.','উত্তর ও দক্ষিণ দেয়ালে দৈর্ঘ্য, পূর্ব ও পশ্চিম দেয়ালে প্রস্থ ধরা হয়। সিলিং = দৈর্ঘ্য × প্রস্থ।')}</p></div>
+<div class="pcres"><div class="pcc pcrc"><div class="pcch"><div><h3>${tr('Final Result','চূড়ান্ত ফলাফল')}</h3><small>${bi('Final Result','চূড়ান্ত ফলাফল')}</small></div></div>
+<div class="pcrl">${row('N','North Wall','উত্তর দেয়াল',1)}${row('S','South Wall','দক্ষিণ দেয়াল',1)}${row('E','East Wall','পূর্ব দেয়াল',1)}${row('Wt','West Wall','পশ্চিম দেয়াল',1)}${row('C','Ceiling','সিলিং',1)}</div>
+<div class="pcsum"><div class="pcr tot"><div class="pcn"><b>${tr('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</b><small>${sec('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</small></div><div class="pcv" data-pcv="total">—</div></div>
+<div class="pcr"><div class="pcn"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><div class="pcv" data-pcv="price">—</div></div></div>
+<div class="pcgt"><div class="pcgl"><span>${tr('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</span><small>${sec('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</small></div><strong data-pcv="grand">—</strong></div>
+<p class="pch" id="pc-hint" aria-live="polite"></p>
+<p class="note">${tr('This is an estimate from the measurements you enter. Areas and amounts are rounded to 2 decimal places. Doors, windows and the floor are not deducted or included. The final price is confirmed in a written quotation after a site assessment.','এটি আপনার দেওয়া মাপের ভিত্তিতে একটি আনুমানিক হিসাব। ক্ষেত্রফল ও টাকার অঙ্ক দশমিকের পর ২ ঘর পর্যন্ত রাউন্ড করা হয়। দরজা-জানালা বাদ দেওয়া হয়নি এবং মেঝে ধরা হয়নি। সাইট মূল্যায়নের পর লিখিত কোটেশনে চূড়ান্ত মূল্য নিশ্চিত করা হয়।')}</p></div></div></div>
+<div class="pcbar" aria-hidden="true"><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b data-pcv="mtotal">—</b></div><div><small>${tr('Grand total','সর্বমোট')}</small><b data-pcv="mgrand">—</b></div></div>
+<p class="pcct"><a class="btn" href="#request-quote">${tr('Get a Free Quote','বিনামূল্যে কোটেশন নিন')}</a> <a class="btn o" href="#book-appointment">${tr('Book an appointment','অ্যাপয়েন্টমেন্ট বুক করুন')}</a></p></div>`}
+function pcUpdate(root){root=root||document.querySelector('#pg-paint-calculator .pc');if(!root)return;
+ const R=pcCalc(PCX),q=k=>root.querySelector('[data-pcv="'+k+'"]'),set=(k,v)=>{const e=q(k);if(e&&e.textContent!==v)e.textContent=v},hasBad=[];
+ ['L','W','H'].forEach(k=>{const d=R.D[k],bad=d.st==='bad',er=root.querySelector('#pc-'+k+'-e');
+  ['f','i'].forEach(x=>{const inp=root.querySelector('#pc-'+k+'-'+x),isBad=bad&&d.fld===x;inp.classList.toggle('bad',isBad);if(isBad)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid')});
+  er.textContent=bad?tr(PCERR[d.err][0],PCERR[d.err][1]):'';if(bad)hasBad.push(k)});
+ const pe=root.querySelector('#pc-p-e'),pi=root.querySelector('#pc-p'),pb=R.pr.st==='bad';pi.classList.toggle('bad',pb);if(pb)pi.setAttribute('aria-invalid','true');else pi.removeAttribute('aria-invalid');pe.textContent=pb?tr(PCERR[R.pr.err][0],PCERR[R.pr.err][1]):'';if(pb)hasBad.push('p');
+ ['N','S','E','Wt','C'].forEach(k=>set(k,pcSft(R.parts[k])));
+ root.querySelectorAll('.pcrl .pcr').forEach((r,ix)=>{const k=['N','S','E','Wt','C'][ix],bar=r.querySelector('.pcb');if(bar)bar.style.setProperty('--w',R.total&&R.parts[k]!==null?Math.min(100,R.parts[k]/R.total*100).toFixed(1)+'%':'0%')});
+ set('total',pcSft(R.total));set('price',R.price===null?'—':pcTk(R.price)+' / '+tr('SFT','বর্গফুট'));set('grand',pcTk(R.grand));set('mtotal',pcSft(R.total));set('mgrand',pcTk(R.grand));
+ const h=root.querySelector('#pc-hint');let m='';
+ if(hasBad.length)m=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
+ else if(R.total===null)m=tr('Enter length, width and height to see the full area.','পুরো ক্ষেত্রফল দেখতে দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিন।');
+ else if(R.grand===null)m=tr('Enter the price per SFT to see the total amount.','মোট টাকা দেখতে প্রতি বর্গফুটের দাম দিন।');
+ h.textContent=m;root.classList.toggle('pcready',R.grand!==null)}
+function pcInit(){const root=document.querySelector('#pg-paint-calculator .pc');if(!root)return;
+ root.addEventListener('input',e=>{const t=e.target,k=t&&t.dataset&&t.dataset.pc;if(!k)return;if(k==='p')PCX.p=t.value;else{const a=k.split('.');PCX[a[0]][a[1]]=t.value}pcUpdate(root)});
+ root.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-pcact]');if(!a)return;
+  const set=(k,x,v)=>{PCX[k][x]=v;root.querySelector('#pc-'+k+'-'+x).value=v};
+  if(a.dataset.pcact==='reset'){['L','W','H'].forEach(k=>{set(k,'f','');set(k,'i','')});PCX.p='';root.querySelector('#pc-p').value='';const f=root.querySelector('#pc-L-f');if(f)f.focus()}
+  else{set('L','f','10');set('L','i','');set('W','f','10');set('W','i','');set('H','f','7');set('H','i','6');PCX.p='7';root.querySelector('#pc-p').value='7'}
+  pcUpdate(root)});
+ pcUpdate(root)}
 function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
 function build(h){const s=$('#pg-'+h);if(!s)return;let x='';
 if(['book-appointment','complaint','ask-question'].includes(h)){const d=FORMS(h);x=`<div class="w">${head(['Support','সহায়তা'],d.title,d.intro)}${formHTML(h)}</div>`}
@@ -1639,6 +1792,7 @@ else if(h==='reviews'){const R=(window.TR_APPROVED_REVIEWS||[]),avg=R.length?(R.
 x=`<div class="w trw">${head(['Reviews','মতামত'],['Customer Reviews','গ্রাহকের মতামত'])}${R.length?`<p class="trs">${trSumHTML()}</p><div class="trl">${trItemsHTML()}</div>`:`<div class="c" style="margin-bottom:18px"><p>${tr('No published reviews yet. Be the first to share your experience.','এখনও কোনো প্রকাশিত মতামত নেই। আপনিই প্রথম অভিজ্ঞতা জানান।')}</p></div>`}<h3 id="trwf" style="margin:34px 0 14px;scroll-margin-top:90px">${tr('Write a review','মতামত লিখুন')}</h3>${formHTML('review')}</div>`}
 
 else if(h==='colour-catalog'){x=ccBuild()}
+else if(h==='paint-calculator'){x=pcBuild()}
 else if(h==='visualizer'){x=`<div class="w">${head(['Visualizer','ভিজ্যুয়ালাইজার'],['See Your Home in New Colours','আপনার বাড়ির নতুন রং দেখুন'],['Upload a photo of your home, tap a wall, then pick a colour to preview it.','আপনার বাড়ির ছবি আপলোড করুন, দেয়ালে চাপুন, তারপর রং বেছে নিয়ে দেখুন।'])}<label class="btn" style="cursor:pointer;margin-bottom:14px">${tr('Upload a photo','ছবি আপলোড করুন')}<input type="file" id="vzf" accept="image/*" hidden></label><div class="vzwrap"><canvas id="vzc" style="display:none"></canvas><div id="vzph">${tr('Your photo will appear here','আপনার ছবি এখানে দেখা যাবে')}</div></div><p id="vzh" class="note">${tr('Upload a photo to start.','শুরু করতে ছবি আপলোড করুন।')}</p><div class="vzctl"><label>${tr('Tolerance (how much area is selected)','টলারেন্স (কতটা জায়গা নির্বাচিত হবে)')}<input type="range" id="vzt" min="10" max="90" value="40"></label><button type="button" id="vzr" class="btn o sm">${tr('Reset','রিসেট')}</button></div><div id="vz-sel" class="selbar"></div>${swatches('viz')}<p class="note">${tr('This is a smart colour preview that runs on your phone. Your photo is not uploaded anywhere. Results are approximate.','এটি আপনার ফোনেই চলা স্মার্ট রং প্রিভিউ। আপনার ছবি কোথাও আপলোড হয় না। ফলাফল আনুমানিক।')}</p></div>`}
 else if(h==='bill-payment'){const P=CONFIG.payments||[],st=[[['Quotation','কোটেশন'],['After the site assessment you receive a clear written quotation with the scope of work.','সাইট মূল্যায়নের পর কাজের পরিধিসহ স্পষ্ট লিখিত কোটেশন পাবেন।']],[['Agreement & schedule','সম্মতি ও সময়সূচি'],['The work plan and schedule are confirmed with you before work starts.','কাজ শুরুর আগে কাজের পরিকল্পনা ও সময়সূচি আপনার সাথে নিশ্চিত করা হয়।']],[['Payments','পেমেন্ট'],['Payment stages are agreed in your quotation.','পেমেন্টের ধাপ আপনার কোটেশনেই ঠিক করা থাকে।']],[['Final bill','চূড়ান্ত বিল'],['After the work is completed and checked with you, the final bill is settled.','কাজ শেষ হয়ে আপনার সাথে দেখে নেওয়ার পর চূড়ান্ত বিল মেটানো হয়।']]];
 x=`<div class="w">${head(['Billing','বিল'],['Bill & Payment','বিল ও পেমেন্ট'],['Clear billing, agreed in advance. Confirm your payment or ask for a bill here.','স্পষ্ট বিল, আগে থেকে ঠিক করা। এখানে পেমেন্ট নিশ্চিত করুন বা বিল চান।'])}<div class="g">${st.map(s=>`<div class="c"><h3>${tr(s[0][0],s[0][1])}</h3><p>${tr(s[1][0],s[1][1])}</p></div>`).join('')}</div><h3 style="margin:34px 0 12px">${tr('Payment methods','পেমেন্টের মাধ্যম')}</h3>${P.length?`<div class="g">${P.map(q=>`<div class="c"><h3>${esc2(q.name)}</h3><p>${esc2(q.number||'')}</p>${q.note?`<p>${esc2(q.note)}</p>`:''}</div>`).join('')}</div>`:`<div class="c"><p>${tr('Payment details are shared with your quotation. Please contact us to receive them.','পেমেন্টের তথ্য কোটেশনের সাথে জানানো হয়। পেতে আমাদের সাথে যোগাযোগ করুন।')}</p><p style="margin-top:12px"><a class="btn sm" href="#contact">${tr('Contact us','যোগাযোগ করুন')}</a></p></div>`}<h3 style="margin:34px 0 12px">${tr('Confirm a payment','পেমেন্ট নিশ্চিত করুন')}</h3>${formHTML('pay')}<h3 style="margin:34px 0 12px">${tr('Ask for a bill / invoice','বিল / ইনভয়েস চান')}</h3>${formHTML('bill')}</div>`}
@@ -1653,8 +1807,8 @@ nm=tr('Furniture Painting','ফার্নিচার রং'),ds=tr('Wooden f
 hg=(window.GI||[]).find(g=>g.c[0]==='Painted chairs and table set'),
 dt=b?['চেয়ার, টেবিল, কেবিনেট ও অন্যান্য কাঠের আসবাব','রং করার আগে যত্নের সাথে সারফেস প্রস্তুতি','রং ও ফিনিশ বাছাইয়ে পরামর্শ','মসৃণ ও টেকসই ফিনিশ এবং কাজ শেষে পরিষ্কার-পরিচ্ছন্নতা']:['Chairs, tables, cabinets and other wooden furniture','Careful surface preparation before painting','Colour and finish guidance','Smooth, durable finish and tidy clean-up after the job'];
 x=`<div class="w"><p class="note"><a href="#home">${b?'হোম':'Home'}</a> / <a href="#services">${T0.n_serv}</a> / ${nm}</p><div class="tag">${T0.n_serv}</div><h2>${nm}</h2><p style="max-width:720px">${ds}</p>${hg?`<figure class="fg" style="margin:0 0 22px;max-width:820px"><img src="${hg.s}" alt="${nm}" style="display:block;width:100%;height:auto"></figure>`:''}<div class="g">${dt.map(y=>`<div class="c"><h3 style="font-size:16px">${y}</h3></div>`).join('')}</div><p style="margin:26px 0"><a class="btn" href="#request-quote">${T0.cta_q}</a> <a class="btn o" href="#book-appointment">${b?'অ্যাপয়েন্টমেন্ট':'Book appointment'}</a> <a class="btn o" href="#colour-catalog">${b?'রং দেখুন':'See colours'}</a> <a class="btn o" href="#services">← ${T0.n_serv}</a></p><h3 style="margin:34px 0 14px">${tr('Our work','আমাদের কাজ')}</h3><div class="g" id="fgal">${(window.GI||[]).map((g,i)=>g.t.includes('fur')?`<button class="gt" data-i="${i}" aria-label="${g.c[0]}"><img src="${g.s}" alt="${g.c[0]}" loading="lazy"><span class="cp">${g.c[L==='bn'?1:0]}</span></button>`:'').join('')}</div><h3 style="margin:34px 0 14px">${tr('Before & After','আগে ও পরে')}</h3><div class="fba" id="fba"></div><div class="c" style="max-width:640px;margin-top:30px"><h3>${tr('Want your furniture refreshed?','আপনার ফার্নিচার নতুন করতে চান?')}</h3><p>${tr('Send us a message and we will guide you.','আমাদের মেসেজ করুন, আমরা সহায়তা করব।')}</p><p style="margin-top:14px">${CONFIG.whatsapp?`<a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent('Teksoi Rong – I am interested in the furniture painting service.')}">WhatsApp</a>`:''} <a class="btn o sm" href="#request-quote">${tr('Free quote','বিনামূল্যে কোটেশন')}</a></p></div><h3 style="margin-top:34px">${b?'অন্যান্য সেবা':'Other services'}</h3><div class="g">${SV.map((o,k)=>`<a class="c" href="#${SL[k]}" style="display:block"><h3>${b?o[2]:o[1]}</h3></a>`).join('')}</div></div>`}
-s.innerHTML=x;if(h==='colour-catalog')ccInit();if(h==='furniture-painting'&&window.fbaInit)window.fbaInit();if(h==='visualizer'){selBar('viz');orig=null}
-const nm=FORMS(h)?FORMS(h).title:null;document.title=(nm?nm[L==='bn'?1:0]:h.replace(/-/g,' '))+' | Teksoi Rong'}
+s.innerHTML=x;if(h==='paint-calculator')pcInit();if(h==='colour-catalog')ccInit();if(h==='furniture-painting'&&window.fbaInit)window.fbaInit();if(h==='visualizer'){selBar('viz');orig=null}
+const nm=FORMS(h)?FORMS(h).title:null;document.title=(nm?nm[L==='bn'?1:0]:h==='paint-calculator'?tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'):h.replace(/-/g,' '))+' | Teksoi Rong'}
 function route2(){const h=(location.hash||'#').slice(1),mine=PGS.includes(h);
 if(mine){HIDE.forEach(q=>{const e=$(q);if(e)e.style.display='none'});build(h);if(h==='contact')$('#quote').style.display='';scrollTo(0,0)}
 PGS.forEach(p=>{const e=$('#pg-'+p);if(e)e.style.display=p===h?'':'none'});
@@ -1713,7 +1867,7 @@ const nav0=$('.nav'),lang=$('.lang'),logoA=nav0.querySelector('a');
 const hb=document.createElement('button');hb.type='button';hb.className='ib hb';hb.setAttribute('aria-label','Menu');hb.innerHTML='<span></span><span></span>';
 lang.insertAdjacentHTML('beforebegin',`<a href="#home" class="ib hm" aria-label="${tr('Home','হোম')}" title="${tr('Home','হোম')}">${ico(I.home,18)}</a>`);
 const mn=$('.menu');if(mn)mn.remove();nav0.appendChild(hb);
-const NAV=[['#home','home','Home','হোম'],['#about-us','info','About us','আমাদের সম্পর্কে'],['#services','grid','Services','সেবাসমূহ'],['#projects','img','Projects','প্রকল্প'],['#our-process','steps','Our process','আমাদের প্রক্রিয়া'],['#colour-catalog','pal','Try Colours','রং বেছে দেখুন'],['#book-appointment','cal','Book an appointment','অ্যাপয়েন্টমেন্ট বুক'],['#bill-payment','bill','Bill & payment','বিল ও পেমেন্ট'],['#reviews','star','Reviews','মতামত'],['#ask-question','chat','Ask a question','প্রশ্ন করুন'],['#complaint','alert','Complaint','অভিযোগ'],['#faq','q','FAQ','সাধারণ জিজ্ঞাসা'],['#contact','ph','Contact','যোগাযোগ'],['#terms-and-conditions','bill','Terms & Conditions','শর্তাবলী'],['#account','bill','Login','লগইন']];
+const NAV=[['#home','home','Home','হোম'],['#about-us','info','About us','আমাদের সম্পর্কে'],['#services','grid','Services','সেবাসমূহ'],['#projects','img','Projects','প্রকল্প'],['#our-process','steps','Our process','আমাদের প্রক্রিয়া'],['#colour-catalog','pal','Try Colours','রং বেছে দেখুন'],['#paint-calculator','grid','Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['#book-appointment','cal','Book an appointment','অ্যাপয়েন্টমেন্ট বুক'],['#bill-payment','bill','Bill & payment','বিল ও পেমেন্ট'],['#reviews','star','Reviews','মতামত'],['#ask-question','chat','Ask a question','প্রশ্ন করুন'],['#complaint','alert','Complaint','অভিযোগ'],['#faq','q','FAQ','সাধারণ জিজ্ঞাসা'],['#contact','ph','Contact','যোগাযোগ'],['#terms-and-conditions','bill','Terms & Conditions','শর্তাবলী'],['#account','bill','Login','লগইন']];
 function mkDr(){let d=$('#dr');if(d&&(d.classList.contains('on')||d.dataset.l===L))return d;if(d)d.remove();d=document.createElement('div');d.id='dr';d.dataset.l=L;
 d.innerHTML=`<div class="bk"></div><div class="pn"><div class="dh">${(logoA.querySelector('svg.tklogo')||{outerHTML:''}).outerHTML}<button type="button" class="ib dx" aria-label="Close">×</button></div><div class="ds"><input type="search" id="drs" placeholder="${tr('Search…','খুঁজুন…')}" aria-label="Search"></div>${NAV.map(n=>`<a href="${n[0]}">${ico(I[n[1]],20)}<span>${tr(n[2],n[3])}</span></a>`).join('')}<div class="dsub">${tr('Our services','আমাদের সেবা')}</div>${SV.map((s,k)=>`<a href="#${['residential-painting','commercial-painting','interior-painting','exterior-painting','full-home-painting','repainting'][k]}" class="sa">${ico(SICO[k],18)}<span>${tr(s[1],s[2])}</span></a>`).join('')}<a href="#furniture-painting" class="sa">${ico(SICO[6],18)}<span>${tr('Furniture Painting','ফার্নিচার রং')}</span></a></div>`;
 document.body.appendChild(d);
@@ -1727,8 +1881,8 @@ let k=0;const st=()=>`style="--i:${k++}"`;
 const CF=(typeof CONFIG!=='undefined'&&CONFIG)||{},EH=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const IPH='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>';
 const IWA='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42z"/></svg>';
-const EXP=['#home','#about-us','#services','#projects','#our-process','#colour-catalog','#reviews','#faq','#contact'],SUP=['#book-appointment','#ask-question','#complaint','#bill-payment'],FT=['#account','#terms-and-conditions'],by=l=>l.map(h=>NAV.find(n=>n[0]===h)).filter(Boolean);
-m.innerHTML=`<div class="amw"><div class="amtop"><form class="ams ami" ${st()} role="search"><span class="amsi">${ico(I.search,18)}</span><input type="search" id="ams" placeholder="${(window.matchMedia&&matchMedia('(max-width:480px)').matches)?tr('Search pages, services…','পেজ, সেবা খুঁজুন…'):tr('Search pages, services, questions…','পেজ, সেবা, প্রশ্ন খুঁজুন…')}" aria-label="${tr('Search','সার্চ')}" autocomplete="off"></form><div class="amcta ami" ${st()}><a class="amq" href="#request-quote">${tr('Get a Free Quote','বিনামূল্যে কোটেশন নিন')}</a>${CF.phone?`<a class="amcl" href="tel:${EH(CF.phone)}">${IPH}<span>${tr('Call','কল করুন')}</span><small>${EH(CF.phone)}</small></a>`:''}${CF.whatsapp?`<a class="amwa" href="https://wa.me/${String(CF.whatsapp).replace(/\D/g,'')}" target="_blank" rel="noopener">${IWA}<span>WhatsApp</span></a>`:''}</div></div><div id="amr" class="aml amr" hidden></div><div class="amgrp"><div class="amcols"><div class="amc amce"><div class="amh ami" ${st()}>${tr('Explore Teksoi Rong','টেকসই রং ঘুরে দেখুন')}</div><nav class="aml">${by(EXP).map(n=>`<a class="ami" ${st()} href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div><div class="amc amcs"><div class="amh ami" ${st()}>${tr('Support','সহায়তা')}</div><nav class="aml">${by(SUP).map(n=>`<a class="ami" ${st()} href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div><div class="amc amcv"><div class="amh ami" ${st()}>${tr('Our services','আমাদের সেবা')}</div><nav class="aml sm">${SV.map((x,q)=>`<a class="ami" ${st()} href="#${AMS[q][0]}">${tr(x[1],x[2])}</a>`).join('')}<a class="ami" ${st()} href="#furniture-painting">${tr('Furniture Painting','ফার্নিচার রং')}</a></nav></div></div><nav class="amfoot ami" ${st()}>${by(FT).map(n=>`<a href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div></div>`;
+const EXP=['#home','#about-us','#services','#projects','#our-process','#colour-catalog','#reviews','#faq','#contact'],SUP=['#book-appointment','#ask-question','#complaint','#bill-payment'],TL=['#paint-calculator'],FT=['#account','#terms-and-conditions'],by=l=>l.map(h=>NAV.find(n=>n[0]===h)).filter(Boolean);
+m.innerHTML=`<div class="amw"><div class="amtop"><form class="ams ami" ${st()} role="search"><span class="amsi">${ico(I.search,18)}</span><input type="search" id="ams" placeholder="${(window.matchMedia&&matchMedia('(max-width:480px)').matches)?tr('Search pages, services…','পেজ, সেবা খুঁজুন…'):tr('Search pages, services, questions…','পেজ, সেবা, প্রশ্ন খুঁজুন…')}" aria-label="${tr('Search','সার্চ')}" autocomplete="off"></form><div class="amcta ami" ${st()}><a class="amq" href="#request-quote">${tr('Get a Free Quote','বিনামূল্যে কোটেশন নিন')}</a>${CF.phone?`<a class="amcl" href="tel:${EH(CF.phone)}">${IPH}<span>${tr('Call','কল করুন')}</span><small>${EH(CF.phone)}</small></a>`:''}${CF.whatsapp?`<a class="amwa" href="https://wa.me/${String(CF.whatsapp).replace(/\D/g,'')}" target="_blank" rel="noopener">${IWA}<span>WhatsApp</span></a>`:''}</div></div><div id="amr" class="aml amr" hidden></div><div class="amgrp"><div class="amcols"><div class="amc amce"><div class="amh ami" ${st()}>${tr('Explore Teksoi Rong','টেকসই রং ঘুরে দেখুন')}</div><nav class="aml">${by(EXP).map(n=>`<a class="ami" ${st()} href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div><div class="amc amcs"><div class="amh ami" ${st()}>${tr('Support','সহায়তা')}</div><nav class="aml">${by(SUP).map(n=>`<a class="ami" ${st()} href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav><div class="amh ami" ${st()}>${tr('Tools','টুলস')}</div><nav class="aml">${by(TL).map(n=>`<a class="ami" ${st()} href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div><div class="amc amcv"><div class="amh ami" ${st()}>${tr('Our services','আমাদের সেবা')}</div><nav class="aml sm">${SV.map((x,q)=>`<a class="ami" ${st()} href="#${AMS[q][0]}">${tr(x[1],x[2])}</a>`).join('')}<a class="ami" ${st()} href="#furniture-painting">${tr('Furniture Painting','ফার্নিচার রং')}</a></nav></div></div><nav class="amfoot ami" ${st()}>${by(FT).map(n=>`<a href="${n[0]}">${tr(n[2],n[3])}</a>`).join('')}</nav></div></div>`;
 document.body.appendChild(m);
 m.addEventListener('click',e=>{if(e.target.closest('a'))amClose()});
 const si=m.querySelector('#ams'),sr=m.querySelector('#amr'),grp=m.querySelector('.amgrp');let IDXm=null;
@@ -1749,7 +1903,7 @@ addEventListener('hashchange',amClose);
 document.addEventListener('click',e=>{if(e.target.closest('.lang button'))amClose()},true);
 addEventListener('resize',()=>{});
 /* ---------- search */
-const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
+const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#paint-calculator','Paint calculator cost estimate price per sft square feet area wall ceiling feet inch rate budget','পেইন্ট ক্যালকুলেটর হিসাব খরচ দাম বর্গফুট এসএফটি ক্ষেত্রফল দেয়াল সিলিং ফুট ইঞ্চি বাজেট রেট'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
 function index(){const out=[];NAV.forEach(n=>{const k=PG2.find(p=>p[0]===n[0]);out.push({t:tr(n[2],n[3]),h:n[0],i:n[1],k:(k?k[1]+' '+k[2]:'')+' '+n[2]+' '+n[3]})});
 const q=PG2.find(p=>p[0]==='#request-quote');out.push({t:tr('Free quote','বিনামূল্যে কোটেশন'),h:'#request-quote',i:'bill',k:q[1]+' '+q[2]});
 SV.forEach((s,k)=>out.push({t:tr(s[1],s[2]),h:'#'+['residential-painting','commercial-painting','interior-painting','exterior-painting','full-home-painting','repainting'][k],i:'g',k:s[1]+' '+s[2]+' '+s[3]+' '+s[4]}));
