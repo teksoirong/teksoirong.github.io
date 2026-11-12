@@ -415,7 +415,7 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 .pc{--pce:#b3261e}
 :root[data-theme=dark] .pc{--pce:#ff8a80}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) .pc{--pce:#ff8a80}}
-.pc .pcl{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:24px}
+.pc .pcl{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:20px}
 .pc .pcin{display:grid;gap:18px;min-width:0}
 .pc .pcc{background:var(--card);border:1px solid color-mix(in srgb,var(--tx) 10%,transparent);border-radius:18px;padding:22px;box-shadow:0 10px 32px color-mix(in srgb,var(--tx) 6%,transparent)}
 .pc .pcch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 14px}
@@ -424,14 +424,8 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 .pc .pcact{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .pc .pcg{padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--tx) 16%,transparent);background:transparent;color:var(--tx);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:border-color .2s}
 .pc .pcg:hover{border-color:var(--tx)}
-.pc .pcsvg{display:block;width:100%;max-width:250px;height:auto;margin:2px auto 14px;color:var(--tx)}
-.pc .pcsvg path{stroke:color-mix(in srgb,var(--tx) 60%,transparent);stroke-width:1.5;stroke-linejoin:round}
-.pc .pcsvg .f1{fill:color-mix(in srgb,var(--tx) 5%,transparent)}
-.pc .pcsvg .f2{fill:color-mix(in srgb,var(--tx) 10%,transparent)}
-.pc .pcsvg .f3{fill:color-mix(in srgb,var(--tx) 15%,transparent)}
-.pc .pcsvg text{fill:var(--tx);font-size:11px;font-weight:600;font-family:inherit}
 .pc .pcd{padding:14px 0;border-top:1px solid color-mix(in srgb,var(--tx) 8%,transparent)}
-.pc .pcc>.pcd:first-child,.pc .pcsvg+.pcd{border-top:0;padding-top:4px}
+.pc .pcc>.pcd:first-child,.pc .pcd.pcfirst{border-top:0;padding-top:4px}
 .pc .pcdl b{font-size:15px}
 .pc .pcdf{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .pc label.pcf{display:block;position:relative;gap:0;font-weight:500;margin:0}
@@ -442,6 +436,7 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 .pc .pcf>span{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--mu);pointer-events:none}
 .pc .pcp{margin-top:10px}
 .pc .pcp input{padding:0 74px 0 38px}
+.pc .pcp.pcnp input{padding:0 122px 0 14px}
 .pc .pcp>i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;font-size:19px;font-weight:700;color:var(--mu);pointer-events:none}
 .pc .pce{min-height:0;margin-top:6px;font-size:12.5px;line-height:1.4;color:var(--pce)}
 .pc .pce:empty{display:none}
@@ -467,6 +462,129 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 .pc .pch:empty{min-height:0;margin:0}
 .pc .pcbar{display:none}
 .pc .pcct{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+
+/* ---- options (Price | Paint) ---- */
+.pc [hidden]{display:none!important}
+.pc[data-tab=price] [data-pcp=paint],.pc[data-tab=paint] [data-pcp=price]{display:none}
+.pc .pctabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-width:520px;margin-top:22px;padding:6px;border-radius:18px;background:color-mix(in srgb,var(--tx) 7%,transparent)}
+.pc .pctab{display:grid;gap:2px;justify-items:center;padding:12px 14px;border:0;border-radius:13px;background:transparent;color:var(--tx);font:inherit;text-align:center;cursor:pointer;transition:background .2s,color .2s}
+.pc .pctab b{font-size:17px;font-weight:700;line-height:1.2}
+.pc .pctab small{font-size:12px;font-weight:500;opacity:.72;line-height:1.2}
+.pc .pctab:hover{background:color-mix(in srgb,var(--tx) 8%,transparent)}
+.pc .pctab[aria-selected=true]{background:var(--tx);color:var(--bg)}
+.pc .pctab:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
+/* ---- 3D room ---- */
+.pc .pcv3{position:relative;border-radius:16px;overflow:hidden;border:1px solid color-mix(in srgb,var(--tx) 10%,transparent);background:radial-gradient(120% 90% at 50% 0%,color-mix(in srgb,var(--tx) 3%,var(--card)),color-mix(in srgb,var(--tx) 9%,var(--card)))}
+.pc .pc3{display:block;width:100%;height:auto;aspect-ratio:4/3;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;outline:none;font-family:inherit}
+.pc .pc3.grab{cursor:grabbing}
+.pc .pc3:focus-visible{box-shadow:inset 0 0 0 2px var(--tx)}
+.pc .pc3f{fill:color-mix(in srgb,var(--tx) 11%,var(--card));stroke:color-mix(in srgb,var(--tx) 35%,transparent);stroke-width:1;stroke-linejoin:round}
+.pc .pc3gr{fill:none;stroke:var(--tx);stroke-opacity:.09;stroke-width:1}
+.pc .pc3w{stroke:color-mix(in srgb,var(--tx) 40%,transparent);stroke-width:1;stroke-linejoin:round;transition:fill .25s}
+.pc .pc3bb{fill:#fff;fill-opacity:.42;stroke:none}
+.pc .pc3cut{fill:none;stroke:var(--tx);stroke-opacity:.26;stroke-width:1;stroke-dasharray:3 4;stroke-linejoin:round}
+.pc .pc3o{cursor:grab}
+.pc .pc3o.sel{cursor:grab}
+.pc .pc3hit{fill:transparent;stroke:none}
+.pc .pc3fr{fill:#f6f5f1;stroke:rgba(0,0,0,.38);stroke-width:.8;stroke-linejoin:round}
+.pc .pc3g{stroke:rgba(0,0,0,.3);stroke-width:.6}
+.pc .pc3mu{fill:none;stroke:#f6f5f1;stroke-width:1.7}
+.pc .pc3d{stroke:rgba(0,0,0,.5);stroke-width:.9;stroke-linejoin:round}
+.pc .pc3di{stroke:rgba(0,0,0,.28);stroke-width:.7}
+.pc .pc3dk{fill:#e5c266;stroke:rgba(0,0,0,.45);stroke-width:.5}
+.pc .pc3h{fill:none;stroke:var(--tx);stroke-width:5;stroke-linejoin:round}
+.pc .pc3o.bad .pc3fr,.pc .pc3o.bad .pc3d{stroke:var(--pce);stroke-width:2;stroke-dasharray:4 3}
+.pc .pc3pl{pointer-events:none}
+.pc .pc3pl rect{fill:var(--card);stroke:color-mix(in srgb,var(--tx) 24%,transparent);stroke-width:1}
+.pc .pc3pl text{fill:var(--tx);font-size:10.5px;font-weight:700;font-family:inherit;font-variant-numeric:tabular-nums}
+.pc .pc3pl.wl rect,.pc .pc3pl.tg rect{fill:var(--tx);stroke:none}
+.pc .pc3pl.wl text,.pc .pc3pl.tg text{fill:var(--bg)}
+.pc .pc3pl.dm text{fill:var(--mu);font-weight:600}
+.pc .pcv3p{position:absolute;top:10px;left:12px;margin:0;padding:4px 11px;border-radius:999px;background:color-mix(in srgb,var(--tx) 82%,transparent);color:var(--bg);font-size:12px;font-weight:600;line-height:1.35;pointer-events:none}
+.pc .pcv3c{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:8px 10px 10px;border-top:1px solid color-mix(in srgb,var(--tx) 8%,transparent)}
+.pc .pcv3c button,.pc .pcrm{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:50%;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;transition:border-color .2s,background .2s}
+.pc .pcv3c button:hover,.pc .pcrm:hover{border-color:var(--tx)}
+.pc .pcv3c button:active{background:color-mix(in srgb,var(--tx) 10%,var(--card))}
+.pc .pci{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pc .pcv3h{margin:10px 2px 0;font-size:12.5px;line-height:1.45;color:var(--mu);text-align:center}
+/* wall colour */
+.pc .pccolr{margin-top:14px}
+.pc .pccolb{display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:14px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s}
+.pc .pccolb:hover{border-color:var(--tx)}
+.pc .pccolb .pci{margin-left:auto;transition:transform .25s}
+.pc .pccolb[aria-expanded=true] .pci{transform:rotate(180deg)}
+.pc .pccolt{flex:1;min-width:0}
+.pc .pccolt b{display:block;font-size:14.5px;line-height:1.25}
+.pc .pccolt small{display:block;font-size:12.5px;font-weight:500;color:var(--mu);line-height:1.3;margin-top:1px}
+.pc .pcdot{width:30px;height:30px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tx) 26%,transparent)}
+.pc .pcdot.none{background:repeating-conic-gradient(color-mix(in srgb,var(--tx) 16%,var(--bg)) 0 25%,var(--bg) 0 50%) 0 0/10px 10px}
+.pc .pccolp{margin-top:10px;padding:12px;border-radius:14px;border:1px solid var(--bd);background:var(--bg)}
+.pc .pcfam{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.pc .pcchip{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--bd);background:transparent;color:var(--tx);font:inherit;font-size:12.5px;font-weight:600;white-space:nowrap;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pc .pcchip:hover{border-color:var(--tx)}
+.pc .pcchip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.pc .pcsws{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px;margin-top:6px}
+.pc .pcsw1{aspect-ratio:1;padding:3px;border-radius:50%;border:2px solid transparent;background:transparent;cursor:pointer;transition:transform .15s}
+.pc .pcsw1:hover{transform:scale(1.08)}
+.pc .pcsw1 span{display:block;width:100%;height:100%;border-radius:50%;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tx) 22%,transparent)}
+.pc .pcsw1.on{border-color:var(--tx)}
+.pc .pcsw1:focus-visible,.pc .pcchip:focus-visible,.pc .pccolb:focus-visible,.pc .pcot:focus-visible,.pc .pcrm:focus-visible,.pc .pcv3c button:focus-visible,.pc .pcst button:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
+.pc .pccx{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;font-size:13px;font-weight:600;min-height:0}
+.pc .pccx span:empty{display:none}
+/* doors & windows */
+.pc .pcops{display:grid;gap:10px}
+.pc .pco{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:6px 8px;padding:10px 12px;border-radius:14px;border:1px solid var(--bd);background:var(--bg);transition:border-color .2s,box-shadow .2s}
+.pc .pco.on{border-color:var(--tx);box-shadow:0 0 0 2px color-mix(in srgb,var(--tx) 14%,transparent)}
+.pc .pco.bad{border-color:var(--pce)}
+.pc .pcot{grid-column:1;grid-row:1;display:flex;align-items:center;gap:8px;min-width:0;padding:4px 0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:15px;text-align:left;cursor:pointer}
+.pc .pcot b{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc .pcow{grid-column:2;grid-row:1;height:40px;box-sizing:border-box;padding:0 10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:14px;font-weight:600;cursor:pointer;width:auto;margin:0}
+.pc .pcwh{grid-column:1/-1;grid-row:2;display:flex;align-items:center;gap:8px;margin-top:2px}
+.pc .pcwh .pcs{flex:1;min-width:0}
+.pc .pcs input{height:42px;padding:0 40px 0 12px;font-size:16px;border-radius:10px}
+.pc .pcs>span{font-size:13px;right:12px}
+.pc .pcx{font-style:normal;font-weight:700;color:var(--mu)}
+.pc .pco .pcrm{grid-column:3;grid-row:1}
+.pc .pco .pce{grid-column:1/-1;grid-row:3;margin-top:2px}
+.pc .pcempty{margin:0;padding:12px 14px;border-radius:12px;border:1px dashed var(--bd);color:var(--mu);font-size:13.5px;line-height:1.5}
+/* paint details */
+.pc .pcst{display:inline-flex;align-items:center;margin-top:10px;border:1px solid var(--bd);border-radius:14px;background:var(--bg);overflow:hidden}
+.pc .pcst button{display:grid;place-items:center;width:50px;height:48px;padding:0;border:0;background:transparent;color:var(--tx);cursor:pointer}
+.pc .pcst button:hover{background:color-mix(in srgb,var(--tx) 8%,transparent)}
+.pc .pcst output{min-width:56px;text-align:center;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.pc .pcchips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pc .pcsw{position:relative;display:flex;align-items:flex-start;gap:12px;margin:0;padding:6px 0;font-weight:500;cursor:pointer}
+.pc .pcsw input{position:absolute;opacity:0;width:1px;height:1px;margin:0;padding:0;border:0}
+.pc .pcsw i{position:relative;flex:none;width:42px;height:24px;margin-top:1px;border-radius:999px;background:color-mix(in srgb,var(--tx) 20%,transparent);transition:background .2s}
+.pc .pcsw i::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--bg);transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.pc .pcsw input:checked+i{background:var(--tx)}
+.pc .pcsw input:checked+i::after{transform:translateX(18px)}
+.pc .pcsw input:focus-visible+i{outline:2px solid var(--tx);outline-offset:2px}
+.pc .pcsw span b{display:block;font-size:15px;line-height:1.3}
+.pc .pcsw span small{display:block;font-size:12.5px;font-weight:500;color:var(--mu);line-height:1.35;margin-top:1px}
+.pc .pcsub{margin:4px 0 4px 54px}
+.pc .pcsub .pcp{margin-top:6px}
+.pc .pcdl small{max-width:46ch}
+/* paint results */
+.pc .pcgt2{margin-top:14px}
+.pc .pcsum0{margin-top:0}
+.pc .pctinw{margin-top:14px;padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--tx) 6%,transparent)}
+.pc .pctinh{display:flex;align-items:baseline;justify-content:space-between;gap:4px 12px;flex-wrap:wrap}
+.pc .pctinh b{font-size:15px}
+.pc .pctinh small{font-size:12.5px;font-weight:500;color:var(--mu)}
+.pc .pctins{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pc .pctin{padding:8px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--card);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.pc .pctin b{font-weight:800}
+.pc .pcrcol{display:flex;align-items:center;gap:12px;margin-top:14px}
+.pc .pcrcol small{display:block;font-size:12.5px;color:var(--mu);line-height:1.2}
+.pc .pcrcol b{font-size:15px}
+.pc .pchow{margin:14px 0 0;padding:0 16px;border-radius:14px;border:1px solid var(--bd);background:transparent}
+.pc .pchow summary{padding:12px 0;font-size:14px;font-weight:600;cursor:pointer}
+.pc .pchow[open] summary{padding-bottom:6px}
+.pc .pchow ol{display:grid;gap:8px;margin:4px 0 14px;padding-left:20px;font-size:13.5px;line-height:1.55;color:var(--mu)}
+.pc .pchow li b{color:var(--tx)}
+.pc .pcdedw{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:10px 14px;border-radius:12px;border:1px dashed var(--bd);font-size:13.5px;color:var(--mu)}
+.pc .pcdedw b{color:var(--tx);font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:899px){
  .pc .pcl{grid-template-columns:minmax(0,1fr)}
  .pc .pcres{position:static}
@@ -484,8 +602,13 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
  .pc .pcf input{height:50px;font-size:18px;padding-right:54px}
  .pc .pcp input{padding-left:36px}
  .pc .pcgt{padding:16px}
+ .pc .pctab{padding:10px 8px}
+ .pc .pctab b{font-size:16px}
+ .pc .pco{padding:10px}
+ .pc .pcsub{margin-left:0}
+ .pc .pcv3c button{width:34px;height:34px}
 }
-@media(prefers-reduced-motion:reduce){.pc .pcb::after,.pc .pcf input,.pc .pcg{transition:none}}
+@media(prefers-reduced-motion:reduce){.pc .pcb::after,.pc .pcf input,.pc .pcg,.pc .pctab,.pc .pcsw i,.pc .pcsw i::after,.pc .pc3w,.pc .pccolb .pci,.pc .pcsw1{transition:none}}
 </style><style id="ptcss">.ptg{display:flex;flex-wrap:wrap;gap:8px;font-weight:400}.ptc{display:block;position:relative;gap:0;font-size:14px;font-weight:600}.ptc input{position:absolute;opacity:0;width:0;height:0;padding:0;margin:0;border:0}.ptc span{display:inline-block;padding:8px 15px;border:1px solid var(--bd);border-radius:99px;background:var(--card);color:var(--tx);cursor:pointer;transition:.2s;user-select:none}.ptc span:hover{border-color:#8A8A86}.ptc input:checked+span{background:linear-gradient(135deg,#BEBEBA,#5A5A57);color:#111;border-color:transparent}.ptc input:focus-visible+span{outline:2px solid #8A8A86;outline-offset:2px}</style><style id="xdcss">
 :root{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}
 select.xd-n{position:absolute!important;opacity:0;pointer-events:none;width:1px!important;height:1px!important;padding:0!important;border:0!important;margin:0;overflow:hidden}
@@ -2214,9 +2337,10 @@ PGS.forEach(p=>{const s=document.createElement('section');s.id='pg-'+p;s.style.d
 const HIDE=['#founder','.hero','#services','#why','#projects','#process','#about','#testi','#areas','#faq','#quote','.cta','#svcpg'];
 const head=(a,b,c)=>`<div class="tag">${tr(a[0],a[1])}</div><h2>${tr(b[0],b[1])}</h2>${c?`<p style="max-width:720px;color:var(--mu)">${tr(c[0],c[1])}</p>`:''}`;
 /* ===== Smart Paint Calculator (#paint-calculator) =====
+   Two options: Price (cost per SFT) and Paint (litres + tins), sharing one room (3D view, size, doors & windows).
    Measurements are kept as whole numbers of 1/100 inch, so every area is exact (no floating-point drift).
-   Total SFT = 2 x (Length + Width) x Height + (Length x Width).  Walls: N/S use Length, E/W use Width. */
-const PCX={L:{f:'',i:''},W:{f:'',i:''},H:{f:'',i:''},p:''};
+   Total SFT = 2 x (Length + Width) x Height + (Length x Width) - doors & windows.  Walls: N/S use Length, E/W use Width. */
+const PCX={L:{f:'',i:''},W:{f:'',i:''},H:{f:'',i:''},p:'',tab:'price',o:[],sel:0,nid:1,pt:{coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120'},col:null,colOpen:false,fam:0};
 const PCBN='০১২৩৪৫৬৭৮৯';
 function pcNorm(s){return String(s==null?'':s).replace(/[০-৯]/g,c=>String(PCBN.indexOf(c))).trim()}
 function pcParse(raw,kind){const s=pcNorm(raw);if(s==='')return{st:'empty'};
@@ -2227,6 +2351,9 @@ function pcParse(raw,kind){const s=pcNorm(raw);if(s==='')return{st:'empty'};
  if(kind==='in'&&v>=1200)return{st:'bad',err:'inrange'};
  if(kind==='pr'&&v>10000000)return{st:'bad',err:'prbig'};
  if(kind==='pr'&&v===0)return{st:'bad',err:'przero'};
+ if(kind==='op'&&v===0)return{st:'bad',err:'zero'};
+ if(kind==='op'&&v>5000)return{st:'bad',err:'opbig'};
+ if(kind==='cov'&&(v<1000||v>100000))return{st:'bad',err:'covr'};
  return{st:'ok',v}}
 function pcDim(d){const f=pcParse(d.f,'ft'),i=pcParse(d.i,'in');
  if(f.st==='bad')return{st:'bad',err:f.err,fld:'f'};
@@ -2235,61 +2362,386 @@ function pcDim(d){const f=pcParse(d.f,'ft'),i=pcParse(d.i,'in');
  const c=(f.st==='ok'?f.v*12:0)+(i.st==='ok'?i.v:0);
  if(c===0)return{st:'bad',err:'zero',fld:f.st==='ok'?'f':'i'};
  return{st:'ok',c}}
-/* returns areas in 1/100 SFT, grand total in 1/100 BDT (paisa); null where inputs are missing */
+/* wall key -> which room dimension it runs along (N/S = Length, E/Wt = Width) */
+const PCWL={N:'L',S:'L',E:'W',Wt:'W'};
+/* an opening (door / window) keeps its position as u (along the wall) and v (height of its bottom edge), in 1/100 inch */
+function pcPos(op,wc,hc,D){const dl=D[PCWL[op.wall]],hh=D.H;let u=op.x|0,v=op.t==='d'?0:(op.y|0);
+ if(dl.st==='ok')u=Math.max(0,Math.min(u,dl.c-wc));
+ if(hh.st==='ok')v=Math.max(0,Math.min(v,hh.c-hc));
+ return{u,v}}
+/* checks every door / window: size entered, fits the wall, does not overlap another one */
+function pcOps(s,D){const o=s.o||[],out=[];
+ o.forEach(op=>{const pw=pcParse(op.w,'op'),ph=pcParse(op.h,'op'),r={op,st:'ok',err:'',fld:'',wc:0,hc:0,u:0,v:0};
+  if(pw.st!=='ok'){r.st='bad';r.err=pw.st==='empty'?'req':pw.err;r.fld='w'}
+  else if(ph.st!=='ok'){r.st='bad';r.err=ph.st==='empty'?'req':ph.err;r.fld='h'}
+  else{r.wc=pw.v*12;r.hc=ph.v*12;
+   const dl=D[PCWL[op.wall]],hh=D.H;
+   if(dl.st==='ok'&&r.wc>dl.c){r.st='bad';r.err='wide';r.fld='w'}
+   else if(hh.st==='ok'&&r.hc>hh.c){r.st='bad';r.err='tall';r.fld='h'}
+   else{const p=pcPos(op,r.wc,r.hc,D);r.u=p.u;r.v=p.v}}
+  out.push(r)});
+ if(D.L.st==='ok'&&D.W.st==='ok'&&D.H.st==='ok')
+  for(let j=1;j<out.length;j++){const b=out[j];if(b.st!=='ok')continue;
+   for(let i=0;i<j;i++){const a=out[i];if(a.st!=='ok'||a.op.wall!==b.op.wall)continue;
+    if(a.u<b.u+b.wc&&b.u<a.u+a.wc&&a.v<b.v+b.hc&&b.v<a.v+a.hc){b.st='bad';b.err='over';b.fld='w';break}}}
+ return out}
+/* returns areas in 1/100 SFT, grand total in 1/100 BDT (paisa); null where inputs are missing.
+   T is the exact net area (walls + ceiling - doors & windows) in 1/10000 square inch. */
 function pcCalc(s){const D={L:pcDim(s.L),W:pcDim(s.W),H:pcDim(s.H)},pr=pcParse(s.p,'pr'),ok=k=>D[k].st==='ok',DEN=14400;
- const area=(a,b)=>ok(a)&&ok(b)?Math.round(D[a].c*D[b].c/DEN):null;
- const parts={N:area('L','H'),S:area('L','H'),E:area('W','H'),Wt:area('W','H'),C:area('L','W')};
- let total=null,T=null,grand=null;
- if(ok('L')&&ok('W')&&ok('H')){T=2*(D.L.c+D.W.c)*D.H.c+D.L.c*D.W.c;total=Math.round(T/DEN)}
+ const ops=pcOps(s,D),openBad=ops.some(r=>r.st==='bad'),ded={N:0,S:0,E:0,Wt:0};
+ ops.forEach(r=>{if(r.st==='ok')ded[r.op.wall]+=r.wc*r.hc});
+ const dedT=ded.N+ded.S+ded.E+ded.Wt;
+ const wall=(a,k)=>ok(a)&&ok('H')&&!openBad?D[a].c*D.H.c-ded[k]:null;
+ const Tn={N:wall('L','N'),S:wall('L','S'),E:wall('W','E'),Wt:wall('W','Wt'),C:ok('L')&&ok('W')?D.L.c*D.W.c:null};
+ const parts={};for(const k in Tn)parts[k]=Tn[k]===null?null:Math.round(Tn[k]/DEN);
+ let total=null,T=null,grand=null,Tw=null;
+ if(ok('L')&&ok('W')&&ok('H')&&!openBad){Tw=2*(D.L.c+D.W.c)*D.H.c-dedT;T=Tw+D.L.c*D.W.c;total=Math.round(T/DEN)}
  if(T!==null&&pr.st==='ok'){const Dn=1440000n;grand=Number((BigInt(T)*BigInt(pr.v)*2n+Dn)/(2n*Dn))}
- return{D,pr,parts,total,T,grand,price:pr.st==='ok'?pr.v:null}}
-window.pcCalc=pcCalc;window.PCSTATE=PCX;
-const PCERR={num:['Enter a valid positive number.','সঠিক ধনাত্মক সংখ্যা লিখুন।'],ftint:['Whole feet only. Put the rest in the inches box.','ফুট শুধু পূর্ণসংখ্যা হবে। বাকিটুকু ইঞ্চির ঘরে দিন।'],big:['Too large. Maximum is 999 ft.','অনেক বড়। সর্বোচ্চ ৯৯৯ ফুট।'],inrange:['Inches must be less than 12. Put full feet in the feet box.','ইঞ্চি ১২-এর কম হতে হবে। পূর্ণ ফুট ফুটের ঘরে দিন।'],zero:['The measurement must be greater than zero.','মাপ শূন্যের চেয়ে বেশি হতে হবে।'],prbig:['This price looks too high. Please check it.','দামটি অনেক বেশি মনে হচ্ছে। অনুগ্রহ করে দেখে নিন।'],przero:['The price must be greater than zero.','দাম শূন্যের চেয়ে বেশি হতে হবে।']};
+ return{D,pr,parts,total,T,Tw,Tc:Tn.C,grand,price:pr.st==='ok'?pr.v:null,ops,openBad,ded:Math.round(dedT/DEN),dedT}}
+/* Paint packs are sold in multiples of 0.91 L (a quart), so quantities are counted in "units" of 0.91 L:
+   18.2 L = 20 units, 9.1 L = 10, 3.64 L = 4, 0.91 L = 1.  Picks the combination with few tins and little leftover. */
+function pcTins(n){if(!(n>0))return null;let best=null;const top=Math.ceil(n/20);
+ for(let a=Math.max(0,top-2);a<=top;a++)for(let b=0;b<=1;b++)for(let c=0;c<=4;c++)for(let d=0;d<=3;d++){
+  const tot=a*20+b*10+c*4+d;if(tot<n)continue;const tins=a+b+c+d,cost=3*tins+2*(tot-n);
+  if(!best||cost<best.cost||(cost===best.cost&&(tins<best.tins||(tins===best.tins&&tot<best.tot))))best={20:a,10:b,4:c,1:d,tot,tins,cost}}
+ return best}
+/* litres in 1/100 L, rounded up:  A x coats x (100+waste)% / (14400 x coverage in 1/100 sq ft per litre), with A in 1/10000 in2 */
+function pcLit(A,coats,cv,wastePct){const n=BigInt(A)*BigInt(coats)*BigInt(100+wastePct),d=14400n*BigInt(cv);
+ return Number((n+d-1n)/d)}
+function pcPaint(s,R){const t=s.pt||{},coats=Math.max(1,Math.min(4,Math.round(Number(t.coats))||2)),cv=pcParse(t.cov,'cov'),pv=pcParse(t.pcov,'cov'),W=10;
+ const o={st:'wait',coats,cv,pv,waste:W};
+ if(R.T===null)return o;
+ if(cv.st!=='ok'){o.st='badcov';return o}
+ if(t.primer&&pv.st!=='ok'){o.st='badpcov';return o}
+ const DEN=14400,AT=R.Tw+(t.ceil?R.Tc:0);
+ o.walls=Math.round(R.Tw/DEN);o.ceil=t.ceil?Math.round(R.Tc/DEN):null;o.area=Math.round(AT/DEN);
+ o.lh=pcLit(AT,coats,cv.v,W);o.tins=pcTins(Math.ceil(o.lh/91));o.boughtH=o.tins.tot*91;o.extraH=o.boughtH-o.lh;
+ o.bh=pcLit(AT,coats,cv.v,0);
+ if(t.primer){o.plh=pcLit(AT,1,pv.v,W);o.ptins=pcTins(Math.ceil(o.plh/91));o.pboughtH=o.ptins.tot*91;o.pextraH=o.pboughtH-o.plh}
+ o.st='ok';return o}
+window.pcCalc=pcCalc;window.PCSTATE=PCX;window.pcPaint=pcPaint;window.pcTins=pcTins;
+const PCERR={num:['Enter a valid positive number.','সঠিক ধনাত্মক সংখ্যা লিখুন।'],ftint:['Whole feet only. Put the rest in the inches box.','ফুট শুধু পূর্ণসংখ্যা হবে। বাকিটুকু ইঞ্চির ঘরে দিন।'],big:['Too large. Maximum is 999 ft.','অনেক বড়। সর্বোচ্চ ৯৯৯ ফুট।'],inrange:['Inches must be less than 12. Put full feet in the feet box.','ইঞ্চি ১২-এর কম হতে হবে। পূর্ণ ফুট ফুটের ঘরে দিন।'],zero:['The measurement must be greater than zero.','মাপ শূন্যের চেয়ে বেশি হতে হবে।'],prbig:['This price looks too high. Please check it.','দামটি অনেক বেশি মনে হচ্ছে। অনুগ্রহ করে দেখে নিন।'],przero:['The price must be greater than zero.','দাম শূন্যের চেয়ে বেশি হতে হবে।'],
+ req:['Enter this size.','এই মাপটি দিন।'],opbig:['Too large. Maximum is 50 ft.','অনেক বড়। সর্বোচ্চ ৫০ ফুট।'],wide:['Wider than this wall. Make it smaller or pick another wall.','এই দেয়ালের চেয়ে চওড়া। ছোট করুন বা অন্য দেয়াল বেছে নিন।'],tall:['Taller than this wall. Make it smaller.','এই দেয়ালের চেয়ে উঁচু। ছোট করুন।'],over:['Overlaps another door or window. Move it or change its size.','অন্য দরজা বা জানালার সাথে মিলে গেছে। সরান বা মাপ বদলান।'],covr:['Enter between 10 and 1,000 sq ft per litre.','প্রতি লিটারে ১০ থেকে ১,০০০ বর্গফুটের মধ্যে লিখুন।'],reqc:['Enter the coverage.','কভারেজ লিখুন।']};
 const pcN=(v,fx)=>new Intl.NumberFormat(L==='bn'?'bn-BD':'en-IN',{minimumFractionDigits:fx,maximumFractionDigits:2}).format(v);
-const pcSft=h=>h===null?'—':pcN(h/100,h%100===0?0:2)+' '+tr('SFT','বর্গফুট');
+const pcSft=h=>h===null||h===undefined?'—':pcN(h/100,h%100===0?0:2)+' '+tr('SFT','বর্গফুট');
 const pcTk=h=>h===null?'—':'৳'+pcN(h/100,h%100===0?0:2);
-function pcBuild(){const b=L==='bn',sec=(en,bnt)=>b?en:bnt;
+const pcLt=h=>h===null||h===undefined?'—':pcN(h/100,h%100===0?0:2)+' '+tr('L','লিটার');
+const pcTn=n=>pcN(n,0)+' '+(L==='bn'?'টিন':n===1?'tin':'tins');
+const PCPK=[[20,18.2],[10,9.1],[4,3.64],[1,0.91]];
+const PCWN={N:['North','উত্তর'],E:['East','পূর্ব'],S:['South','দক্ষিণ'],Wt:['West','পশ্চিম']};
+const PCWS={N:['N','উ'],E:['E','পূ'],S:['S','দ'],Wt:['W','প']};
+const PCPRE={eco:['Economy','ইকোনমি','100'],std:['Standard','স্ট্যান্ডার্ড','120'],pre:['Premium','প্রিমিয়াম','150']};
+const PCI={win:'<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 12h16"/>',door:'<rect x="6" y="2.5" width="12" height="19" rx="1.5"/><circle cx="15" cy="12.5" r=".9" fill="currentColor"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',plus:'<path d="M12 5v14M5 12h14"/>',minus:'<path d="M5 12h14"/>',rl:'<path d="M5 12a7 7 0 1 0 2.2-5.1M5 4.5v4h4"/>',rr:'<path d="M19 12a7 7 0 1 1-2.2-5.1M19 4.5v4h-4"/>',up:'<path d="M6 15l6-6 6 6"/>',down:'<path d="M6 9l6 6 6-6"/>',rs:'<path d="M4.5 12a7.5 7.5 0 1 1 2.4 5.5M4.5 19v-5h5"/>',chev:'<path d="M6 9l6 6 6-6"/>'};
+const pcIc=k=>`<svg class="pci" viewBox="0 0 24 24" aria-hidden="true">${PCI[k]}</svg>`;
+const pcRoot=()=>document.querySelector('#pg-paint-calculator .pc');
+/* ---------------- 3D room (custom SVG renderer: perspective camera, cut-away "doll house" view) ---------------- */
+const PCV={yaw:35,pitch:30,zoom:1},PC3S={pts:new Map(),drag:null,raf:0,an:0,d:null};
+const PC3N={N:[0,0,1],S:[0,0,-1],Wt:[1,0,0],E:[-1,0,0]};
+const PC3VW=400,PC3VH=300,PC3WALL='#D9D4C9';
+const pc3Len=(w,d)=>w==='N'||w==='S'?d.L:d.W;
+const pc3Pt=(w,u,v,d)=>w==='N'?[u,v,0]:w==='S'?[u,v,d.W]:w==='Wt'?[0,v,u]:[d.L,v,u];
+function pc3Dims(){const R=pcCalc(PCX),f=(k,x)=>R.D[k].st==='ok'?R.D[k].c/1200:x;
+ return{L:f('L',12),W:f('W',10),H:f('H',9),pre:!(R.D.L.st==='ok'&&R.D.W.st==='ok'&&R.D.H.st==='ok'),R}}
+function pc3CamAt(d,yaw,pitch,dist){const th=yaw*Math.PI/180,ph=pitch*Math.PI/180,T=[d.L/2,d.H/2,d.W/2],cp=Math.cos(ph);
+ const C=[T[0]+dist*cp*Math.sin(th),T[1]+dist*Math.sin(ph),T[2]+dist*cp*Math.cos(th)];
+ let f=[T[0]-C[0],T[1]-C[1],T[2]-C[2]];const fl=Math.hypot(f[0],f[1],f[2]);f=f.map(a=>a/fl);
+ let r=[-f[2],0,f[0]];const rl=Math.hypot(r[0],r[2])||1;r=[r[0]/rl,0,r[2]/rl];
+ const u=[r[1]*f[2]-r[2]*f[1],r[2]*f[0]-r[0]*f[2],r[0]*f[1]-r[1]*f[0]],F=(PC3VH/2)/Math.tan(17*Math.PI/180);
+ return{C,f,r,u,F,
+  p(x,y,z){const a=x-C[0],b=y-C[1],c=z-C[2],zv=a*f[0]+b*f[1]+c*f[2];return[PC3VW/2+F*(a*r[0]+b*r[1]+c*r[2])/zv,PC3VH/2-F*(a*u[0]+b*u[1]+c*u[2])/zv,zv]},
+  ray(sx,sy){const a=(sx-PC3VW/2)/F,b=-(sy-PC3VH/2)/F;return[f[0]+r[0]*a+u[0]*b,f[1]+r[1]*a+u[1]*b,f[2]+r[2]*a+u[2]*b]}}}
+/* camera distance that keeps the whole room inside the view while it is rotated around at this tilt; cached per room size */
+const PC3FIT={};
+function pc3Fit(d,pitch){const pk=Math.round(pitch/2),key=d.L+'|'+d.W+'|'+d.H+'|'+pk;if(PC3FIT[key])return PC3FIT[key];
+ const R=Math.hypot(d.L,d.H,d.W)/2,pts=[];
+ for(const x of[0,d.L])for(const y of[0,d.H])for(const z of[0,d.W])pts.push([x,y,z]);
+ const fits=dist=>{for(let yaw=0;yaw<360;yaw+=10){const c=pc3CamAt(d,yaw,pk*2,dist);
+   for(const q of pts){const s=c.p(q[0],q[1],q[2]);if(s[0]<30||s[0]>PC3VW-30||s[1]<30||s[1]>PC3VH-36)return false}}return true};
+ let lo=R*1.05,hi=R*14;for(let i=0;i<20;i++){const m=(lo+hi)/2;if(fits(m))hi=m;else lo=m}
+ if(Object.keys(PC3FIT).length>200)for(const k in PC3FIT)delete PC3FIT[k];
+ return PC3FIT[key]=hi}
+function pc3Cam(d){return pc3CamAt(d,PCV.yaw,PCV.pitch,pc3Fit(d,PCV.pitch)/PCV.zoom)}
+function pc3Vis(cam,d){const o={};['N','S','Wt','E'].forEach(w=>{const n=PC3N[w],p=pc3Pt(w,0,0,d);o[w]=(cam.C[0]-p[0])*n[0]+(cam.C[1]-p[1])*n[1]+(cam.C[2]-p[2])*n[2]>0});return o}
+/* where the pointer touches the visible walls: returns {w,u,v} in feet (u along the wall, v height) */
+function pc3Hit(sx,sy,cam,d,vis,pref){const dir=cam.ray(sx,sy),C=cam.C;let best=null,pr=null;
+ ['N','Wt','S','E'].forEach(w=>{const n=PC3N[w],p0=pc3Pt(w,0,0,d),den=dir[0]*n[0]+dir[1]*n[1]+dir[2]*n[2];if(Math.abs(den)<1e-9)return;
+  const t=((p0[0]-C[0])*n[0]+(p0[1]-C[1])*n[1]+(p0[2]-C[2])*n[2])/den;if(t<=0)return;
+  const P=[C[0]+dir[0]*t,C[1]+dir[1]*t,C[2]+dir[2]*t],u=w==='N'||w==='S'?P[0]:P[2],v=P[1],inb=u>=0&&u<=pc3Len(w,d)&&v>=0&&v<=d.H,h={w,u,v,t,inb};
+  if(w===pref)pr=h;if(vis[w]&&inb&&(!best||t<best.t))best=h});
+ return best||pr}
+function pc3Sh(hex,k){const m=/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex||'');if(!m)return hex;
+ const c=[1,2,3].map(i=>{let v=parseInt(m[i],16);v=k<=1?v*k:v+(255-v)*(k-1);return Math.max(0,Math.min(255,Math.round(v)))});return'rgb('+c.join(',')+')'}
+const pc3Fmt=c=>{const ft=Math.floor(c/1200),inch=Math.round((c%1200)/100);return pcN(ft,0)+'′'+(inch?' '+pcN(inch,0)+'″':'')};
+/* an opening as a rectangle in 1/100 inch, with its position kept inside the wall */
+function pcRect(op,d){const pw=pcParse(op.w,'op'),ph=pcParse(op.h,'op');if(pw.st!=='ok'||ph.st!=='ok')return null;
+ const wc=pw.v*12,hc=ph.v*12,len=Math.round(pc3Len(op.wall,d)*1200),H=Math.round(d.H*1200);
+ return{op,wc,hc,u:Math.max(0,Math.min(op.x|0,len-wc)),v:op.t==='d'?0:Math.max(0,Math.min(op.y|0,H-hc))}}
+const pcHit=(a,u,v,wc,hc)=>u<a.u+a.wc&&a.u<u+wc&&v<a.v+a.hc&&a.v<v+hc;
+function pc3Req(){if(PC3S.raf)return;PC3S.raf=requestAnimationFrame(()=>{PC3S.raf=0;pc3Draw()})}
+function pc3Draw(){const g=document.getElementById('pc3g');if(!g)return;
+ const d=pc3Dims();PC3S.d=d;const cam=pc3Cam(d),vis=pc3Vis(cam,d),P=(x,y,z)=>cam.p(x,y,z),pts=a=>a.map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join(' ');
+ const Ld=cam.r.map((a,i)=>-cam.f[i]*.62+cam.u[i]*.55-cam.r[i]*.3),ll=Math.hypot(Ld[0],Ld[1],Ld[2]);
+ const hex=PCX.col?PCX.col.hex:PC3WALL,W4=['N','Wt','S','E'];let s='';
+ /* floor + faint grid */
+ s+=`<polygon class="pc3f" points="${pts([P(0,0,0),P(d.L,0,0),P(d.L,0,d.W),P(0,0,d.W)])}"/>`;
+ const st=Math.max(1,Math.ceil(Math.max(d.L,d.W)/16));let gl='';
+ for(let x=st;x<d.L-.01;x+=st)gl+='M'+P(x,0,0).slice(0,2).map(n=>n.toFixed(1)).join(' ')+'L'+P(x,0,d.W).slice(0,2).map(n=>n.toFixed(1)).join(' ');
+ for(let z=st;z<d.W-.01;z+=st)gl+='M'+P(0,0,z).slice(0,2).map(n=>n.toFixed(1)).join(' ')+'L'+P(d.L,0,z).slice(0,2).map(n=>n.toFixed(1)).join(' ');
+ s+=`<path class="pc3gr" d="${gl}"/>`;
+ /* walls (inner faces that look at the camera) */
+ W4.forEach(w=>{if(!vis[w])return;const len=pc3Len(w,d),n=PC3N[w],k=.76+.26*Math.max(0,(n[0]*Ld[0]+n[1]*Ld[1]+n[2]*Ld[2])/ll),q=[pc3Pt(w,0,0,d),pc3Pt(w,len,0,d),pc3Pt(w,len,d.H,d),pc3Pt(w,0,d.H,d)].map(a=>P(a[0],a[1],a[2]));
+  s+=`<polygon class="pc3w" points="${pts(q)}" style="fill:${pc3Sh(hex,k)}"/>`;
+  const bb=Math.min(.45,d.H*.06),b=[pc3Pt(w,0,0,d),pc3Pt(w,len,0,d),pc3Pt(w,len,bb,d),pc3Pt(w,0,bb,d)].map(a=>P(a[0],a[1],a[2]));
+  s+=`<polygon class="pc3bb" points="${pts(b)}"/>`});
+ /* walls that are cut away: dashed outline only */
+ W4.forEach(w=>{if(vis[w])return;const len=pc3Len(w,d),q=[pc3Pt(w,0,0,d),pc3Pt(w,len,0,d),pc3Pt(w,len,d.H,d),pc3Pt(w,0,d.H,d)].map(a=>P(a[0],a[1],a[2]));s+=`<polygon class="pc3cut" points="${pts(q)}"/>`});
+ /* doors & windows on the visible walls */
+ let wi=0,di=0;const tag=[];
+ PCX.o.forEach(op=>{const nm=op.t==='d'?++di:++wi,rc=pcRect(op,d);if(!rc||!vis[op.wall])return;
+  const w=rc.wc/1200,h=rc.hc/1200,u=rc.u/1200,v=rc.v/1200,n=PC3N[op.wall],k=.8+.22*Math.max(0,(n[0]*Ld[0]+n[1]*Ld[1]+n[2]*Ld[2])/ll),
+   A=(a,b)=>{const p=pc3Pt(op.wall,a,b,d);return P(p[0],p[1],p[2])},q=[A(u,v),A(u+w,v),A(u+w,v+h),A(u,v+h)],sel=PCX.sel===op.id;
+  const r0=(PCX._ops||[]).find(x=>x.op===op),isBad=r0&&r0.st==='bad';
+  let g2=`<g class="pc3o ${op.t==='d'?'door':'win'}${sel?' sel':''}${isBad?' bad':''}" data-oi="${op.id}">`;
+  if(sel)g2+=`<polygon class="pc3h" points="${pts(q)}"/>`;
+  if(op.t==='d'){const m=Math.min(w,h)*.14,ins=[A(u+m,v+m*.6),A(u+w-m,v+m*.6),A(u+w-m,v+h-m),A(u+m,v+h-m)],hp=A(u+w*.8,v+h*.48);
+   g2+=`<polygon class="pc3d" points="${pts(q)}" style="fill:${pc3Sh('#8a5a35',k)}"/><polygon class="pc3di" points="${pts(ins)}" style="fill:${pc3Sh('#9b6740',k)}"/><circle class="pc3dk" cx="${hp[0].toFixed(1)}" cy="${hp[1].toFixed(1)}" r="${Math.max(1.4,cam.F*.2/hp[2]).toFixed(1)}"/>`}
+  else{const m=Math.min(w,h)*.08,gl=[A(u+m,v+m),A(u+w-m,v+m),A(u+w-m,v+h-m),A(u+m,v+h-m)],mv=[A(u+w/2,v+m),A(u+w/2,v+h-m)],mh=[A(u+m,v+h/2),A(u+w-m,v+h/2)];
+   g2+=`<polygon class="pc3fr" points="${pts(q)}"/><polygon class="pc3g" points="${pts(gl)}" style="fill:${pc3Sh('#a9cfe8',k)}"/><path class="pc3mu" d="M${mv[0][0].toFixed(1)} ${mv[0][1].toFixed(1)}L${mv[1][0].toFixed(1)} ${mv[1][1].toFixed(1)}M${mh[0][0].toFixed(1)} ${mh[0][1].toFixed(1)}L${mh[1][0].toFixed(1)} ${mh[1][1].toFixed(1)}"/>`}
+  g2+=`<polygon class="pc3hit" points="${pts(q)}"><title>${op.t==='d'?tr('Door','দরজা'):tr('Window','জানালা')} ${pcN(nm,0)}</title></polygon></g>`;s+=g2;
+  if(sel){const c=A(u+w/2,v+h);tag.push([c[0],c[1]-9,pcN(w,w%1?1:0)+' × '+pcN(h,h%1?1:0)+' '+tr('ft','ফুট')])}});
+ /* wall letters + room measurements */
+ const pill=(x,y,t,c)=>{const w=Math.max(18,t.length*6.3+12);x=Math.max(w/2+3,Math.min(PC3VW-w/2-3,x));y=Math.max(11,Math.min(PC3VH-11,y));return`<g class="pc3pl ${c||''}"><rect x="${(x-w/2).toFixed(1)}" y="${(y-8.5).toFixed(1)}" width="${w.toFixed(1)}" height="17" rx="8.5"/><text x="${x.toFixed(1)}" y="${(y+4).toFixed(1)}" text-anchor="middle">${t}</text></g>`};
+ const c0=P(d.L/2,0,d.W/2),push=(m,px)=>{const a=P(m[0],m[1],m[2]),dx=a[0]-c0[0],dy=a[1]-c0[1],l=Math.hypot(dx,dy)||1;return[a[0]+dx/l*px,a[1]+dy/l*px]};
+ W4.forEach(w=>{const m=pc3Pt(w,pc3Len(w,d)/2,0,d),q=push(m,vis[w]?-15:15);s+=pill(q[0],q[1],tr(PCWS[w][0],PCWS[w][1]),'wl')});
+ if(!d.pre){const nearL=!vis.N?'N':(!vis.S?'S':null),nearW=!vis.Wt?'Wt':(!vis.E?'E':null),cD=d.R.D;
+  if(nearL){const q=push(pc3Pt(nearL,d.L/2,0,d),36);s+=pill(q[0],q[1],pc3Fmt(cD.L.c),'dm')}
+  if(nearW){const q=push(pc3Pt(nearW,d.W/2,0,d),36);s+=pill(q[0],q[1],pc3Fmt(cD.W.c),'dm')}
+  const vw=vis.Wt?'Wt':(vis.E?'E':null),vn=vis.N?'N':(vis.S?'S':null);
+  if(vw&&vn){const x=vw==='Wt'?d.L:0,z=vn==='N'?d.W:0,q=P(x,d.H/2,z);s+=pill(q[0],q[1],pc3Fmt(cD.H.c),'dm')}}
+ tag.forEach(t=>{s+=pill(t[0],t[1],t[2],'tg')});
+ g.innerHTML=s;
+ const pv=document.getElementById('pc3p');if(pv)pv.hidden=!d.pre}
+function pc3Anim(toYaw,toPitch){const calm=matchMedia('(prefers-reduced-motion:reduce)').matches,dy=((toYaw-PCV.yaw)%360+540)%360-180,y0=PCV.yaw,p0=PCV.pitch,id=++PC3S.an;
+ if(calm){PCV.yaw=y0+dy;if(toPitch!=null)PCV.pitch=toPitch;pc3Req();return}
+ const t0=performance.now(),D=480,step=now=>{if(PC3S.an!==id)return;const k=Math.min(1,(now-t0)/D),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;PCV.yaw=y0+dy*e;if(toPitch!=null)PCV.pitch=p0+(toPitch-p0)*e;pc3Draw();if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+function pc3Reveal(w){const d=pc3Dims(),vis=pc3Vis(pc3Cam(d),d);if(vis[w])return;
+ const sy=Math.sin(PCV.yaw*Math.PI/180)>=0?1:-1,cy=Math.cos(PCV.yaw*Math.PI/180)>=0?1:-1;
+ pc3Anim(w==='N'?sy*35:w==='S'?sy*145:w==='Wt'?(cy>0?35:145):(cy>0?-35:-145))}
+function pc3Pointer(svg,e){const r=svg.getBoundingClientRect();return[(e.clientX-r.left)*PC3VW/r.width,(e.clientY-r.top)*PC3VH/r.height]}
+/* tries to put an opening on a wall at (ux,vy) feet; keeps it inside the wall and off other openings */
+function pcPlaceOp(op,wall,ux,vy,d){const r=pcRect(op,d);if(!r)return false;const w=r.wc/1200,h=r.hc/1200,len=pc3Len(wall,d);
+ ux=Math.max(0,Math.min(ux,len-w));vy=op.t==='d'?0:Math.max(0,Math.min(vy,d.H-h));
+ let ax=Math.round(ux*1200),ay=Math.round(vy*1200);
+ const others=PCX.o.filter(q=>q!==op&&q.wall===wall).map(q=>pcRect(q,d)).filter(Boolean),hit=(x,y)=>others.some(o=>pcHit(o,x,y,r.wc,r.hc));
+ if(hit(ax,ay)){if(wall!==op.wall)return false;if(!hit(ax,r.v))ay=r.v;else if(!hit(r.u,ay))ax=r.u;else return false}
+ const ch=wall!==op.wall||ax!==op.x||ay!==(op.t==='d'?0:op.y);op.wall=wall;op.x=ax;op.y=op.t==='d'?0:ay;return ch}
+/* first free spot on a wall for a new opening (1/100 inch), or null */
+function pcSpot(op,wall,d){const pw=pcParse(op.w,'op'),ph=pcParse(op.h,'op');if(pw.st!=='ok'||ph.st!=='ok')return 0;
+ const wc=pw.v*12,hc=ph.v*12,len=Math.round(pc3Len(wall,d)*1200),H=Math.round(d.H*1200);if(wc>len||hc>H)return null;
+ const v=op.t==='d'?0:Math.max(0,Math.min(op.y|0,H-hc)),others=PCX.o.filter(q=>q!==op&&q.wall===wall).map(q=>pcRect(q,d)).filter(Boolean),free=u=>others.every(o=>!pcHit(o,u,v,wc,hc));
+ const mid=Math.round((len-wc)/2/300)*300;if(free(mid))return mid;
+ for(let u=0;u<=len-wc;u+=300)if(free(u))return u;
+ return free(len-wc)?len-wc:null}
+function pcAddOp(t){if(PCX.o.length>=12)return;const d=pc3Dims(),op={id:PCX.nid++,t,wall:'N',w:t==='d'?'3':'4',h:t==='d'?'7':'4',x:0,y:t==='d'?0:3600},vis=pc3Vis(pc3Cam(d),d),
+ order=['N','Wt','S','E'].sort((a,b)=>(vis[b]?1:0)-(vis[a]?1:0));let placed=false;
+ for(const w of order){const x=pcSpot(op,w,d);if(x!==null){op.wall=w;op.x=x;placed=true;break}}
+ if(!placed){op.wall=order[0];op.x=0}
+ PCX.o.push(op);PCX.sel=op.id;return op}
+function pcOpsHTML(){if(!PCX.o.length)return`<p class="pcempty">${tr('No doors or windows added yet. Add them to deduct their area, or leave this empty.','এখনো কোনো দরজা বা জানালা যোগ করা হয়নি। এদের মাপ বাদ দিতে যোগ করুন, না চাইলে খালি রাখুন।')}</p>`;
+ const cnt={w:0,d:0};
+ return PCX.o.map(op=>{const n=++cnt[op.t],nm=(op.t==='d'?tr('Door','দরজা'):tr('Window','জানালা'))+' '+pcN(n,0),id=op.id,wl=tr('Wall','দেয়াল');
+  return`<div class="pco${PCX.sel===id?' on':''}" data-id="${id}" role="group" aria-label="${nm}"><button type="button" class="pcot" data-pcact="sel" data-id="${id}">${pcIc(op.t==='d'?'door':'win')}<b>${nm}</b></button>
+<select class="pcow" data-pcw="${id}" aria-label="${wl} — ${nm}">${['N','E','S','Wt'].map(w=>`<option value="${w}"${op.wall===w?' selected':''}>${tr(PCWN[w][0],PCWN[w][1])}</option>`).join('')}</select>
+<div class="pcwh"><label class="pcf pcs"><input data-pco="w" data-id="${id}" type="text" inputmode="decimal" autocomplete="off" maxlength="5" placeholder="0" value="${esc2(op.w)}" aria-label="${tr('Width','প্রস্থ')} (${tr('ft','ফুট')}) — ${nm}"><span>${tr('ft','ফুট')}</span></label><i class="pcx" aria-hidden="true">×</i><label class="pcf pcs"><input data-pco="h" data-id="${id}" type="text" inputmode="decimal" autocomplete="off" maxlength="5" placeholder="0" value="${esc2(op.h)}" aria-label="${tr('Height','উচ্চতা')} (${tr('ft','ফুট')}) — ${nm}"><span>${tr('ft','ফুট')}</span></label></div>
+<button type="button" class="pcrm" data-pcact="rm" data-id="${id}" aria-label="${tr('Remove','সরান')} ${nm}" title="${tr('Remove','সরান')}">${pcIc('x')}</button><div class="pce" id="pco-e-${id}"></div></div>`}).join('')}
+function pcColBtn(){const c=PCX.col,b=L==='bn';
+ return`<span class="pcdot${c?'':' none'}"${c?` style="background:${c.hex}"`:''}></span><span class="pccolt"><b>${tr('Wall colour','দেয়ালের রং')}</b><small>${c?tr(c.en,c.bn):tr('Optional — pick a shade to preview it on the walls','ঐচ্ছিক — দেয়ালে দেখতে একটি শেড বাছুন')}</small></span>${pcIc('chev')}`}
+function pcColPanel(){const F=window.__CCF||[],fam=F[PCX.fam]||F[0];if(!fam)return'';
+ return`<div class="pcfam" role="group" aria-label="${tr('Colour families','রঙের ধরন')}">${F.map((f,i)=>`<button type="button" class="pcchip${i===PCX.fam?' on':''}" data-pcact="fam" data-v="${i}" aria-pressed="${i===PCX.fam}">${tr(f[0],f[1])}</button>`).join('')}</div>
+<div class="pcsws" role="group" aria-label="${tr(fam[0],fam[1])}">${fam[2].map((s,i)=>{const on=PCX.col&&PCX.col.hex===s[2]&&PCX.col.en===s[0];return`<button type="button" class="pcsw1${on?' on':''}" data-pcact="sw" data-v="${i}" aria-pressed="${!!on}" aria-label="${tr(s[0],s[1])}" title="${tr(s[0],s[1])}"><span style="background:${s[2]}"></span></button>`}).join('')}</div>
+<div class="pccx"><span>${PCX.col?tr(PCX.col.en,PCX.col.bn):''}</span>${PCX.col?`<button type="button" class="pcg" data-pcact="colclear">${tr('Clear colour','রং সরান')}</button>`:''}</div>`}
+function pcBuild(){const b=L==='bn',sec=(en,bnt)=>b?en:bnt,bi=(en,bnt)=>b?en:bnt;
  const dim=(k,en,bnt)=>`<div class="pcd" role="group" aria-labelledby="pc-${k}-l"><div class="pcdl" id="pc-${k}-l"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcdf"><label class="pcf"><input id="pc-${k}-f" data-pc="${k}.f" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="next" maxlength="3" placeholder="0" value="${esc2(PCX[k].f)}" aria-label="${tr(en+' (feet)',bnt+' (ফুট)')}" aria-describedby="pc-${k}-e"><span>${tr('ft','ফুট')}</span></label><label class="pcf"><input id="pc-${k}-i" data-pc="${k}.i" type="text" inputmode="decimal" autocomplete="off" enterkeyhint="next" maxlength="5" placeholder="0" value="${esc2(PCX[k].i)}" aria-label="${tr(en+' (inches)',bnt+' (ইঞ্চি)')}" aria-describedby="pc-${k}-e"><span>${tr('in','ইঞ্চি')}</span></label></div><div class="pce" id="pc-${k}-e"></div></div>`;
  const row=(k,en,bnt,bar)=>`<div class="pcr"><div class="pcn"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcv" data-pcv="${k}">—</div>${bar?'<i class="pcb"></i>':''}</div>`;
- const bi=(en,bnt)=>b?en:bnt;
- return `<div class="w pc"><p class="note"><a href="#home">${tr('Home','হোম')}</a> / ${tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর')}</p>${head(['Smart tool','স্মার্ট টুল'],['Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['Enter your room size in feet and inches. The four walls, the ceiling and your total paint cost are calculated instantly as you type.','আপনার ঘরের মাপ ফুট ও ইঞ্চিতে লিখুন। লেখার সাথে সাথেই চার দেয়াল, সিলিং এবং মোট রঙের খরচ হিসাব হয়ে যাবে।'])}
+ const prow=(k,en,bnt,hid)=>`<div class="pcr"${hid?' data-pcrow="'+k+'" hidden':''}><div class="pcn"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcv" data-pcv="${k}">—</div></div>`;
+ const tab=(k,en,bnt,s1,s2)=>`<button type="button" role="tab" class="pctab" id="pc-tab-${k}" data-pcact="tab" data-v="${k}" aria-selected="${PCX.tab===k}" aria-controls="pc-res-${k}" tabindex="${PCX.tab===k?0:-1}"><b>${tr(en,bnt)}</b><small>${tr(s1,s2)}</small></button>`;
+ const t=PCX.pt;
+ return `<div class="w pc" data-tab="${PCX.tab}"><p class="note"><a href="#home">${tr('Home','হোম')}</a> / ${tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর')}</p>${head(['Smart tool','স্মার্ট টুল'],['Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['Enter your room size in feet and inches, add doors and windows, then choose Price for the painting cost or Paint for litres and tins. Everything is calculated instantly as you type.','আপনার ঘরের মাপ ফুট ও ইঞ্চিতে লিখুন, দরজা-জানালা যোগ করুন, তারপর রঙের খরচের জন্য “মূল্য” অথবা লিটার ও টিনের জন্য “রং” বেছে নিন। লেখার সাথে সাথেই হিসাব হয়ে যাবে।'])}
+<div class="pctabs" role="tablist" aria-label="${tr('Calculator option','ক্যালকুলেটরের অপশন')}">${tab('price','Price','মূল্য','Painting cost','রঙের খরচ')}${tab('paint','Paint','রং','Litres & tins','লিটার ও টিন')}</div>
 <div class="pcl"><div class="pcin">
-<div class="pcc"><div class="pcch"><div><h3>${tr('Room size','ঘরের মাপ')}</h3><small>${bi('Room size','ঘরের মাপ')} · ${bi('feet & inches','ফুট ও ইঞ্চি')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="example">${tr('Try an example','উদাহরণ দেখুন')}</button><button type="button" class="pcg" data-pcact="reset">${tr('Reset','মুছে ফেলুন')}</button></div></div>
-<svg class="pcsvg" viewBox="0 0 240 150" role="img" aria-label="${tr('Room with length, width and height','দৈর্ঘ্য, প্রস্থ ও উচ্চতাসহ ঘর')}"><path class="f1" d="M30 50h100v75H30z"/><path class="f2" d="M130 50l55-28v75l-55 28z"/><path class="f3" d="M30 50l55-28h100l-55 28z"/><text x="80" y="143" text-anchor="middle">${tr('Length','দৈর্ঘ্য')}</text><text x="17" y="88" text-anchor="middle" transform="rotate(-90 17 88)">${tr('Height','উচ্চতা')}</text><text x="190" y="116" text-anchor="start">${tr('Width','প্রস্থ')}</text></svg>
-${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্থ')}${dim('H','Height','উচ্চতা')}</div>
-<div class="pcc"><div class="pcd"><div class="pcdl" id="pc-p-l"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><label class="pcf pcp"><i>৳</i><input id="pc-p" data-pc="p" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="${tr('e.g. 7','যেমন ৭')}" value="${esc2(PCX.p)}" aria-label="${tr('Price per square foot in taka','প্রতি বর্গফুটের দাম (টাকা)')}" aria-describedby="pc-p-e"><span>/ ${tr('SFT','বর্গফুট')}</span></label><div class="pce" id="pc-p-e"></div><p class="note">${tr('Type the rate you want to use, in taka per square foot.','আপনার পছন্দমতো প্রতি বর্গফুটের দাম (টাকায়) লিখুন।')}</p></div></div>
+<div class="pcc pcvz"><div class="pcch"><div><h3>${tr('Room size','ঘরের মাপ')}</h3><small>${bi('Room size','ঘরের মাপ')} · ${bi('3D view','৩ডি ভিউ')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="example">${tr('Try an example','উদাহরণ দেখুন')}</button><button type="button" class="pcg" data-pcact="reset">${tr('Reset','মুছে ফেলুন')}</button></div></div>
+<div class="pcv3"><svg id="pc3d" class="pc3" viewBox="0 0 ${PC3VW} ${PC3VH}" tabindex="0" role="group" aria-label="${tr('3D room view. Drag to rotate. Arrow keys rotate the room, or move the selected door or window. Plus and minus zoom.','৩ডি রুম ভিউ। ঘোরাতে টানুন। তীর চিহ্নের কী দিয়ে ঘর ঘোরান বা নির্বাচিত দরজা-জানালা সরান। প্লাস ও মাইনাস দিয়ে জুম করুন।')}"><g id="pc3g"></g></svg>
+<p class="pcv3p" id="pc3p">${tr('Preview — enter your room size','প্রিভিউ — আপনার ঘরের মাপ দিন')}</p>
+<div class="pcv3c" role="toolbar" aria-label="${tr('3D view controls','৩ডি ভিউ নিয়ন্ত্রণ')}"><button type="button" data-pcact="view" data-v="rotl" aria-label="${tr('Rotate left','বামে ঘোরান')}" title="${tr('Rotate left','বামে ঘোরান')}">${pcIc('rl')}</button><button type="button" data-pcact="view" data-v="rotr" aria-label="${tr('Rotate right','ডানে ঘোরান')}" title="${tr('Rotate right','ডানে ঘোরান')}">${pcIc('rr')}</button><button type="button" data-pcact="view" data-v="up" aria-label="${tr('Look from higher','উপর থেকে দেখুন')}" title="${tr('Look from higher','উপর থেকে দেখুন')}">${pcIc('up')}</button><button type="button" data-pcact="view" data-v="down" aria-label="${tr('Look from lower','নিচু থেকে দেখুন')}" title="${tr('Look from lower','নিচু থেকে দেখুন')}">${pcIc('down')}</button><button type="button" data-pcact="view" data-v="zin" aria-label="${tr('Zoom in','জুম ইন')}" title="${tr('Zoom in','জুম ইন')}">${pcIc('plus')}</button><button type="button" data-pcact="view" data-v="zout" aria-label="${tr('Zoom out','জুম আউট')}" title="${tr('Zoom out','জুম আউট')}">${pcIc('minus')}</button><button type="button" data-pcact="view" data-v="reset" aria-label="${tr('Reset view','ভিউ রিসেট')}" title="${tr('Reset view','ভিউ রিসেট')}">${pcIc('rs')}</button></div></div>
+<p class="pcv3h">${tr('Drag to rotate the room. Drag a window or door to move it along the walls.','ঘর ঘোরাতে টানুন। দরজা বা জানালা টেনে দেয়ালে সরান।')}</p>
+<div class="pccolr"><button type="button" class="pccolb" id="pc-colb" data-pcact="colopen" aria-expanded="${PCX.colOpen}" aria-controls="pc-colp">${pcColBtn()}</button></div><div class="pccolp" id="pc-colp"${PCX.colOpen?'':' hidden'}>${PCX.colOpen?pcColPanel():''}</div>
+${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্থ')}${dim('H','Height','উচ্চতা')}
 <p class="note pcnote">${tr('North & South walls use the Length. East & West walls use the Width. Ceiling = Length × Width.','উত্তর ও দক্ষিণ দেয়ালে দৈর্ঘ্য, পূর্ব ও পশ্চিম দেয়ালে প্রস্থ ধরা হয়। সিলিং = দৈর্ঘ্য × প্রস্থ।')}</p></div>
-<div class="pcres"><div class="pcc pcrc"><div class="pcch"><div><h3>${tr('Final Result','চূড়ান্ত ফলাফল')}</h3><small>${bi('Final Result','চূড়ান্ত ফলাফল')}</small></div></div>
+<div class="pcc"><div class="pcch"><div><h3>${tr('Doors & windows','দরজা ও জানালা')}</h3><small>${bi('Doors & windows','দরজা ও জানালা')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="add" data-v="w"${PCX.o.length>=12?' disabled':''}>+ ${tr('Window','জানালা')}</button><button type="button" class="pcg" data-pcact="add" data-v="d"${PCX.o.length>=12?' disabled':''}>+ ${tr('Door','দরজা')}</button></div></div>
+<div class="pcops" id="pc-ops">${pcOpsHTML()}</div>
+<p class="note">${tr('Their area is taken off the walls, so you only pay for (and buy paint for) what is actually painted. Default sizes: window 4 × 4 ft, door 3 × 7 ft — change them to match yours.','এদের ক্ষেত্রফল দেয়াল থেকে বাদ যায়, ফলে যতটুকু আসলে রং হবে শুধু সেটুকুরই খরচ ও রং ধরা হয়। শুরুর মাপ: জানালা ৪ × ৪ ফুট, দরজা ৩ × ৭ ফুট — আপনারটার সাথে মিলিয়ে বদলে নিন।')}</p></div>
+<div class="pcc" data-pcp="price"><div class="pcd"><div class="pcdl" id="pc-p-l"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><label class="pcf pcp"><i>৳</i><input id="pc-p" data-pc="p" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="${tr('e.g. 7','যেমন ৭')}" value="${esc2(PCX.p)}" aria-label="${tr('Price per square foot in taka','প্রতি বর্গফুটের দাম (টাকা)')}" aria-describedby="pc-p-e"><span>/ ${tr('SFT','বর্গফুট')}</span></label><div class="pce" id="pc-p-e"></div><p class="note">${tr('Type the rate you want to use, in taka per square foot.','আপনার পছন্দমতো প্রতি বর্গফুটের দাম (টাকায়) লিখুন।')}</p></div></div>
+<div class="pcc" data-pcp="paint"><div class="pcch"><div><h3>${tr('Paint details','রঙের তথ্য')}</h3><small>${bi('Paint details','রঙের তথ্য')}</small></div></div>
+<div class="pcd pcfirst"><div class="pcdl"><b>${tr('Coats of paint','কোটের সংখ্যা')}</b><small>${tr('Usually 2 coats on repaint, 3 on new walls','সাধারণত রিপেইন্টে ২ কোট, নতুন দেয়ালে ৩ কোট')}</small></div><div class="pcst" role="group" aria-label="${tr('Coats of paint','কোটের সংখ্যা')}"><button type="button" data-pcact="coat" data-v="-1" aria-label="${tr('Fewer coats','কোট কমান')}">${pcIc('minus')}</button><output id="pc-coats" aria-live="polite">${pcN(t.coats,0)}</output><button type="button" data-pcact="coat" data-v="1" aria-label="${tr('More coats','কোট বাড়ান')}">${pcIc('plus')}</button></div></div>
+<div class="pcd"><div class="pcdl"><b>${tr('Paint type & coverage','রঙের ধরন ও কভারেজ')}</b><small>${tr('How far one litre goes, per coat','প্রতি কোটে এক লিটারে কতটা জায়গা হয়')}</small></div>
+<div class="pcchips" role="group" aria-label="${tr('Paint type','রঙের ধরন')}">${Object.keys(PCPRE).map(k=>`<button type="button" class="pcchip${t.pre===k?' on':''}" data-pcact="preset" data-v="${k}" aria-pressed="${t.pre===k}">${tr(PCPRE[k][0],PCPRE[k][1])} · ${pcN(+PCPRE[k][2],0)}</button>`).join('')}</div>
+<label class="pcf pcp pcnp"><input id="pc-cov" data-pcs="cov" type="text" inputmode="decimal" autocomplete="off" maxlength="6" value="${esc2(t.cov)}" aria-label="${tr('Coverage in square feet per litre per coat','প্রতি কোটে প্রতি লিটারে বর্গফুট কভারেজ')}" aria-describedby="pc-cov-e"><span>${tr('sq ft / L','বর্গফুট / লিটার')}</span></label><div class="pce" id="pc-cov-e"></div></div>
+<div class="pcd"><label class="pcsw"><input type="checkbox" data-pck="ceil"${t.ceil?' checked':''}><i aria-hidden="true"></i><span><b>${tr('Paint the ceiling too','সিলিংও রং করব')}</b><small>${tr('Adds Length × Width to the paint area','রঙের ক্ষেত্রফলে দৈর্ঘ্য × প্রস্থ যোগ হয়')}</small></span></label>
+<label class="pcsw"><input type="checkbox" data-pck="primer"${t.primer?' checked':''}><i aria-hidden="true"></i><span><b>${tr('Add a primer coat','প্রাইমার কোট যোগ করুন')}</b><small>${tr('Recommended on new or bare walls','নতুন বা খালি দেয়ালে করা ভালো')}</small></span></label>
+<div class="pcsub" id="pc-pcovw"${t.primer?'':' hidden'}><label class="pcf pcp pcnp"><input id="pc-pcov" data-pcs="pcov" type="text" inputmode="decimal" autocomplete="off" maxlength="6" value="${esc2(t.pcov)}" aria-label="${tr('Primer coverage in square feet per litre','প্রাইমারের প্রতি লিটারে বর্গফুট কভারেজ')}" aria-describedby="pc-pcov-e"><span>${tr('sq ft / L','বর্গফুট / লিটার')}</span></label><div class="pce" id="pc-pcov-e"></div></div></div>
+<p class="note">${tr('Coverage numbers are typical estimates (about 100–150 sq ft per litre per coat for emulsion). Check the figure on your paint tin and edit it if it is different.','কভারেজের সংখ্যাগুলো সাধারণ আনুমানিক মান (ইমালশনে প্রতি কোটে লিটারপ্রতি প্রায় ১০০–১৫০ বর্গফুট)। আপনার রঙের টিনে লেখা মান আলাদা হলে এখানে বদলে নিন।')}</p></div>
+</div>
+<div class="pcres">
+<div class="pcc pcrc" id="pc-res-price" data-pcp="price" role="tabpanel" aria-labelledby="pc-tab-price"><div class="pcch"><div><h3>${tr('Final Result','চূড়ান্ত ফলাফল')}</h3><small>${bi('Final Result','চূড়ান্ত ফলাফল')}</small></div></div>
 <div class="pcrl">${row('N','North Wall','উত্তর দেয়াল',1)}${row('S','South Wall','দক্ষিণ দেয়াল',1)}${row('E','East Wall','পূর্ব দেয়াল',1)}${row('Wt','West Wall','পশ্চিম দেয়াল',1)}${row('C','Ceiling','সিলিং',1)}</div>
+<div class="pcdedw" data-pcrow="ded" hidden><span>${tr('Doors & windows already deducted','দরজা-জানালা বাদ দেওয়া হয়েছে')}</span><b data-pcv="ded">—</b></div>
 <div class="pcsum"><div class="pcr tot"><div class="pcn"><b>${tr('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</b><small>${sec('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</small></div><div class="pcv" data-pcv="total">—</div></div>
 <div class="pcr"><div class="pcn"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><div class="pcv" data-pcv="price">—</div></div></div>
 <div class="pcgt"><div class="pcgl"><span>${tr('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</span><small>${sec('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</small></div><strong data-pcv="grand">—</strong></div>
 <p class="pch" id="pc-hint" aria-live="polite"></p>
-<p class="note">${tr('This is an estimate from the measurements you enter. Areas and amounts are rounded to 2 decimal places. Doors, windows and the floor are not deducted or included. The final price is confirmed in a written quotation after a site assessment.','এটি আপনার দেওয়া মাপের ভিত্তিতে একটি আনুমানিক হিসাব। ক্ষেত্রফল ও টাকার অঙ্ক দশমিকের পর ২ ঘর পর্যন্ত রাউন্ড করা হয়। দরজা-জানালা বাদ দেওয়া হয়নি এবং মেঝে ধরা হয়নি। সাইট মূল্যায়নের পর লিখিত কোটেশনে চূড়ান্ত মূল্য নিশ্চিত করা হয়।')}</p></div></div></div>
-<div class="pcbar" aria-hidden="true"><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b data-pcv="mtotal">—</b></div><div><small>${tr('Grand total','সর্বমোট')}</small><b data-pcv="mgrand">—</b></div></div>
+<p class="note">${tr('This is an estimate from the measurements you enter. Areas and amounts are rounded to 2 decimal places. Doors and windows are deducted only if you add them above. The floor is not included. The final price is confirmed in a written quotation after a site assessment.','এটি আপনার দেওয়া মাপের ভিত্তিতে একটি আনুমানিক হিসাব। ক্ষেত্রফল ও টাকার অঙ্ক দশমিকের পর ২ ঘর পর্যন্ত রাউন্ড করা হয়। দরজা-জানালা শুধু উপরে যোগ করলেই বাদ যায়। মেঝে ধরা হয়নি। সাইট মূল্যায়নের পর লিখিত কোটেশনে চূড়ান্ত মূল্য নিশ্চিত করা হয়।')}</p></div>
+<div class="pcc pcrc" id="pc-res-paint" data-pcp="paint" role="tabpanel" aria-labelledby="pc-tab-paint"><div class="pcch"><div><h3>${tr('Paint needed','রং কতটা লাগবে')}</h3><small>${bi('Paint needed','রং কতটা লাগবে')}</small></div></div>
+<div class="pcsum pcsum0"><div class="pcr"><div class="pcn"><b>${tr('Walls','দেয়াল')}</b><small>${tr('after doors & windows','দরজা-জানালা বাদে')}</small></div><div class="pcv" data-pcv="pwalls">—</div></div>
+<div class="pcr" data-pcrow="pceil" hidden><div class="pcn"><b>${tr('Ceiling','সিলিং')}</b></div><div class="pcv" data-pcv="pceil">—</div></div>
+<div class="pcr tot"><div class="pcn"><b>${tr('Paintable area','রং করার ক্ষেত্রফল')}</b><small>${sec('Paintable area','রং করার ক্ষেত্রফল')}</small></div><div class="pcv" data-pcv="parea">—</div></div></div>
+<div class="pcgt pcgt2"><div class="pcgl"><span>${tr('Paint needed','রং লাগবে')}</span><small data-pcv="pnote">—</small></div><strong data-pcv="plit">—</strong></div>
+<div class="pctinw" id="pc-tinw" hidden><div class="pctinh"><b>${tr('Tins to buy','কেনার টিন')}</b><small data-pcv="pbuy">—</small></div><div class="pctins" id="pc-tins"></div></div>
+<div class="pctinw pcprim" id="pc-primw" hidden><div class="pctinh"><b>${tr('Primer needed','প্রাইমার লাগবে')}</b><small data-pcv="pprim">—</small></div><div class="pctins" id="pc-ptins"></div></div>
+<div class="pcrcol" id="pc-rcol" hidden><span class="pcdot" id="pc-rcdot"></span><span><small>${tr('Chosen colour','বাছাই করা রং')}</small><b id="pc-rcn">—</b></span></div>
+<details class="pchow" id="pc-howw" hidden><summary>${tr('How this is worked out','হিসাবটা কীভাবে হলো')}</summary><ol id="pc-how"></ol></details>
+<p class="pch" id="pc-hint2" aria-live="polite"></p>
+<p class="note">${tr('This is an estimate. Real coverage depends on the wall surface, the paint and how it is applied, so a little more or less may be needed. Buying the rounded-up tins keeps a small reserve for touch-ups. A site visit confirms the final quantity.','এটি একটি আনুমানিক হিসাব। দেয়ালের সারফেস, রঙের ধরন ও কাজের পদ্ধতির উপর আসল কভারেজ নির্ভর করে, তাই একটু কম-বেশি লাগতে পারে। রাউন্ড-আপ করা টিন কিনলে টাচ-আপের জন্য সামান্য রং হাতে থাকে। সাইট ভিজিটে চূড়ান্ত পরিমাণ নিশ্চিত হয়।')}</p></div>
+</div></div>
+<div class="pcbar" data-pcp="price" aria-hidden="true"><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b data-pcv="mtotal">—</b></div><div><small>${tr('Grand total','সর্বমোট')}</small><b data-pcv="mgrand">—</b></div></div>
+<div class="pcbar" data-pcp="paint" aria-hidden="true"><div><small>${tr('Paint needed','রং লাগবে')}</small><b data-pcv="mlit">—</b></div><div><small>${tr('Tins','টিন')}</small><b data-pcv="mtins">—</b></div></div>
 <p class="pcct"><a class="btn" href="#request-quote">${tr('Get a Free Quote','বিনামূল্যে কোটেশন নিন')}</a> <a class="btn o" href="#book-appointment">${tr('Book an appointment','অ্যাপয়েন্টমেন্ট বুক করুন')}</a></p></div>`}
-function pcUpdate(root){root=root||document.querySelector('#pg-paint-calculator .pc');if(!root)return;
- const R=pcCalc(PCX),q=k=>root.querySelector('[data-pcv="'+k+'"]'),set=(k,v)=>{const e=q(k);if(e&&e.textContent!==v)e.textContent=v},hasBad=[];
+function pcTinsHTML(t){return PCPK.filter(p=>t[p[0]]).map(p=>`<span class="pctin"><b>${pcN(t[p[0]],0)} ×</b> ${pcN(p[1],0)} ${tr('L','লিটার')}</span>`).join('')}
+function pcUpdate(root){root=root||pcRoot();if(!root)return;
+ const R=pcCalc(PCX),P=pcPaint(PCX,R),q=k=>root.querySelector('[data-pcv="'+k+'"]'),set=(k,v)=>{const e=q(k);if(e&&e.textContent!==v)e.textContent=v},hasBad=[],er2=(m,k)=>PCERR[k]?tr(PCERR[k][0],PCERR[k][1]):'',show=(sel,on)=>{const e=root.querySelector(sel);if(e&&e.hidden===on)e.hidden=!on};
+ PCX._ops=R.ops;
  ['L','W','H'].forEach(k=>{const d=R.D[k],bad=d.st==='bad',er=root.querySelector('#pc-'+k+'-e');
   ['f','i'].forEach(x=>{const inp=root.querySelector('#pc-'+k+'-'+x),isBad=bad&&d.fld===x;inp.classList.toggle('bad',isBad);if(isBad)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid')});
-  er.textContent=bad?tr(PCERR[d.err][0],PCERR[d.err][1]):'';if(bad)hasBad.push(k)});
- const pe=root.querySelector('#pc-p-e'),pi=root.querySelector('#pc-p'),pb=R.pr.st==='bad';pi.classList.toggle('bad',pb);if(pb)pi.setAttribute('aria-invalid','true');else pi.removeAttribute('aria-invalid');pe.textContent=pb?tr(PCERR[R.pr.err][0],PCERR[R.pr.err][1]):'';if(pb)hasBad.push('p');
+  er.textContent=bad?er2(0,d.err):'';if(bad)hasBad.push(k)});
+ const pe=root.querySelector('#pc-p-e'),pi=root.querySelector('#pc-p'),pb=R.pr.st==='bad';pi.classList.toggle('bad',pb);if(pb)pi.setAttribute('aria-invalid','true');else pi.removeAttribute('aria-invalid');pe.textContent=pb?er2(0,R.pr.err):'';if(pb)hasBad.push('p');
+ /* doors & windows rows */
+ R.ops.forEach(r=>{const id=r.op.id,row=root.querySelector('.pco[data-id="'+id+'"]');if(!row)return;
+  const sl=row.querySelector('select');if(sl&&sl.value!==r.op.wall)sl.value=r.op.wall;
+  ['w','h'].forEach(x=>{const inp=row.querySelector('input[data-pco="'+x+'"]'),isBad=r.st==='bad'&&r.fld===x;inp.classList.toggle('bad',isBad);if(isBad)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid')});
+  const e=row.querySelector('.pce');e.textContent=r.st==='bad'?er2(0,r.err):'';row.classList.toggle('bad',r.st==='bad');row.classList.toggle('on',PCX.sel===id)});
+ /* price option */
  ['N','S','E','Wt','C'].forEach(k=>set(k,pcSft(R.parts[k])));
- root.querySelectorAll('.pcrl .pcr').forEach((r,ix)=>{const k=['N','S','E','Wt','C'][ix],bar=r.querySelector('.pcb');if(bar)bar.style.setProperty('--w',R.total&&R.parts[k]!==null?Math.min(100,R.parts[k]/R.total*100).toFixed(1)+'%':'0%')});
+ root.querySelectorAll('#pc-res-price .pcrl .pcr').forEach((r,ix)=>{const k=['N','S','E','Wt','C'][ix],bar=r.querySelector('.pcb');if(bar)bar.style.setProperty('--w',R.total&&R.parts[k]!==null?Math.min(100,R.parts[k]/R.total*100).toFixed(1)+'%':'0%')});
  set('total',pcSft(R.total));set('price',R.price===null?'—':pcTk(R.price)+' / '+tr('SFT','বর্গফুট'));set('grand',pcTk(R.grand));set('mtotal',pcSft(R.total));set('mgrand',pcTk(R.grand));
- const h=root.querySelector('#pc-hint');let m='';
- if(hasBad.length)m=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
+ const dedOn=R.ded>0&&!R.openBad&&R.total!==null;show('#pc-res-price [data-pcrow="ded"]',dedOn);if(dedOn)set('ded','− '+pcSft(R.ded));
+ let m='';
+ if(hasBad.length||R.openBad)m=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
  else if(R.total===null)m=tr('Enter length, width and height to see the full area.','পুরো ক্ষেত্রফল দেখতে দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিন।');
  else if(R.grand===null)m=tr('Enter the price per SFT to see the total amount.','মোট টাকা দেখতে প্রতি বর্গফুটের দাম দিন।');
- h.textContent=m;root.classList.toggle('pcready',R.grand!==null)}
-function pcInit(){const root=document.querySelector('#pg-paint-calculator .pc');if(!root)return;
- root.addEventListener('input',e=>{const t=e.target,k=t&&t.dataset&&t.dataset.pc;if(!k)return;if(k==='p')PCX.p=t.value;else{const a=k.split('.');PCX[a[0]][a[1]]=t.value}pcUpdate(root)});
- root.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-pcact]');if(!a)return;
-  const set=(k,x,v)=>{PCX[k][x]=v;root.querySelector('#pc-'+k+'-'+x).value=v};
-  if(a.dataset.pcact==='reset'){['L','W','H'].forEach(k=>{set(k,'f','');set(k,'i','')});PCX.p='';root.querySelector('#pc-p').value='';const f=root.querySelector('#pc-L-f');if(f)f.focus()}
-  else{set('L','f','10');set('L','i','');set('W','f','10');set('W','i','');set('H','f','7');set('H','i','6');PCX.p='7';root.querySelector('#pc-p').value='7'}
-  pcUpdate(root)});
- pcUpdate(root)}
+ root.querySelector('#pc-hint').textContent=m;root.classList.toggle('pcready',R.grand!==null);
+ /* paint option */
+ const cv=root.querySelector('#pc-cov'),cb=P.cv.st!=='ok';cv.classList.toggle('bad',cb);if(cb)cv.setAttribute('aria-invalid','true');else cv.removeAttribute('aria-invalid');root.querySelector('#pc-cov-e').textContent=cb?er2(0,P.cv.st==='empty'?'reqc':P.cv.err):'';
+ const pc=root.querySelector('#pc-pcov'),pbad=PCX.pt.primer&&P.pv.st!=='ok';pc.classList.toggle('bad',pbad);if(pbad)pc.setAttribute('aria-invalid','true');else pc.removeAttribute('aria-invalid');root.querySelector('#pc-pcov-e').textContent=pbad?er2(0,P.pv.st==='empty'?'reqc':P.pv.err):'';
+ const ok=P.st==='ok',tw=root.querySelector('#pc-tinw'),pw=root.querySelector('#pc-primw');
+ set('pwalls',ok?pcSft(P.walls):'—');set('parea',ok?pcSft(P.area):'—');show('#pc-res-paint [data-pcrow="pceil"]',ok&&P.ceil!==null);if(ok&&P.ceil!==null)set('pceil',pcSft(P.ceil));
+ set('plit',ok?pcLt(P.lh):'—');set('mlit',ok?pcLt(P.lh):'—');set('mtins',ok?pcTn(P.tins.tins+(P.ptins?P.ptins.tins:0)):'—');
+ set('pnote',ok?tr(`${pcN(P.coats,0)} ${P.coats===1?'coat':'coats'} · incl. ${pcN(P.waste,0)}% wastage`,`${pcN(P.coats,0)} কোট · ${pcN(P.waste,0)}% অপচয় সহ`):tr('Including 10% wastage','১০% অপচয় সহ'));
+ show('#pc-tinw',ok);show('#pc-primw',ok&&!!P.ptins);
+ if(ok){root.querySelector('#pc-tins').innerHTML=pcTinsHTML(P.tins);
+  set('pbuy',tr('Total ','মোট ')+pcLt(P.boughtH)+(P.extraH>0?tr(' · '+pcLt(P.extraH)+' spare',' · '+pcLt(P.extraH)+' বাড়তি'):''));
+  if(P.ptins){root.querySelector('#pc-ptins').innerHTML=pcTinsHTML(P.ptins);set('pprim',tr('About ','প্রায় ')+pcLt(P.plh)+' · '+tr('total ','মোট ')+pcLt(P.pboughtH))}}
+ const rc=root.querySelector('#pc-rcol');rc.hidden=!PCX.col;if(PCX.col){root.querySelector('#pc-rcdot').style.background=PCX.col.hex;root.querySelector('#pc-rcn').textContent=tr(PCX.col.en,PCX.col.bn)}
+ const hw=root.querySelector('#pc-howw');hw.hidden=!ok;
+ if(ok){const f1=h=>pcN(h/100,2),li=a=>'<li>'+a+'</li>',rows=[];
+  rows.push(li(tr(`Paintable area = walls ${pcSft(P.walls)}`+(P.ceil!==null?` + ceiling ${pcSft(P.ceil)}`:'')+` = <b>${pcSft(P.area)}</b>`+(R.ded>0?` (doors & windows ${pcSft(R.ded)} already taken off)`:''),`রং করার ক্ষেত্রফল = দেয়াল ${pcSft(P.walls)}`+(P.ceil!==null?` + সিলিং ${pcSft(P.ceil)}`:'')+` = <b>${pcSft(P.area)}</b>`+(R.ded>0?` (দরজা-জানালা ${pcSft(R.ded)} আগেই বাদ)`:''))));
+  rows.push(li(tr(`Paint = area × ${pcN(P.coats,0)} coat${P.coats===1?'':'s'} ÷ ${pcN(P.cv.v/100,P.cv.v%100?2:0)} sq ft per litre = ${pcLt(P.bh)}`,`রং = ক্ষেত্রফল × ${pcN(P.coats,0)} কোট ÷ ${pcN(P.cv.v/100,P.cv.v%100?2:0)} বর্গফুট/লিটার = ${pcLt(P.bh)}`)));
+  rows.push(li(tr(`Add ${pcN(P.waste,0)}% for wastage and spills = <b>${pcLt(P.lh)}</b> (rounded up)`,`অপচয় ও পড়ে যাওয়ার জন্য ${pcN(P.waste,0)}% যোগ = <b>${pcLt(P.lh)}</b> (রাউন্ড-আপ)`)));
+  rows.push(li(tr('Tins are picked from the common 18.2 L, 9.1 L, 3.64 L and 0.91 L packs, so you buy few tins with little left over.','প্রচলিত ১৮.২, ৯.১, ৩.৬৪ ও ০.৯১ লিটারের প্যাক থেকে টিন বাছা হয়, যাতে কম টিন কিনেও বাড়তি রং কম থাকে।')));
+  if(P.ptins)rows.push(li(tr(`Primer = area × 1 coat ÷ ${pcN(P.pv.v/100,P.pv.v%100?2:0)} sq ft per litre, plus ${pcN(P.waste,0)}% = ${pcLt(P.plh)}`,`প্রাইমার = ক্ষেত্রফল × ১ কোট ÷ ${pcN(P.pv.v/100,P.pv.v%100?2:0)} বর্গফুট/লিটার, সাথে ${pcN(P.waste,0)}% = ${pcLt(P.plh)}`)));
+  const ol=root.querySelector('#pc-how'),h=rows.join('');if(ol.innerHTML!==h)ol.innerHTML=h}
+ let m2='';
+ if(hasBad.length||R.openBad||P.st==='badcov'||P.st==='badpcov')m2=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
+ else if(R.total===null)m2=tr('Enter length, width and height to see how much paint you need.','কত রং লাগবে দেখতে দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিন।');
+ root.querySelector('#pc-hint2').textContent=m2;
+ pc3Req()}
+function pcSyncSel(root){root=root||pcRoot();if(!root)return;root.querySelectorAll('.pco').forEach(r=>r.classList.toggle('on',+r.dataset.id===PCX.sel));pc3Req()}
+function pcSelect(id,reveal){PCX.sel=id;pcSyncSel();if(reveal){const op=PCX.o.find(q=>q.id===id);if(op)pc3Reveal(op.wall)}}
+function pcRemoveOp(id){PCX.o=PCX.o.filter(q=>q.id!==id);if(PCX.sel===id)PCX.sel=0}
+function pcRenderOps(root){const e=root.querySelector('#pc-ops');if(e)e.innerHTML=pcOpsHTML();root.querySelectorAll('[data-pcact=add]').forEach(b=>{b.disabled=PCX.o.length>=12})}
+function pcRenderCol(root){const b=root.querySelector('#pc-colb'),p=root.querySelector('#pc-colp');if(b){b.innerHTML=pcColBtn();b.setAttribute('aria-expanded',PCX.colOpen)}if(p){p.hidden=!PCX.colOpen;p.innerHTML=PCX.colOpen?pcColPanel():''}}
+function pcRenderPaint(root){const t=PCX.pt;root.querySelector('#pc-coats').textContent=pcN(t.coats,0);
+ root.querySelectorAll('[data-pcact="preset"]').forEach(b=>{const on=b.dataset.v===t.pre;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+ const c=root.querySelector('#pc-cov');if(c.value!==t.cov)c.value=t.cov;const pc=root.querySelector('#pc-pcov');if(pc.value!==t.pcov)pc.value=t.pcov;
+ root.querySelector('#pc-pcovw').hidden=!t.primer;
+ root.querySelectorAll('[data-pck]').forEach(i=>{i.checked=!!t[i.dataset.pck]})}
+function pc3Bind(root){const svg=root.querySelector('#pc3d');if(!svg)return;
+ const S=PC3S,rot=(dx,dy)=>{PCV.yaw-=dx*.45;PCV.pitch=Math.max(6,Math.min(88,PCV.pitch+dy*.35));pc3Req()};
+ svg.addEventListener('touchstart',e=>{if(e.target.closest&&e.target.closest('.pc3o.sel'))e.preventDefault()},{passive:false});
+ svg.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;
+  S.pts.set(e.pointerId,[e.clientX,e.clientY]);try{svg.setPointerCapture(e.pointerId);svg.focus({preventScroll:true})}catch(_){}
+  if(S.pts.size===2){const a=[...S.pts.values()];S.an++;S.drag={k:'pinch',d0:Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])||1,z0:PCV.zoom};return}
+  if(S.pts.size>2)return;S.an++;
+  const og=e.target.closest&&e.target.closest('.pc3o');
+  if(og){const id=+og.dataset.oi,was=PCX.sel===id;pcSelect(id,false);
+   if(e.pointerType!=='touch'||was){const op=PCX.o.find(q=>q.id===id),d=S.d||pc3Dims(),rc=op&&pcRect(op,d);
+    if(rc){const cam=pc3Cam(d),vis=pc3Vis(cam,d),p=pc3Pointer(svg,e),h=pc3Hit(p[0],p[1],cam,d,vis,op.wall);
+     S.drag={k:'op',id,ou:h?h.u-rc.u/1200:rc.wc/2400,ov:h?h.v-rc.v/1200:rc.hc/2400,id2:e.pointerId};svg.classList.add('grab');return}}}
+  S.drag={k:'orbit',x:e.clientX,y:e.clientY,moved:0,tap:!og}});
+ svg.addEventListener('pointermove',e=>{const g=S.drag;if(!g||!S.pts.has(e.pointerId))return;
+  if(g.k==='pinch'){S.pts.set(e.pointerId,[e.clientX,e.clientY]);if(S.pts.size<2)return;const a=[...S.pts.values()],dd=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])||1;PCV.zoom=Math.max(.6,Math.min(2.6,g.z0*dd/g.d0));pc3Req();return}
+  S.pts.set(e.pointerId,[e.clientX,e.clientY]);
+  if(g.k==='orbit'){const dx=e.clientX-g.x,dy=e.clientY-g.y;g.x=e.clientX;g.y=e.clientY;g.moved+=Math.abs(dx)+Math.abs(dy);rot(dx,dy);return}
+  if(g.k==='op'){const op=PCX.o.find(q=>q.id===g.id);if(!op)return;const d=S.d||pc3Dims(),rc=pcRect(op,d);if(!rc)return;
+   const cam=pc3Cam(d),vis=pc3Vis(cam,d),p=pc3Pointer(svg,e),h=pc3Hit(p[0],p[1],cam,d,vis,op.wall);if(!h)return;
+   let ux,vy;if(h.w===op.wall){ux=h.u-g.ou;vy=h.v-g.ov}else{ux=h.u-rc.wc/2400;vy=h.v-rc.hc/2400;g.ou=rc.wc/2400;g.ov=rc.hc/2400}
+   if(pcPlaceOp(op,h.w,ux,vy,d))pcUpdate(root)}});
+ const end=e=>{S.pts.delete(e.pointerId);const g=S.drag;
+  if(g&&g.k==='pinch'){if(S.pts.size<2)S.drag=null;return}
+  if(g&&g.k==='orbit'&&g.tap&&g.moved<5&&e.type==='pointerup'&&PCX.sel){PCX.sel=0;pcSyncSel(root)}
+  S.drag=null;svg.classList.remove('grab')};
+ svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);svg.addEventListener('lostpointercapture',e=>{if(S.pts.has(e.pointerId)){S.pts.delete(e.pointerId);S.drag=null;svg.classList.remove('grab')}});
+ svg.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();PCV.zoom=Math.max(.6,Math.min(2.6,PCV.zoom*Math.exp(-e.deltaY*.01)));pc3Req()},{passive:false});
+ svg.addEventListener('keydown',e=>{const k=e.key,op=PCX.sel&&PCX.o.find(q=>q.id===PCX.sel);
+  if(k==='+'||k==='='){PCV.zoom=Math.min(2.6,PCV.zoom*1.15);pc3Req();e.preventDefault();return}
+  if(k==='-'||k==='_'){PCV.zoom=Math.max(.6,PCV.zoom/1.15);pc3Req();e.preventDefault();return}
+  if(k==='0'||k==='Home'){PCV.yaw=35;PCV.pitch=30;PCV.zoom=1;pc3Req();e.preventDefault();return}
+  if(k==='Escape'&&PCX.sel){PCX.sel=0;pcSyncSel(root);e.preventDefault();return}
+  if((k==='Delete'||k==='Backspace')&&op){pcRemoveOp(op.id);pcRenderOps(root);pcUpdate(root);e.preventDefault();return}
+  if(!/^Arrow/.test(k))return;e.preventDefault();
+  if(op){const d=S.d||pc3Dims(),rc=pcRect(op,d);if(!rc)return;const cam=pc3Cam(d),a=pc3Pt(op.wall,rc.u/1200,rc.v/1200,d),b=pc3Pt(op.wall,rc.u/1200+1,rc.v/1200,d),sg=cam.p(b[0],b[1],b[2])[0]>=cam.p(a[0],a[1],a[2])[0]?1:-1,st=e.shiftKey?2:.5;
+   let du=0,dv=0;if(k==='ArrowRight')du=sg*st;else if(k==='ArrowLeft')du=-sg*st;else if(k==='ArrowUp')dv=st;else dv=-st;
+   if(pcPlaceOp(op,op.wall,rc.u/1200+du,rc.v/1200+dv,d))pcUpdate(root);return}
+  if(k==='ArrowLeft')PCV.yaw+=8;else if(k==='ArrowRight')PCV.yaw-=8;else if(k==='ArrowUp')PCV.pitch=Math.min(88,PCV.pitch+5);else PCV.pitch=Math.max(6,PCV.pitch-5);pc3Req()})}
+function pcInit(){const root=pcRoot();if(!root)return;
+ root.addEventListener('input',e=>{const t=e.target,d=t&&t.dataset;if(!d)return;
+  if(d.pc){const k=d.pc;if(k==='p')PCX.p=t.value;else{const a=k.split('.');PCX[a[0]][a[1]]=t.value}pcUpdate(root)}
+  else if(d.pco){const op=PCX.o.find(q=>q.id===+d.id);if(op){op[d.pco]=t.value;pcUpdate(root)}}
+  else if(d.pcs){PCX.pt[d.pcs]=t.value;if(d.pcs==='cov'){const m=Object.keys(PCPRE).find(k=>PCPRE[k][2]===pcNorm(t.value));PCX.pt.pre=m||'cus';pcRenderPaint(root)}pcUpdate(root)}});
+ root.addEventListener('change',e=>{const t=e.target,d=t&&t.dataset;if(!d)return;
+  if(d.pcw){const op=PCX.o.find(q=>q.id===+d.pcw);if(op){const dm=pc3Dims(),x=pcSpot(op,t.value,dm);op.wall=t.value;op.x=x===null?0:x;pcUpdate(root);pc3Reveal(op.wall)}}
+  else if(d.pck){PCX.pt[d.pck]=t.checked;pcRenderPaint(root);pcUpdate(root)}});
+ root.addEventListener('focusin',e=>{const r=e.target.closest&&e.target.closest('.pco');if(r&&+r.dataset.id!==PCX.sel)pcSelect(+r.dataset.id,false)});
+ root.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-pcact]');if(!a)return;const act=a.dataset.pcact,v=a.dataset.v,id=+a.dataset.id;
+  const set=(k,x,val)=>{PCX[k][x]=val;root.querySelector('#pc-'+k+'-'+x).value=val};
+  if(act==='tab'){PCX.tab=v;root.dataset.tab=v;root.querySelectorAll('.pctab').forEach(b=>{const on=b.dataset.v===v;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});return}
+  if(act==='reset'){['L','W','H'].forEach(k=>{set(k,'f','');set(k,'i','')});PCX.p='';root.querySelector('#pc-p').value='';PCX.o=[];PCX.sel=0;PCX.pt={coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120'};PCX.col=null;PCX.colOpen=false;PCV.yaw=35;PCV.pitch=30;PCV.zoom=1;pcRenderOps(root);pcRenderPaint(root);pcRenderCol(root);const f=root.querySelector('#pc-L-f');if(f)f.focus();pcUpdate(root);return}
+  if(act==='example'){set('L','f','10');set('L','i','');set('W','f','10');set('W','i','');set('H','f','7');set('H','i','6');PCX.p='7';root.querySelector('#pc-p').value='7';pcUpdate(root);return}
+  if(act==='add'){const op=pcAddOp(v);if(op){pcRenderOps(root);pcUpdate(root);pc3Reveal(op.wall)}return}
+  if(act==='rm'){pcRemoveOp(id);pcRenderOps(root);pcUpdate(root);return}
+  if(act==='sel'){pcSelect(id,true);return}
+  if(act==='view'){const S=PCV;
+   if(v==='rotl')pc3Anim(S.yaw-20);else if(v==='rotr')pc3Anim(S.yaw+20);
+   else if(v==='up'){S.pitch=Math.min(88,S.pitch+8);pc3Req()}else if(v==='down'){S.pitch=Math.max(6,S.pitch-8);pc3Req()}
+   else if(v==='zin'){S.zoom=Math.min(2.6,S.zoom*1.2);pc3Req()}else if(v==='zout'){S.zoom=Math.max(.6,S.zoom/1.2);pc3Req()}
+   else{S.zoom=1;S.pitch=30;pc3Anim(35,30)}return}
+  if(act==='coat'){PCX.pt.coats=Math.max(1,Math.min(4,PCX.pt.coats+(+v)));pcRenderPaint(root);pcUpdate(root);return}
+  if(act==='preset'){PCX.pt.pre=v;PCX.pt.cov=PCPRE[v][2];pcRenderPaint(root);pcUpdate(root);return}
+  if(act==='colopen'){PCX.colOpen=!PCX.colOpen;pcRenderCol(root);return}
+  if(act==='fam'){PCX.fam=+v;pcRenderCol(root);return}
+  if(act==='sw'){const s=(window.__CCF||[])[PCX.fam][2][+v];PCX.col={hex:s[2],en:s[0],bn:s[1]};pcRenderCol(root);pcUpdate(root);return}
+  if(act==='colclear'){PCX.col=null;pcRenderCol(root);pcUpdate(root)}});
+ root.querySelector('.pctabs').addEventListener('keydown',e=>{const k=e.key;if(!/^(ArrowLeft|ArrowRight|Home|End)$/.test(k))return;e.preventDefault();const tabs=[...root.querySelectorAll('.pctab')],i=tabs.findIndex(x=>x.getAttribute('aria-selected')==='true'),n=k==='Home'?0:k==='End'?tabs.length-1:(i+(k==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[n].click();tabs[n].focus()});
+ pc3Bind(root);pcUpdate(root);pc3Draw()}
+window.PC3API={PCV,pc3Dims,pc3Cam,pc3Vis,pc3Draw};
 function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
 function build(h){const s=$('#pg-'+h);if(!s)return;let x='';
 if(['book-appointment','complaint','ask-question'].includes(h)){const d=FORMS(h);x=`<div class="w">${head(['Support','সহায়তা'],d.title,d.intro)}${formHTML(h)}</div>`}
@@ -2405,7 +2857,7 @@ addEventListener('hashchange',amClose);
 document.addEventListener('click',e=>{if(e.target.closest('.lang button'))amClose()},true);
 addEventListener('resize',()=>{});
 /* ---------- search */
-const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#paint-calculator','Paint calculator cost estimate price per sft square feet area wall ceiling feet inch rate budget','পেইন্ট ক্যালকুলেটর হিসাব খরচ দাম বর্গফুট এসএফটি ক্ষেত্রফল দেয়াল সিলিং ফুট ইঞ্চি বাজেট রেট'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
+const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#paint-calculator','Paint calculator cost estimate price per sft square feet area wall ceiling feet inch rate budget 3D room visualizer window door litre tin paint quantity coats primer','পেইন্ট ক্যালকুলেটর হিসাব খরচ দাম বর্গফুট এসএফটি ক্ষেত্রফল দেয়াল সিলিং ফুট ইঞ্চি বাজেট রেট ৩ডি রুম জানালা দরজা লিটার টিন রং কতটা কোট প্রাইমার'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
 function index(){const out=[];NAV.forEach(n=>{const k=PG2.find(p=>p[0]===n[0]);out.push({t:tr(n[2],n[3]),h:n[0],i:n[1],k:(k?k[1]+' '+k[2]:'')+' '+n[2]+' '+n[3]})});
 const q=PG2.find(p=>p[0]==='#request-quote');out.push({t:tr('Free quote','বিনামূল্যে কোটেশন'),h:'#request-quote',i:'bill',k:q[1]+' '+q[2]});
 SV.forEach((s,k)=>out.push({t:tr(s[1],s[2]),h:'#'+['residential-painting','commercial-painting','interior-painting','exterior-painting','full-home-painting','repainting'][k],i:'g',k:s[1]+' '+s[2]+' '+s[3]+' '+s[4]}));
