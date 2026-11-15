@@ -468,13 +468,6 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 /* ---- options (Price | Paint) ---- */
 .pc [hidden]{display:none!important}
 .pc[data-tab=price] [data-pcp=paint],.pc[data-tab=paint] [data-pcp=price]{display:none}
-.pc .pctabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-width:520px;margin-top:22px;padding:6px;border-radius:18px;background:color-mix(in srgb,var(--tx) 7%,transparent)}
-.pc .pctab{display:grid;gap:2px;justify-items:center;padding:12px 14px;border:0;border-radius:13px;background:transparent;color:var(--tx);font:inherit;text-align:center;cursor:pointer;transition:background .2s,color .2s}
-.pc .pctab b{font-size:17px;font-weight:700;line-height:1.2}
-.pc .pctab small{font-size:12px;font-weight:500;opacity:.72;line-height:1.2}
-.pc .pctab:hover{background:color-mix(in srgb,var(--tx) 8%,transparent)}
-.pc .pctab[aria-selected=true]{background:var(--tx);color:var(--bg)}
-.pc .pctab:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
 /* ---- 3D room ---- */
 .pc .pcv3{position:relative;border-radius:16px;overflow:hidden;border:1px solid color-mix(in srgb,var(--tx) 10%,transparent);background:radial-gradient(120% 90% at 50% 0%,color-mix(in srgb,var(--tx) 3%,var(--card)),color-mix(in srgb,var(--tx) 9%,var(--card)))}
 .pc .pc3{display:block;width:100%;height:auto;aspect-ratio:4/3;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;outline:none;font-family:inherit}
@@ -604,14 +597,12 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
  .pc .pcf input{height:50px;font-size:18px;padding-right:54px}
  .pc .pcp input{padding-left:36px}
  .pc .pcgt{padding:16px}
- .pc .pctab{padding:10px 8px}
- .pc .pctab b{font-size:16px}
  .pc .pco{padding:10px}
  .pc .pcsub{margin-left:0}
  .pc .pcv3c{gap:5px;padding:8px 6px 10px;flex-wrap:nowrap}
  .pc .pcv3c button{width:32px;height:32px;flex:0 0 auto}
 }
-@media(prefers-reduced-motion:reduce){.pc .pcb::after,.pc .pcf input,.pc .pcg,.pc .pctab,.pc .pcsw i,.pc .pcsw i::after,.pc .pc3w,.pc .pccolb .pci,.pc .pcsw1{transition:none}}
+@media(prefers-reduced-motion:reduce){.pc .pcb::after,.pc .pcf input,.pc .pcg,.pc .pcsw i,.pc .pcsw i::after,.pc .pc3w,.pc .pccolb .pci,.pc .pcsw1{transition:none}}
 .pc .pcotx{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.2}
 .pc .pcoa{font-size:12.5px;font-weight:600;color:var(--mu);font-variant-numeric:tabular-nums}
 .pc .pcosum{margin-top:12px;padding:11px 14px;border-radius:14px;border:1px solid var(--bd);background:var(--bg);display:grid;gap:6px}
@@ -650,36 +641,21 @@ body.am #am .ami{opacity:1;transform:none;transition:opacity .5s ease calc(.12s 
 .pc .pcrmtot small{display:block;font-size:11.5px;opacity:.72;line-height:1.25}
 .pc .pcrmtot b{display:block;margin-top:2px;font-size:17px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .pc .pcrmo{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.pc .pcgp{background:var(--tx);color:var(--bg);border-color:var(--tx)}
-.pc .pcgp:hover{opacity:.88}
 .pc .pcg:disabled{opacity:.4;cursor:not-allowed}
 .pc .pcgd{margin-left:auto;color:var(--pce);border-color:color-mix(in srgb,var(--pce) 40%,transparent)}
 .pc .pcgd.warn{background:var(--pce);color:#fff;border-color:var(--pce)}
-.pc .pcpco{margin-top:14px}
-.pc .pcpco .pcr{border-bottom:0}
 @media(max-width:480px){.pc .pcgd{margin-left:0}.pc .pcrma .btn{flex:1 1 auto;text-align:center}}
-/* ---- printable quotation (shown only while printing) ---- */
-#pcquote{display:none}
-@page{margin:14mm}
-@media print{
- body.pcprint>*:not(#pcquote){display:none!important}
- body.pcprint{background:#fff!important;color:#111!important}
- body.pcprint #pcquote{display:block!important;position:static;max-width:none;margin:0;padding:0;background:#fff;color:#111;font:13px/1.5 system-ui,-apple-system,"Segoe UI","Noto Sans Bengali","Noto Sans",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
- #pcquote *{box-sizing:border-box;letter-spacing:normal;text-transform:none;text-shadow:none;animation:none;transition:none}
- #pcquote .qh{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:0 0 12px;margin:0 0 6px;border-bottom:2px solid #111;position:static;background:none;box-shadow:none}
- #pcquote .qb{display:block;font-size:26px;line-height:1.15;font-weight:800;color:#111}
- #pcquote .qd{text-align:right}
- #pcquote .qd b{font-size:16px;color:#111}
- #pcquote .qk{margin:20px 0 6px;font-size:15px;font-weight:800;color:#111}
- #pcquote table{width:100%;border-collapse:collapse;font-size:12.5px;background:none;box-shadow:none;border-radius:0}
- #pcquote tr{page-break-inside:avoid}
- #pcquote th,#pcquote td{border:1px solid #b8b8b8;padding:6px 8px;text-align:left;vertical-align:top;color:#111;font-size:12.5px;line-height:1.45;font-weight:400;background:none;white-space:normal}
- #pcquote th{background:#eceae6;font-weight:700}
- #pcquote .qn{text-align:right}
- #pcquote .qt td{font-weight:800;background:#f4f2ee}
- #pcquote .qs{display:block;font-size:11.5px;line-height:1.5;color:#444;margin:6px 0 0}
- #pcquote .qh .qs{margin:3px 0 0}
-}
+/* ---- sign-in gate: the paint result is shown to signed-in visitors only ---- */
+.pc .pclock{text-align:center;padding:30px 22px}
+.pc .pclk{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:color-mix(in srgb,var(--tx) 8%,transparent);color:var(--tx)}
+.pc .pclk svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pc .pclock h3{margin:0 0 8px;font-size:20px;line-height:1.25}
+.pc .pclock p{margin:0 auto;max-width:36ch;color:var(--mu);font-size:14.5px;line-height:1.55;text-align:center}
+.pc .pclock p.note{margin-top:14px;font-size:12.5px}
+.pc .pclb{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+.pc[data-auth=in] #pc-lock{display:none}
+.pc:not([data-auth=in]) #pc-res-paint,.pc:not([data-auth=in]) #pc-rooms,.pc:not([data-auth=in]) .pcbar{display:none!important}
+.pc[data-auth=wait] .pclb{visibility:hidden}
 </style><style id="ptcss">.ptg{display:flex;flex-wrap:wrap;gap:8px;font-weight:400}.ptc{display:block;position:relative;gap:0;font-size:14px;font-weight:600}.ptc input{position:absolute;opacity:0;width:0;height:0;padding:0;margin:0;border:0}.ptc span{display:inline-block;padding:8px 15px;border:1px solid var(--bd);border-radius:99px;background:var(--card);color:var(--tx);cursor:pointer;transition:.2s;user-select:none}.ptc span:hover{border-color:#8A8A86}.ptc input:checked+span{background:linear-gradient(135deg,#BEBEBA,#5A5A57);color:#111;border-color:transparent}.ptc input:focus-visible+span{outline:2px solid #8A8A86;outline-offset:2px}</style><style id="xdcss">
 :root{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}
 select.xd-n{position:absolute!important;opacity:0;pointer-events:none;width:1px!important;height:1px!important;padding:0!important;border:0!important;margin:0;overflow:hidden}
@@ -2554,10 +2530,10 @@ PGS.forEach(p=>{const s=document.createElement('section');s.id='pg-'+p;s.style.d
 const HIDE=['#founder','.hero','#services','#why','#projects','#process','#about','#testi','#areas','#faq','#quote','.cta','#svcpg'];
 const head=(a,b,c)=>`<div class="tag">${tr(a[0],a[1])}</div><h2>${tr(b[0],b[1])}</h2>${c?`<p style="max-width:720px;color:var(--mu)">${tr(c[0],c[1])}</p>`:''}`;
 /* ===== Smart Paint Calculator (#paint-calculator) =====
-   Two options: Price (cost per SFT) and Paint (litres + tins), sharing one room (3D view, size, doors & windows).
+   Paint litres + tins for one room (3D view, size, doors & windows). The result is shown to signed-in visitors only.
    Measurements are kept as whole numbers of 1/100 inch, so every area is exact (no floating-point drift).
    Total SFT = 2 x (Length + Width) x Height + (Length x Width) - doors & windows.  Walls: N/S use Length, E/W use Width. */
-const PCX={L:{f:'',i:''},W:{f:'',i:''},H:{f:'',i:''},p:'',tab:'price',o:[],sel:0,nid:1,pt:{coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120',ppl:''},col:null,colOpen:false,fam:0};
+const PCX={L:{f:'',i:''},W:{f:'',i:''},H:{f:'',i:''},p:'',tab:'paint',o:[],sel:0,nid:1,pt:{coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120'},col:null,colOpen:false,fam:0};
 const PCBN='০১২৩৪৫৬৭৮৯';
 function pcNorm(s){return String(s==null?'':s).replace(/[০-৯]/g,c=>String(PCBN.indexOf(c))).trim()}
 function pcParse(raw,kind){const s=pcNorm(raw);if(s==='')return{st:'empty'};
@@ -2807,14 +2783,10 @@ function pcColPanel(){const F=window.__CCF||[],fam=F[PCX.fam]||F[0];if(!fam)retu
  return`<div class="pcfam" role="group" aria-label="${tr('Colour families','রঙের ধরন')}">${F.map((f,i)=>`<button type="button" class="pcchip${i===PCX.fam?' on':''}" data-pcact="fam" data-v="${i}" aria-pressed="${i===PCX.fam}">${tr(f[0],f[1])}</button>`).join('')}</div>
 <div class="pcsws" role="group" aria-label="${tr(fam[0],fam[1])}">${fam[2].map((s,i)=>{const on=PCX.col&&PCX.col.hex===s[2]&&PCX.col.en===s[0];return`<button type="button" class="pcsw1${on?' on':''}" data-pcact="sw" data-v="${i}" aria-pressed="${!!on}" aria-label="${tr(s[0],s[1])}" title="${tr(s[0],s[1])}"><span style="background:${s[2]}"></span></button>`}).join('')}</div>
 <div class="pccx"><span>${PCX.col?tr(PCX.col.en,PCX.col.bn):''}</span>${PCX.col?`<button type="button" class="pcg" data-pcact="colclear">${tr('Clear colour','রং সরান')}</button>`:''}</div>`}
-function pcBuild(){const b=L==='bn',sec=(en,bnt)=>b?en:bnt,bi=(en,bnt)=>b?en:bnt;
+function pcBuild(){pcAuthInit();const b=L==='bn',sec=(en,bnt)=>b?en:bnt,bi=(en,bnt)=>b?en:bnt;
  const dim=(k,en,bnt)=>`<div class="pcd" role="group" aria-labelledby="pc-${k}-l"><div class="pcdl" id="pc-${k}-l"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcdf"><label class="pcf"><input id="pc-${k}-f" data-pc="${k}.f" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="next" maxlength="3" placeholder="0" value="${esc2(PCX[k].f)}" aria-label="${tr(en+' (feet)',bnt+' (ফুট)')}" aria-describedby="pc-${k}-e"><span>${tr('ft','ফুট')}</span></label><label class="pcf"><input id="pc-${k}-i" data-pc="${k}.i" type="text" inputmode="decimal" autocomplete="off" enterkeyhint="next" maxlength="5" placeholder="0" value="${esc2(PCX[k].i)}" aria-label="${tr(en+' (inches)',bnt+' (ইঞ্চি)')}" aria-describedby="pc-${k}-e"><span>${tr('in','ইঞ্চি')}</span></label></div><div class="pce" id="pc-${k}-e"></div></div>`;
- const row=(k,en,bnt,bar)=>`<div class="pcr"><div class="pcn"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcv" data-pcv="${k}">—</div>${bar?'<i class="pcb"></i>':''}</div>`;
- const prow=(k,en,bnt,hid)=>`<div class="pcr"${hid?' data-pcrow="'+k+'" hidden':''}><div class="pcn"><b>${tr(en,bnt)}</b><small>${sec(en,bnt)}</small></div><div class="pcv" data-pcv="${k}">—</div></div>`;
- const tab=(k,en,bnt,s1,s2)=>`<button type="button" role="tab" class="pctab" id="pc-tab-${k}" data-pcact="tab" data-v="${k}" aria-selected="${PCX.tab===k}" aria-controls="pc-res-${k}" tabindex="${PCX.tab===k?0:-1}"><b>${tr(en,bnt)}</b><small>${tr(s1,s2)}</small></button>`;
  const t=PCX.pt;
- return `<div class="w pc" data-tab="${PCX.tab}"><p class="note"><a href="#home">${tr('Home','হোম')}</a> / ${tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর')}</p>${head(['Smart tool','স্মার্ট টুল'],['Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['Enter your room size in feet and inches, add doors and windows, then choose Price for the painting cost or Paint for litres and tins. Everything is calculated instantly as you type.','আপনার ঘরের মাপ ফুট ও ইঞ্চিতে লিখুন, দরজা-জানালা যোগ করুন, তারপর রঙের খরচের জন্য “মূল্য” অথবা লিটার ও টিনের জন্য “রং” বেছে নিন। লেখার সাথে সাথেই হিসাব হয়ে যাবে।'])}
-<div class="pctabs" role="tablist" aria-label="${tr('Calculator option','ক্যালকুলেটরের অপশন')}">${tab('price','Price','মূল্য','Painting cost','রঙের খরচ')}${tab('paint','Paint','রং','Litres & tins','লিটার ও টিন')}</div>
+ return `<div class="w pc" data-tab="paint" data-auth="${PCX._a||'out'}"><p class="note"><a href="#home">${tr('Home','হোম')}</a> / ${tr('Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর')}</p>${head(['Smart tool','স্মার্ট টুল'],['Smart Paint Calculator','স্মার্ট পেইন্ট ক্যালকুলেটর'],['Enter your room size in feet and inches and add doors and windows. Sign in to see how many litres and tins of paint you need. The result appears instantly as you type.','আপনার ঘরের মাপ ফুট ও ইঞ্চিতে লিখুন এবং দরজা-জানালা যোগ করুন। কত লিটার ও কত টিন রং লাগবে দেখতে লগইন করুন। লেখার সাথে সাথেই হিসাব হয়ে যাবে।'])}
 <div class="pcl"><div class="pcin">
 <div class="pcc pcvz"><div class="pcch"><div><h3>${tr('Room size','ঘরের মাপ')}</h3><small>${bi('Room size','ঘরের মাপ')} · ${bi('3D view','৩ডি ভিউ')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="example">${tr('Try an example','উদাহরণ দেখুন')}</button><button type="button" class="pcg" data-pcact="reset">${tr('Reset','মুছে ফেলুন')}</button></div></div>
 <div class="pcv3"><svg id="pc3d" class="pc3" viewBox="0 0 ${PC3VW} ${PC3VH}" tabindex="0" role="group" aria-label="${tr('3D room view. Drag to rotate. Arrow keys rotate the room, or move the selected door or window. Plus and minus zoom.','৩ডি রুম ভিউ। ঘোরাতে টানুন। তীর চিহ্নের কী দিয়ে ঘর ঘোরান বা নির্বাচিত দরজা-জানালা সরান। প্লাস ও মাইনাস দিয়ে জুম করুন।')}"><defs><linearGradient id="pc3wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".17"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".15"/></linearGradient><radialGradient id="pc3shg"><stop offset="0" stop-color="#000" stop-opacity=".3"/><stop offset=".62" stop-color="#000" stop-opacity=".14"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><g id="pc3g"></g></svg>
@@ -2827,7 +2799,6 @@ ${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্�
 <div class="pcc"><div class="pcch"><div><h3>${tr('Doors & windows','দরজা ও জানালা')}</h3><small>${bi('Doors & windows','দরজা ও জানালা')}</small></div><div class="pcact"><button type="button" class="pcg" data-pcact="add" data-v="w"${PCX.o.length>=12?' disabled':''}>+ ${tr('Window','জানালা')}</button><button type="button" class="pcg" data-pcact="add" data-v="d"${PCX.o.length>=12?' disabled':''}>+ ${tr('Door','দরজা')}</button></div></div>
 <div class="pcops" id="pc-ops">${pcOpsHTML()}</div><div class="pcosum" id="pc-osum" hidden></div>
 <p class="note">${tr('Their area is taken off the walls, so you only pay for (and buy paint for) what is actually painted. Default sizes: window 4 × 4 ft, door 3 × 7 ft — change them to match yours.','এদের ক্ষেত্রফল দেয়াল থেকে বাদ যায়, ফলে যতটুকু আসলে রং হবে শুধু সেটুকুরই খরচ ও রং ধরা হয়। শুরুর মাপ: জানালা ৪ × ৪ ফুট, দরজা ৩ × ৭ ফুট — আপনারটার সাথে মিলিয়ে বদলে নিন।')}</p></div>
-<div class="pcc" data-pcp="price"><div class="pcd"><div class="pcdl" id="pc-p-l"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><label class="pcf pcp"><i>৳</i><input id="pc-p" data-pc="p" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="${tr('e.g. 7','যেমন ৭')}" value="${esc2(PCX.p)}" aria-label="${tr('Price per square foot in taka','প্রতি বর্গফুটের দাম (টাকা)')}" aria-describedby="pc-p-e"><span>/ ${tr('SFT','বর্গফুট')}</span></label><div class="pce" id="pc-p-e"></div><p class="note">${tr('Type the rate you want to use, in taka per square foot.','আপনার পছন্দমতো প্রতি বর্গফুটের দাম (টাকায়) লিখুন।')}</p></div></div>
 <div class="pcc" data-pcp="paint"><div class="pcch"><div><h3>${tr('Paint details','রঙের তথ্য')}</h3><small>${bi('Paint details','রঙের তথ্য')}</small></div></div>
 <div class="pcd pcfirst"><div class="pcdl"><b>${tr('Coats of paint','কোটের সংখ্যা')}</b><small>${tr('Usually 2 coats on repaint, 3 on new walls','সাধারণত রিপেইন্টে ২ কোট, নতুন দেয়ালে ৩ কোট')}</small></div><div class="pcst" role="group" aria-label="${tr('Coats of paint','কোটের সংখ্যা')}"><button type="button" data-pcact="coat" data-v="-1" aria-label="${tr('Fewer coats','কোট কমান')}">${pcIc('minus')}</button><output id="pc-coats" aria-live="polite">${pcN(t.coats,0)}</output><button type="button" data-pcact="coat" data-v="1" aria-label="${tr('More coats','কোট বাড়ান')}">${pcIc('plus')}</button></div></div>
 <div class="pcd"><div class="pcdl"><b>${tr('Paint type & coverage','রঙের ধরন ও কভারেজ')}</b><small>${tr('How far one litre goes, per coat','প্রতি কোটে এক লিটারে কতটা জায়গা হয়')}</small></div>
@@ -2836,18 +2807,10 @@ ${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্�
 <div class="pcd"><label class="pcsw"><input type="checkbox" data-pck="ceil"${t.ceil?' checked':''}><i aria-hidden="true"></i><span><b>${tr('Paint the ceiling too','সিলিংও রং করব')}</b><small>${tr('Adds Length × Width to the paint area','রঙের ক্ষেত্রফলে দৈর্ঘ্য × প্রস্থ যোগ হয়')}</small></span></label>
 <label class="pcsw"><input type="checkbox" data-pck="primer"${t.primer?' checked':''}><i aria-hidden="true"></i><span><b>${tr('Add a primer coat','প্রাইমার কোট যোগ করুন')}</b><small>${tr('Recommended on new or bare walls','নতুন বা খালি দেয়ালে করা ভালো')}</small></span></label>
 <div class="pcsub" id="pc-pcovw"${t.primer?'':' hidden'}><label class="pcf pcp pcnp"><input id="pc-pcov" data-pcs="pcov" type="text" inputmode="decimal" autocomplete="off" maxlength="6" value="${esc2(t.pcov)}" aria-label="${tr('Primer coverage in square feet per litre','প্রাইমারের প্রতি লিটারে বর্গফুট কভারেজ')}" aria-describedby="pc-pcov-e"><span>${tr('sq ft / L','বর্গফুট / লিটার')}</span></label><div class="pce" id="pc-pcov-e"></div></div></div>
-<div class="pcd"><div class="pcdl"><b>${tr('Paint price (optional)','রঙের দাম (ঐচ্ছিক)')}</b><small>${tr('Your price per litre — shows an estimated paint cost','আপনার প্রতি লিটারের দাম — আনুমানিক রঙের খরচ দেখাবে')}</small></div><label class="pcf pcp"><i>৳</i><input id="pc-ppl" data-pcs="ppl" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="${tr('e.g. 650','যেমন ৬৫০')}" value="${esc2(t.ppl||'')}" aria-label="${tr('Paint price per litre in taka','প্রতি লিটার রঙের দাম (টাকা)')}" aria-describedby="pc-ppl-e"><span>/ ${tr('L','লিটার')}</span></label><div class="pce" id="pc-ppl-e"></div></div>
 <p class="note">${tr('Coverage numbers are typical estimates (about 100–150 sq ft per litre per coat for emulsion). Check the figure on your paint tin and edit it if it is different.','কভারেজের সংখ্যাগুলো সাধারণ আনুমানিক মান (ইমালশনে প্রতি কোটে লিটারপ্রতি প্রায় ১০০–১৫০ বর্গফুট)। আপনার রঙের টিনে লেখা মান আলাদা হলে এখানে বদলে নিন।')}</p></div>
 </div>
 <div class="pcres">
-<div class="pcc pcrc" id="pc-res-price" data-pcp="price" role="tabpanel" aria-labelledby="pc-tab-price"><div class="pcch"><div><h3>${tr('Final Result','চূড়ান্ত ফলাফল')}</h3><small>${bi('Final Result','চূড়ান্ত ফলাফল')}</small></div></div>
-<div class="pcrl">${row('N','North Wall','উত্তর দেয়াল',1)}${row('S','South Wall','দক্ষিণ দেয়াল',1)}${row('E','East Wall','পূর্ব দেয়াল',1)}${row('Wt','West Wall','পশ্চিম দেয়াল',1)}${row('C','Ceiling','সিলিং',1)}</div>
-<div class="pcdedw" data-pcrow="ded" hidden><span>${tr('Doors & windows already deducted','দরজা-জানালা বাদ দেওয়া হয়েছে')}</span><b data-pcv="ded">—</b></div>
-<div class="pcsum"><div class="pcr tot"><div class="pcn"><b>${tr('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</b><small>${sec('Total Area (SFT)','মোট ক্ষেত্রফল (বর্গফুট)')}</small></div><div class="pcv" data-pcv="total">—</div></div>
-<div class="pcr"><div class="pcn"><b>${tr('Price Per SFT','প্রতি বর্গফুটের দাম')}</b><small>${sec('Price Per SFT','প্রতি বর্গফুটের দাম')}</small></div><div class="pcv" data-pcv="price">—</div></div></div>
-<div class="pcgt"><div class="pcgl"><span>${tr('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</span><small>${sec('Grand Total Amount (BDT)','সর্বমোট টাকা (BDT)')}</small></div><strong data-pcv="grand">—</strong></div>
-<p class="pch" id="pc-hint" aria-live="polite"></p>
-<p class="note">${tr('This is an estimate from the measurements you enter. Areas and amounts are rounded to 2 decimal places. Doors and windows are deducted only if you add them above. The floor is not included. The final price is confirmed in a written quotation after a site assessment.','এটি আপনার দেওয়া মাপের ভিত্তিতে একটি আনুমানিক হিসাব। ক্ষেত্রফল ও টাকার অঙ্ক দশমিকের পর ২ ঘর পর্যন্ত রাউন্ড করা হয়। দরজা-জানালা শুধু উপরে যোগ করলেই বাদ যায়। মেঝে ধরা হয়নি। সাইট মূল্যায়নের পর লিখিত কোটেশনে চূড়ান্ত মূল্য নিশ্চিত করা হয়।')}</p></div>
+<div class="pcc pcrc pclock" id="pc-lock" role="region" aria-labelledby="pc-lock-h"><div class="pclk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2.4"/><path d="M8.2 10.5V8a3.8 3.8 0 017.6 0v2.5"/></svg></div><h3 id="pc-lock-h">${tr('Sign in to see your paint estimate','রঙের হিসাব দেখতে লগইন করুন')}</h3><p id="pc-lockm" aria-live="polite"></p><div class="pclb"><button type="button" class="btn" data-pcact="login">${tr('Sign in','সাইন ইন')}</button><button type="button" class="btn o" data-pcact="signup">${tr('Create free account','ফ্রি অ্যাকাউন্ট খুলুন')}</button></div><p class="note">${tr('A free account only needs your name, mobile number, address and email. Your room size stays here while you sign in.','ফ্রি অ্যাকাউন্টে শুধু নাম, মোবাইল নম্বর, ঠিকানা ও ইমেইল লাগে। লগইন করার সময় আপনার দেওয়া ঘরের মাপ এখানেই থাকবে।')}</p></div>
 <div class="pcc pcrc" id="pc-res-paint" data-pcp="paint" role="tabpanel" aria-labelledby="pc-tab-paint"><div class="pcch"><div><h3>${tr('Paint needed','রং কতটা লাগবে')}</h3><small>${bi('Paint needed','রং কতটা লাগবে')}</small></div></div>
 <div class="pcsum pcsum0"><div class="pcr"><div class="pcn"><b>${tr('Walls','দেয়াল')}</b><small>${tr('after doors & windows','দরজা-জানালা বাদে')}</small></div><div class="pcv" data-pcv="pwalls">—</div></div>
 <div class="pcr" data-pcrow="pceil" hidden><div class="pcn"><b>${tr('Ceiling','সিলিং')}</b></div><div class="pcv" data-pcv="pceil">—</div></div>
@@ -2855,24 +2818,27 @@ ${dim('L','Length','দৈর্ঘ্য')}${dim('W','Width','প্রস্�
 <div class="pcgt pcgt2"><div class="pcgl"><span>${tr('Paint needed','রং লাগবে')}</span><small data-pcv="pnote">—</small></div><strong data-pcv="plit">—</strong></div>
 <div class="pctinw" id="pc-tinw" hidden><div class="pctinh"><b>${tr('Tins to buy','কেনার টিন')}</b><small data-pcv="pbuy">—</small></div><div class="pctins" id="pc-tins"></div></div>
 <div class="pctinw pcprim" id="pc-primw" hidden><div class="pctinh"><b>${tr('Primer needed','প্রাইমার লাগবে')}</b><small data-pcv="pprim">—</small></div><div class="pctins" id="pc-ptins"></div></div>
-<div class="pcsum pcpco" data-pcrow="pcost" hidden><div class="pcr tot"><div class="pcn"><b>${tr('Estimated paint cost','রঙের আনুমানিক খরচ')}</b><small>${tr('Tins you buy × your price per litre (primer not included)','কেনা রং × আপনার লিটারপ্রতি দাম (প্রাইমার ছাড়া)')}</small></div><div class="pcv" data-pcv="pcost">—</div></div></div>
 <div class="pcrcol" id="pc-rcol" hidden><span class="pcdot" id="pc-rcdot"></span><span><small>${tr('Chosen colour','বাছাই করা রং')}</small><b id="pc-rcn">—</b></span></div>
 <details class="pchow" id="pc-howw" hidden><summary>${tr('How this is worked out','হিসাবটা কীভাবে হলো')}</summary><ol id="pc-how"></ol></details>
 <p class="pch" id="pc-hint2" aria-live="polite"></p>
 <p class="note">${tr('This is an estimate. Real coverage depends on the wall surface, the paint and how it is applied, so a little more or less may be needed. Buying the rounded-up tins keeps a small reserve for touch-ups. A site visit confirms the final quantity.','এটি একটি আনুমানিক হিসাব। দেয়ালের সারফেস, রঙের ধরন ও কাজের পদ্ধতির উপর আসল কভারেজ নির্ভর করে, তাই একটু কম-বেশি লাগতে পারে। রাউন্ড-আপ করা টিন কিনলে টাচ-আপের জন্য সামান্য রং হাতে থাকে। সাইট ভিজিটে চূড়ান্ত পরিমাণ নিশ্চিত হয়।')}</p></div>
 </div></div>
 <div class="pcc pcrmc" id="pc-rooms"></div>
-<div class="pcbar" data-pcp="price" aria-hidden="true"><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b data-pcv="mtotal">—</b></div><div><small>${tr('Grand total','সর্বমোট')}</small><b data-pcv="mgrand">—</b></div></div>
 <div class="pcbar" data-pcp="paint" aria-hidden="true"><div><small>${tr('Paint needed','রং লাগবে')}</small><b data-pcv="mlit">—</b></div><div><small>${tr('Tins','টিন')}</small><b data-pcv="mtins">—</b></div></div>
 <p class="pcct"><a class="btn" href="#request-quote">${tr('Get a Free Quote','বিনামূল্যে কোটেশন নিন')}</a> <a class="btn o" href="#book-appointment">${tr('Book an appointment','অ্যাপয়েন্টমেন্ট বুক করুন')}</a></p></div>`}
 function pcTinsHTML(t){return PCPK.filter(p=>t[p[0]]).map(p=>`<span class="pctin"><b>${pcN(t[p[0]],0)} ×</b> ${pcN(p[1],0)} ${tr('L','লিটার')}</span>`).join('')}
+/* who may see the paint result: any signed-in account. TRA is provided by the account module. */
+function pcAuthInit(){const A=window.TRA;PCX._a=A&&A.hint&&A.hint()?(PCX._a==='in'?'in':'wait'):'out'}
+function pcAuth(root){const A=window.TRA,tk=PCX._at=(PCX._at||0)+1,set=ok=>{if(tk!==PCX._at||!root.isConnected)return;const n=ok?'in':'out';if(PCX._a===n&&root.dataset.auth===n)return;PCX._a=n;root._pcrk=null;pcUpdate(root)};
+ if(!A||!A.check){set(false);return}
+ try{A.check().then(set,()=>set(false))}catch(e){set(false)}}
+function pcLogin(tab){window.__trLgFrom={h:'#paint-calculator',auto:1};try{if(window.TRA&&window.TRA.go)window.TRA.go(tab)}catch(e){}location.hash='#account'}
 function pcUpdate(root){root=root||pcRoot();if(!root)return;
  const R=pcCalc(PCX),P=pcPaint(PCX,R),q=k=>root.querySelector('[data-pcv="'+k+'"]'),set=(k,v)=>{const e=q(k);if(e&&e.textContent!==v)e.textContent=v},hasBad=[],er2=(m,k)=>PCERR[k]?tr(PCERR[k][0],PCERR[k][1]):'',show=(sel,on)=>{const e=root.querySelector(sel);if(e&&e.hidden===on)e.hidden=!on};
  PCX._ops=R.ops;
  ['L','W','H'].forEach(k=>{const d=R.D[k],bad=d.st==='bad',er=root.querySelector('#pc-'+k+'-e');
   ['f','i'].forEach(x=>{const inp=root.querySelector('#pc-'+k+'-'+x),isBad=bad&&d.fld===x;inp.classList.toggle('bad',isBad);if(isBad)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid')});
   er.textContent=bad?er2(0,d.err):'';if(bad)hasBad.push(k)});
- const pe=root.querySelector('#pc-p-e'),pi=root.querySelector('#pc-p'),pb=R.pr.st==='bad';pi.classList.toggle('bad',pb);if(pb)pi.setAttribute('aria-invalid','true');else pi.removeAttribute('aria-invalid');pe.textContent=pb?er2(0,R.pr.err):'';if(pb)hasBad.push('p');
  /* doors & windows rows */
  R.ops.forEach(r=>{const id=r.op.id,row=root.querySelector('.pco[data-id="'+id+'"]');if(!row)return;
   const sl=row.querySelector('select');if(sl&&sl.value!==r.op.wall)sl.value=r.op.wall;
@@ -2880,20 +2846,11 @@ function pcUpdate(root){root=root||pcRoot();if(!root)return;
   const e=row.querySelector('.pce');e.textContent=r.st==='bad'?er2(0,r.err):'';row.classList.toggle('bad',r.st==='bad');row.classList.toggle('on',PCX.sel===id);
   const ea=row.querySelector('.pcoa');if(ea){const tx=r.st==='ok'?pcSft(Math.round(r.wc*r.hc/14400)):'—';if(ea.textContent!==tx)ea.textContent=tx}});
  pcOsum(root,R);
- /* price option */
- ['N','S','E','Wt','C'].forEach(k=>set(k,pcSft(R.parts[k])));
- root.querySelectorAll('#pc-res-price .pcrl .pcr').forEach((r,ix)=>{const k=['N','S','E','Wt','C'][ix],bar=r.querySelector('.pcb');if(bar)bar.style.setProperty('--w',R.total&&R.parts[k]!==null?Math.min(100,R.parts[k]/R.total*100).toFixed(1)+'%':'0%')});
- set('total',pcSft(R.total));set('price',R.price===null?'—':pcTk(R.price)+' / '+tr('SFT','বর্গফুট'));set('grand',pcTk(R.grand));set('mtotal',pcSft(R.total));set('mgrand',pcTk(R.grand));
- const dedOn=R.ded>0&&!R.openBad&&R.total!==null;show('#pc-res-price [data-pcrow="ded"]',dedOn);if(dedOn)set('ded','− '+pcSft(R.ded));
- let m='';
- if(hasBad.length||R.openBad)m=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
- else if(R.total===null)m=tr('Enter length, width and height to see the full area.','পুরো ক্ষেত্রফল দেখতে দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিন।');
- else if(R.grand===null)m=tr('Enter the price per SFT to see the total amount.','মোট টাকা দেখতে প্রতি বর্গফুটের দাম দিন।');
- root.querySelector('#pc-hint').textContent=m;root.classList.toggle('pcready',R.grand!==null);
+ const A=PCX._a==='in';root.dataset.auth=PCX._a||'out';root.classList.toggle('pcready',A&&P.st==='ok');
  /* paint option */
  const cv=root.querySelector('#pc-cov'),cb=P.cv.st!=='ok';cv.classList.toggle('bad',cb);if(cb)cv.setAttribute('aria-invalid','true');else cv.removeAttribute('aria-invalid');root.querySelector('#pc-cov-e').textContent=cb?er2(0,P.cv.st==='empty'?'reqc':P.cv.err):'';
  const pc=root.querySelector('#pc-pcov'),pbad=PCX.pt.primer&&P.pv.st!=='ok';pc.classList.toggle('bad',pbad);if(pbad)pc.setAttribute('aria-invalid','true');else pc.removeAttribute('aria-invalid');root.querySelector('#pc-pcov-e').textContent=pbad?er2(0,P.pv.st==='empty'?'reqc':P.pv.err):'';
- const ok=P.st==='ok',tw=root.querySelector('#pc-tinw'),pw=root.querySelector('#pc-primw'),pq=pcParse(PCX.pt.ppl,'pr'),pcs=ok?pcCost(P,PCX.pt):null;
+ const ok=P.st==='ok'&&A,tw=root.querySelector('#pc-tinw'),pw=root.querySelector('#pc-primw');
  set('pwalls',ok?pcSft(P.walls):'—');set('parea',ok?pcSft(P.area):'—');show('#pc-res-paint [data-pcrow="pceil"]',ok&&P.ceil!==null);if(ok&&P.ceil!==null)set('pceil',pcSft(P.ceil));
  set('plit',ok?pcLt(P.lh):'—');set('mlit',ok?pcLt(P.lh):'—');set('mtins',ok?pcTn(P.tins.tins+(P.ptins?P.ptins.tins:0)):'—');
  set('pnote',ok?tr(`${pcN(P.coats,0)} ${P.coats===1?'coat':'coats'} · incl. ${pcN(P.waste,0)}% wastage`,`${pcN(P.coats,0)} কোট · ${pcN(P.waste,0)}% অপচয় সহ`):tr('Including 10% wastage','১০% অপচয় সহ'));
@@ -2908,16 +2865,14 @@ function pcUpdate(root){root=root||pcRoot();if(!root)return;
   rows.push(li(tr(`Paint = area × ${pcN(P.coats,0)} coat${P.coats===1?'':'s'} ÷ ${pcN(P.cv.v/100,P.cv.v%100?2:0)} sq ft per litre = ${pcLt(P.bh)}`,`রং = ক্ষেত্রফল × ${pcN(P.coats,0)} কোট ÷ ${pcN(P.cv.v/100,P.cv.v%100?2:0)} বর্গফুট/লিটার = ${pcLt(P.bh)}`)));
   rows.push(li(tr(`Add ${pcN(P.waste,0)}% for wastage and spills = <b>${pcLt(P.lh)}</b> (rounded up)`,`অপচয় ও পড়ে যাওয়ার জন্য ${pcN(P.waste,0)}% যোগ = <b>${pcLt(P.lh)}</b> (রাউন্ড-আপ)`)));
   rows.push(li(tr('Tins are picked from the common 18.2 L, 9.1 L, 3.64 L and 0.91 L packs, so you buy few tins with little left over.','প্রচলিত ১৮.২, ৯.১, ৩.৬৪ ও ০.৯১ লিটারের প্যাক থেকে টিন বাছা হয়, যাতে কম টিন কিনেও বাড়তি রং কম থাকে।')));
-  if(pcs!==null)rows.push(li(tr(`Estimated paint cost = ${pcLt(P.boughtH)} you buy × ${pcTk(pq.v)} per litre = <b>${pcTk(pcs)}</b> (primer not included)`,`রঙের আনুমানিক খরচ = কেনা ${pcLt(P.boughtH)} × লিটারপ্রতি ${pcTk(pq.v)} = <b>${pcTk(pcs)}</b> (প্রাইমার ছাড়া)`)));
   if(P.ptins)rows.push(li(tr(`Primer = area × 1 coat ÷ ${pcN(P.pv.v/100,P.pv.v%100?2:0)} sq ft per litre, plus ${pcN(P.waste,0)}% = ${pcLt(P.plh)}`,`প্রাইমার = ক্ষেত্রফল × ১ কোট ÷ ${pcN(P.pv.v/100,P.pv.v%100?2:0)} বর্গফুট/লিটার, সাথে ${pcN(P.waste,0)}% = ${pcLt(P.plh)}`)));
   const ol=root.querySelector('#pc-how'),h=rows.join('');if(ol.innerHTML!==h)ol.innerHTML=h}
  let m2='';
  if(hasBad.length||R.openBad||P.st==='badcov'||P.st==='badpcov')m2=tr('Please correct the highlighted values.','চিহ্নিত মানগুলো ঠিক করুন।');
  else if(R.total===null)m2=tr('Enter length, width and height to see how much paint you need.','কত রং লাগবে দেখতে দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিন।');
- root.querySelector('#pc-hint2').textContent=m2;
- const pl=root.querySelector('#pc-ppl'),plb=pq.st==='bad';pl.classList.toggle('bad',plb);if(plb)pl.setAttribute('aria-invalid','true');else pl.removeAttribute('aria-invalid');root.querySelector('#pc-ppl-e').textContent=plb?er2(0,pq.err):'';
- show('#pc-res-paint [data-pcrow="pcost"]',pcs!==null);if(pcs!==null)set('pcost',pcTk(pcs));
- pcRoomsSync(root,R);
+ root.querySelector('#pc-hint2').textContent=A?m2:'';
+ {const lm=root.querySelector('#pc-lockm');if(lm){const ready=R.total!==null&&!hasBad.length&&!R.openBad&&P.st!=='badcov'&&P.st!=='badpcov',tx=PCX._a==='wait'?tr('Checking your account…','আপনার অ্যাকাউন্ট দেখা হচ্ছে…'):ready?tr('Your room details are ready. Sign in to see how much paint you need.','আপনার ঘরের মাপ তৈরি। কত রং লাগবে দেখতে লগইন করুন।'):tr('Enter the room size, then sign in to see how much paint you need.','ঘরের মাপ দিন, তারপর কত রং লাগবে দেখতে লগইন করুন।');if(lm.textContent!==tx)lm.textContent=tx}}
+ if(A)pcRoomsSync(root,R);
  pc3Req()}
 /* windows / doors / total area that is taken off the walls */
 function pcOsum(root,R){const e=root.querySelector('#pc-osum');if(!e)return;const s={w:[0,0],d:[0,0]};
@@ -2979,7 +2934,7 @@ function pc3Bind(root){const svg=root.querySelector('#pc3d');if(!svg)return;
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)pc3Req()})}
 function pcInit(){const root=pcRoot();if(!root)return;
  root.addEventListener('input',e=>{const t=e.target,d=t&&t.dataset;if(!d)return;
-  if(d.pc){const k=d.pc;if(k==='p')PCX.p=t.value;else{const a=k.split('.');PCX[a[0]][a[1]]=t.value}pcUpdate(root)}
+  if(d.pc){const a=d.pc.split('.');PCX[a[0]][a[1]]=t.value;pcUpdate(root)}
   else if(d.pco){const op=PCX.o.find(q=>q.id===+d.id);if(op){op[d.pco]=t.value;pcUpdate(root)}}
   else if(d.pcrn){pcRmRename(d.pcrn,t.value)}
   else if(d.pcs){PCX.pt[d.pcs]=t.value;if(d.pcs==='cov'){const m=Object.keys(PCPRE).find(k=>PCPRE[k][2]===pcNorm(t.value));PCX.pt.pre=m||'cus';pcRenderPaint(root)}pcUpdate(root)}});
@@ -2989,10 +2944,10 @@ function pcInit(){const root=pcRoot();if(!root)return;
  root.addEventListener('focusin',e=>{const r=e.target.closest&&e.target.closest('.pco');if(r&&+r.dataset.id!==PCX.sel)pcSelect(+r.dataset.id,false)});
  root.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-pcact]');if(!a)return;const act=a.dataset.pcact,v=a.dataset.v,id=+a.dataset.id;
   const set=(k,x,val)=>{PCX[k][x]=val;root.querySelector('#pc-'+k+'-'+x).value=val};
-  if(/^r(add|upd|load|dup|del|clr|print|wa|copy|share)$/.test(act)){pcRmAct(root,act,a);return}
-  if(act==='tab'){PCX.tab=v;root.dataset.tab=v;root.querySelectorAll('.pctab').forEach(b=>{const on=b.dataset.v===v;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});return}
-  if(act==='reset'){['L','W','H'].forEach(k=>{set(k,'f','');set(k,'i','')});PCX.p='';root.querySelector('#pc-p').value='';PCX.o=[];PCX.sel=0;PCX.pt={coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120',ppl:''};PCX._ed=0;PCX.col=null;PCX.colOpen=false;PCV.yaw=35;PCV.pitch=30;PCV.zoom=1;pcRenderOps(root);pcRenderPaint(root);pcRenderCol(root);const f=root.querySelector('#pc-L-f');if(f)f.focus();pcUpdate(root);return}
-  if(act==='example'){set('L','f','10');set('L','i','');set('W','f','10');set('W','i','');set('H','f','7');set('H','i','6');PCX.p='7';root.querySelector('#pc-p').value='7';pcUpdate(root);return}
+  if(/^r(add|upd|load|dup|del|clr|wa|copy|share)$/.test(act)){pcRmAct(root,act,a);return}
+  if(act==='login'||act==='signup'){pcLogin(act==='signup'?'up':'in');return}
+  if(act==='reset'){['L','W','H'].forEach(k=>{set(k,'f','');set(k,'i','')});PCX.o=[];PCX.sel=0;PCX.pt={coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120'};PCX._ed=0;PCX.col=null;PCX.colOpen=false;PCV.yaw=35;PCV.pitch=30;PCV.zoom=1;pcRenderOps(root);pcRenderPaint(root);pcRenderCol(root);const f=root.querySelector('#pc-L-f');if(f)f.focus();pcUpdate(root);return}
+  if(act==='example'){set('L','f','10');set('L','i','');set('W','f','10');set('W','i','');set('H','f','7');set('H','i','6');pcUpdate(root);return}
   if(act==='add'){const op=pcAddOp(v);if(op){pcRenderOps(root);pcUpdate(root);pc3Reveal(op.wall)}return}
   if(act==='rm'){pcRemoveOp(id);pcRenderOps(root);pcUpdate(root);return}
   if(act==='sel'){pcSelect(id,true);return}
@@ -3008,70 +2963,46 @@ function pcInit(){const root=pcRoot();if(!root)return;
   if(act==='fam'){PCX.fam=+v;pcRenderCol(root);return}
   if(act==='sw'){const s=(window.__CCF||[])[PCX.fam][2][+v];PCX.col={hex:s[2],en:s[0],bn:s[1]};pcRenderCol(root);pcUpdate(root);return}
   if(act==='colclear'){PCX.col=null;pcRenderCol(root);pcUpdate(root)}});
- root.querySelector('.pctabs').addEventListener('keydown',e=>{const k=e.key;if(!/^(ArrowLeft|ArrowRight|Home|End)$/.test(k))return;e.preventDefault();const tabs=[...root.querySelectorAll('.pctab')],i=tabs.findIndex(x=>x.getAttribute('aria-selected')==='true'),n=k==='Home'?0:k==='End'?tabs.length-1:(i+(k==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[n].click();tabs[n].focus()});
- pc3Bind(root);pcUpdate(root);
+ pc3Bind(root);pcUpdate(root);pcAuth(root);
  if(!pc3Calm()){PCV.yaw=PCT.yaw-70;PCV.zoom=PCT.zoom*.8;PC3S.hx=null;PC3S.idle=performance.now()+2200}
  pc3Draw();pc3Req()}
 window.PC3API={PCV,PCT,PC3S,pc3Dims,pc3Cam,pc3Vis,pc3Fade,pc3Draw,pc3Tick};
 
-/* ===== My rooms · estimated paint cost · share summary · printable quotation =====
+/* ===== My rooms · combined paint total · share summary =====
    The list lives in this browser (localStorage). Every number is recalculated from the saved measurements with the same
    pcCalc / pcPaint functions, so nothing is stored twice and the totals always agree with the calculator. */
-const PCRK='tr-pcrooms',PCDFT=()=>({coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120',ppl:''});
+const PCRK='tr-pcrooms',PCDFT=()=>({coats:2,cov:'120',pre:'std',ceil:true,primer:false,pcov:'120'});
 const pcStr=(v,n)=>String(v==null?'':v).slice(0,n||12);
 /* anything read back from storage is rebuilt field by field, so a damaged or edited entry can never break the page */
 function pcClean(r){if(!r||typeof r!=='object'||!r.s||typeof r.s!=='object')return null;const s=r.s;
  const dm=d=>({f:pcStr(d&&d.f,4),i:pcStr(d&&d.i,6)});
  const o=(Array.isArray(s.o)?s.o:[]).slice(0,12).map((q,ix)=>({id:ix+1,t:q&&q.t==='d'?'d':'w',wall:['N','E','S','Wt'].includes(q&&q.wall)?q.wall:'N',w:pcStr(q&&q.w,6),h:pcStr(q&&q.h,6),x:Math.max(0,Math.min(99900,+(q&&q.x)||0)),y:Math.max(0,Math.min(99900,+(q&&q.y)||0))}));
- const t=s.pt&&typeof s.pt==='object'?s.pt:{},pt=Object.assign(PCDFT(),{coats:Math.max(1,Math.min(4,Math.round(+t.coats)||2)),cov:pcStr(t.cov,8),pre:['eco','std','pre','cus'].includes(t.pre)?t.pre:'std',ceil:!!t.ceil,primer:!!t.primer,pcov:pcStr(t.pcov,8),ppl:pcStr(t.ppl,10)});
+ const t=s.pt&&typeof s.pt==='object'?s.pt:{},pt=Object.assign(PCDFT(),{coats:Math.max(1,Math.min(4,Math.round(+t.coats)||2)),cov:pcStr(t.cov,8),pre:['eco','std','pre','cus'].includes(t.pre)?t.pre:'std',ceil:!!t.ceil,primer:!!t.primer,pcov:pcStr(t.pcov,8)});
  const c=s.col&&/^#[0-9a-f]{3,8}$/i.test(String(s.col.hex))?{hex:String(s.col.hex),en:pcStr(s.col.en,40),bn:pcStr(s.col.bn,40)}:null;
- return{id:pcStr(r.id,24)||('r'+Date.now().toString(36)),name:pcStr(r.name,40)||tr('Room','রুম'),s:{L:dm(s.L),W:dm(s.W),H:dm(s.H),p:pcStr(s.p,10),o,pt,col:c}}}
+ return{id:pcStr(r.id,24)||('r'+Date.now().toString(36)),name:pcStr(r.name,40)||tr('Room','রুম'),s:{L:dm(s.L),W:dm(s.W),H:dm(s.H),o,pt,col:c}}}
 const pcRmLoad=()=>{try{const a=JSON.parse(localStorage.getItem(PCRK)||'[]');return(Array.isArray(a)?a:[]).slice(0,20).map(pcClean).filter(Boolean)}catch(e){return[]}};
 const pcRmSave=a=>{try{localStorage.setItem(PCRK,JSON.stringify(a))}catch(e){}};
 const pcRmId=()=>'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-const pcSnap=()=>JSON.parse(JSON.stringify({L:PCX.L,W:PCX.W,H:PCX.H,p:PCX.p,o:PCX.o,pt:PCX.pt,col:PCX.col}));
+const pcSnap=()=>JSON.parse(JSON.stringify({L:PCX.L,W:PCX.W,H:PCX.H,o:PCX.o,pt:PCX.pt,col:PCX.col}));
 const pcFt=c=>pcN(c/1200,c%1200===0?0:2);
 const pcRmDims=R=>R.D.L.st==='ok'&&R.D.W.st==='ok'&&R.D.H.st==='ok'?pcFt(R.D.L.c)+' × '+pcFt(R.D.W.c)+' × '+pcFt(R.D.H.c)+' '+tr('ft','ফুট'):'—';
-/* estimated paint cost in 1/100 BDT: litres you buy x your price per litre (primer is not included) */
-function pcCost(P,pt){if(!P||P.st!=='ok')return null;const q=pcParse(pt&&pt.ppl,'pr');if(q.st!=='ok')return null;const n=BigInt(P.boughtH)*BigInt(q.v);return Number((n+50n)/100n)}
-function pcRmCalc(r){const R=pcCalc(r.s),P=pcPaint(r.s,R);return{r,R,P,cost:pcCost(P,r.s.pt)}}
-function pcRmTotals(rows){const t={n:rows.length,area:0,ded:0,grand:0,anyPriced:false,allPriced:true,lh:0,plh:0,cost:0,anyCost:false,tins:null,units:0};
- rows.forEach(x=>{if(x.R.total!==null)t.area+=x.R.total;t.ded+=x.R.ded||0;if(x.R.grand!==null){t.grand+=x.R.grand;t.anyPriced=true}else t.allPriced=false;
-  if(x.P.st==='ok'){t.lh+=x.P.lh;t.plh+=x.P.plh||0;if(x.cost!==null){t.cost+=x.cost;t.anyCost=true}}});
+function pcRmCalc(r){const R=pcCalc(r.s),P=pcPaint(r.s,R);return{r,R,P}}
+function pcRmTotals(rows){const t={n:rows.length,area:0,ded:0,lh:0,plh:0,tins:null,units:0};
+ rows.forEach(x=>{if(x.R.total!==null)t.area+=x.R.total;t.ded+=x.R.ded||0;if(x.P.st==='ok'){t.lh+=x.P.lh;t.plh+=x.P.plh||0}});
  t.units=Math.ceil(t.lh/91);t.tins=t.units>0?pcTins(t.units):null;return t}
 const pcTinsText=t=>t?PCPK.filter(p=>t[p[0]]).map(p=>pcN(t[p[0]],0)+' × '+pcN(p[1],0)+' '+tr('L','লিটার')).join(', '):'';
 function pcRowsFor(){const list=pcRmLoad();if(list.length)return list.map(pcRmCalc);
  const R=pcCalc(PCX);if(R.total===null||R.openBad)return[];return[pcRmCalc({id:'cur',name:tr('Room','রুম')+' 1',s:pcSnap()})]}
 /* ---- plain-text summary (WhatsApp / copy / share sheet) ---- */
 function pcSummary(rows){const T=pcRmTotals(rows),ln=['Teksoi Rong – '+tr('Paint estimate','পেইন্ট হিসাব')];
- rows.forEach(x=>{const a=[x.r.name,pcRmDims(x.R),pcSft(x.R.total)];if(x.R.grand!==null)a.push(pcTk(x.R.grand));if(x.P.st==='ok')a.push(pcLt(x.P.lh)+' '+tr('paint','রং'));ln.push('• '+a.join(' · '))});
+ rows.forEach(x=>{const a=[x.r.name,pcRmDims(x.R),pcSft(x.R.total)];if(x.P.st==='ok')a.push(pcLt(x.P.lh)+' '+tr('paint','রং'));ln.push('• '+a.join(' · '))});
  ln.push('');ln.push(tr('Total area: ','মোট ক্ষেত্রফল: ')+pcSft(T.area));
- if(T.anyPriced)ln.push(tr('Total amount: ','সর্বমোট টাকা: ')+pcTk(T.grand)+(T.allPriced?'':tr(' (rooms with a price only)',' (শুধু দাম দেওয়া রুম)')));
  if(T.lh>0)ln.push(tr('Paint needed: ','রং লাগবে: ')+pcLt(T.lh)+(T.tins?' ('+pcTinsText(T.tins)+')':''));
- if(T.anyCost)ln.push(tr('Estimated paint cost: ','রঙের আনুমানিক খরচ: ')+pcTk(T.cost));
- ln.push('');ln.push(tr('Estimate only. The final price is confirmed after a site assessment.','এটি আনুমানিক হিসাব। সাইট মূল্যায়নের পর চূড়ান্ত মূল্য নিশ্চিত হয়।'));
+ ln.push('');ln.push(tr('Estimate only. The final quantity is confirmed after a site assessment.','এটি আনুমানিক হিসাব। সাইট মূল্যায়নের পর চূড়ান্ত পরিমাণ নিশ্চিত হয়।'));
  ln.push(location.href.split('#')[0]+'#paint-calculator');return ln.join('\n')}
-/* ---- printable quotation (Print -> Save as PDF) ---- */
-function pcQuoteHTML(rows){const T=pcRmTotals(rows),C=typeof CONFIG==='object'&&CONFIG?CONFIG:{},d=new Date().toLocaleDateString(L==='bn'?'bn-BD':'en-GB',{day:'numeric',month:'long',year:'numeric'}),e=esc2;
- const th=(a)=>'<tr>'+a.map((x,i)=>`<th${i>=a.length-3?' class="qn"':''}>${x}</th>`).join('')+'</tr>';
- const anyPaint=rows.some(x=>x.P.st==='ok'),anyPrice=T.anyPriced;
- const t1=`<div class="qk">${tr('Painting cost','রং করার খরচ')}</div><table>${th([tr('Room','রুম'),tr('Size (L × W × H)','মাপ (দৈর্ঘ্য × প্রস্থ × উচ্চতা)'),tr('Doors & windows','দরজা-জানালা'),tr('Area','ক্ষেত্রফল'),tr('Rate / SFT','দর / বর্গফুট'),tr('Amount','টাকা')])}`
-  +rows.map(x=>`<tr><td>${e(x.r.name)}</td><td>${pcRmDims(x.R)}</td><td class="qn">${x.R.ded>0?'− '+pcSft(x.R.ded):'—'}</td><td class="qn">${pcSft(x.R.total)}</td><td class="qn">${x.R.price!==null?pcTk(x.R.price)+'':'—'}</td><td class="qn">${x.R.grand!==null?pcTk(x.R.grand):'—'}</td></tr>`).join('')
-  +`<tr class="qt"><td colspan="3">${tr('Total','মোট')}</td><td class="qn">${pcSft(T.area)}</td><td class="qn"></td><td class="qn">${anyPrice?pcTk(T.grand):'—'}</td></tr></table>`;
- const t2=anyPaint?`<div class="qk">${tr('Paint needed','রং কতটা লাগবে')}</div><table>${th([tr('Room','রুম'),tr('Paint area','রঙের ক্ষেত্রফল'),tr('Coats','কোট'),tr('Paint','রং'),tr('Tins to buy','কেনার টিন'),tr('Est. paint cost','আনু. রঙের খরচ')])}`
-  +rows.filter(x=>x.P.st==='ok').map(x=>`<tr><td>${e(x.r.name)}</td><td>${pcSft(x.P.area)}</td><td class="qn">${pcN(x.P.coats,0)}</td><td class="qn">${pcLt(x.P.lh)}</td><td class="qn">${e(pcTinsText(x.P.tins))}</td><td class="qn">${x.cost!==null?pcTk(x.cost):'—'}</td></tr>`).join('')
-  +`<tr class="qt"><td colspan="3">${tr('Total','মোট')}</td><td class="qn">${pcLt(T.lh)}</td><td class="qn">${T.tins?e(pcTinsText(T.tins)):'—'}</td><td class="qn">${T.anyCost?pcTk(T.cost):'—'}</td></tr></table>`
-  +(rows.length>1&&T.tins?`<p class="qs">${tr('Buying all the paint together: ','সব রং একসাথে কিনলে: ')}${e(pcTinsText(T.tins))}</p>`:'')+(rows.some(x=>x.P.st==='ok'&&x.P.ptins)?`<p class="qs">${tr('Primer is not included in these figures.','প্রাইমার এই হিসাবে ধরা হয়নি।')}</p>`:''):'';
- const ct=[C.phone?'☎ '+e(C.phone):'',C.email?'✉ '+e(C.email):''].filter(Boolean).join(' &nbsp;·&nbsp; ');
- return `<div class="qh"><div><b class="qb">${tr('Teksoi Rong','টেকসই রং')}</b><div class="qs">${C.location?e(C.location):''}</div><div class="qs">${ct}</div></div><div class="qd"><b>${tr('Painting estimate','পেইন্ট হিসাব / কোটেশন')}</b><div class="qs">${tr('Date','তারিখ')}: ${d}</div></div></div>`+t1+t2
-  +`<p class="qs">${tr('This is an estimate worked out from the measurements entered in the Smart Paint Calculator. Doors and windows are deducted only where listed; the floor is not included. Real paint coverage depends on the surface and the way the paint is applied. The final price and quantity are confirmed in a written quotation after a site assessment.','এটি স্মার্ট পেইন্ট ক্যালকুলেটরে দেওয়া মাপ থেকে করা একটি আনুমানিক হিসাব। দরজা-জানালা শুধু তালিকাভুক্ত হলেই বাদ গেছে; মেঝে ধরা হয়নি। রঙের আসল কভারেজ সারফেস ও কাজের পদ্ধতির উপর নির্ভর করে। সাইট মূল্যায়নের পর লিখিত কোটেশনে চূড়ান্ত মূল্য ও পরিমাণ নিশ্চিত করা হয়।')}</p><p class="qs">${e(location.href.split('#')[0])}</p>`}
-function pcPrint(){const rows=pcRowsFor();if(!rows.length)return;
- let q=document.getElementById('pcquote');if(q)q.remove();q=document.createElement('div');q.id='pcquote';q.innerHTML=pcQuoteHTML(rows);document.body.appendChild(q);document.body.classList.add('pcprint');
- const done=()=>{clearTimeout(tm);document.body.classList.remove('pcprint');const x=document.getElementById('pcquote');if(x)x.remove();window.removeEventListener('afterprint',done)};
- const tm=setTimeout(done,180000);window.addEventListener('afterprint',done);setTimeout(()=>{try{window.print()}catch(e){done()}},80)}
 /* ---- apply a saved room back into the calculator ---- */
 function pcApply(root,s){['L','W','H'].forEach(k=>{PCX[k]={f:s[k].f,i:s[k].i};root.querySelector('#pc-'+k+'-f').value=PCX[k].f;root.querySelector('#pc-'+k+'-i').value=PCX[k].i});
- PCX.p=s.p;root.querySelector('#pc-p').value=PCX.p;PCX.o=s.o.map(o=>Object.assign({},o));PCX.nid=PCX.o.reduce((m,o)=>Math.max(m,o.id||0),0)+1;PCX.sel=0;
+ PCX.o=s.o.map(o=>Object.assign({},o));PCX.nid=PCX.o.reduce((m,o)=>Math.max(m,o.id||0),0)+1;PCX.sel=0;
  PCX.pt=Object.assign(PCDFT(),s.pt);PCX.col=s.col?Object.assign({},s.col):null;PCX.colOpen=false;
  pcRenderOps(root);pcRenderPaint(root);pcRenderCol(root);pcUpdate(root)}
 /* ---- the "My rooms" card ---- */
@@ -3086,16 +3017,16 @@ function pcRenderRooms(root){const box=root.querySelector('#pc-rooms');if(!box)r
  const list=pcRmLoad(),rows=list.map(pcRmCalc),T=pcRmTotals(rows),R=pcCalc(PCX),ed=PCX._ed&&list.find(r=>r.id===PCX._ed),n=list.length;
  const share=navigator.share?`<button type="button" class="pcg" data-pcact="rshare">${tr('Share…','শেয়ার…')}</button>`:'';
  const items=rows.map(x=>{const r=x.r,P=x.P;return`<li class="pcrmi${PCX._ed===r.id?' on':''}" data-rid="${esc2(r.id)}"><div class="pcrmt"><input class="pcrmn" data-pcrn="${esc2(r.id)}" value="${esc2(r.name)}" maxlength="40" aria-label="${tr('Room name','রুমের নাম')}"><button type="button" class="pcrmx" data-pcact="rdel" data-rid="${esc2(r.id)}" aria-label="${tr('Remove this room','এই রুম সরান')}">×</button></div>
-<div class="pcrms"><span>${pcRmDims(x.R)}</span><span>${pcSft(x.R.total)}</span>${x.R.grand!==null?`<span>${pcTk(x.R.grand)}</span>`:''}${P.st==='ok'?`<span>${pcLt(P.lh)} ${tr('paint','রং')}</span>`:''}${x.cost!==null?`<span>${tr('Paint ','রং ')}${pcTk(x.cost)}</span>`:''}</div>
+<div class="pcrms"><span>${pcRmDims(x.R)}</span><span>${pcSft(x.R.total)}</span>${P.st==='ok'?`<span>${pcLt(P.lh)} ${tr('paint','রং')}</span>`:''}</div>
 <div class="pcrmb"><button type="button" class="pcg" data-pcact="rload" data-rid="${esc2(r.id)}">${tr('Edit','এডিট')}</button><button type="button" class="pcg" data-pcact="rdup" data-rid="${esc2(r.id)}">${tr('Duplicate','কপি')}</button></div></li>`}).join('');
- const tot=n?`<div class="pcrmtot" aria-label="${tr('Combined total','সব রুমের মোট')}"><div><small>${tr('Rooms','রুম')}</small><b>${pcN(n,0)}</b></div><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b>${pcSft(T.area)}</b></div>${T.anyPriced?`<div><small>${tr('Total amount','সর্বমোট টাকা')}${T.allPriced?'':tr(' (priced rooms)',' (দাম দেওয়া রুম)')}</small><b>${pcTk(T.grand)}</b></div>`:''}${T.lh>0?`<div><small>${tr('Paint needed','রং লাগবে')}</small><b>${pcLt(T.lh)}</b></div>`:''}${T.anyCost?`<div><small>${tr('Est. paint cost','আনু. রঙের খরচ')}</small><b>${pcTk(T.cost)}</b></div>`:''}</div>${T.tins&&n>1?`<p class="pcrmh">${tr('Buying all the paint together: ','সব রং একসাথে কিনলে: ')}<b>${esc2(pcTinsText(T.tins))}</b></p>`:''}`:'';
+ const tot=n?`<div class="pcrmtot" aria-label="${tr('Combined total','সব রুমের মোট')}"><div><small>${tr('Rooms','রুম')}</small><b>${pcN(n,0)}</b></div><div><small>${tr('Total area','মোট ক্ষেত্রফল')}</small><b>${pcSft(T.area)}</b></div>${T.lh>0?`<div><small>${tr('Paint needed','রং লাগবে')}</small><b>${pcLt(T.lh)}</b></div>`:''}</div>${T.tins&&n>1?`<p class="pcrmh">${tr('Buying all the paint together: ','সব রং একসাথে কিনলে: ')}<b>${esc2(pcTinsText(T.tins))}</b></p>`:''}`:'';
  const can=n>0||(R.total!==null&&!R.openBad);PCX._n=n;if(PCX._ed&&!ed)PCX._ed=0;root._pcrk=can+'|'+(PCX._ed||0);
- box.innerHTML=`<div class="pcch"><div><h3>${tr('My rooms & quotation','আমার রুম ও কোটেশন')}</h3><small>${tr('Add several rooms for one combined total','কয়েকটি রুম যোগ করে একসাথে মোট হিসাব')}</small></div></div>
-<p class="pcrmh">${tr('Calculate a room, then add it here. You get one combined total, a summary to share and a printable quotation. The list is saved on this device only.','একটি রুম হিসাব করে এখানে যোগ করুন। সব রুমের মোট, শেয়ার করার সারাংশ ও প্রিন্টযোগ্য কোটেশন পাবেন। তালিকা শুধু এই ডিভাইসে সংরক্ষিত থাকে।')}</p>
+ box.innerHTML=`<div class="pcch"><div><h3>${tr('My rooms','আমার রুম')}</h3><small>${tr('Add several rooms for one combined total','কয়েকটি রুম যোগ করে একসাথে মোট হিসাব')}</small></div></div>
+<p class="pcrmh">${tr('Calculate a room, then add it here. You get one combined total and a summary to share. The list is saved on this device only.','একটি রুম হিসাব করে এখানে যোগ করুন। সব রুমের মোট ও শেয়ার করার সারাংশ পাবেন। তালিকা শুধু এই ডিভাইসে সংরক্ষিত থাকে।')}</p>
 <div class="pcrma">${ed?`<button type="button" class="btn sm" data-pcact="rupd">${tr('Update “','আপডেট “')}${esc2(ed.name)}”</button><button type="button" class="btn o sm" data-pcact="radd">${tr('Add as new room','নতুন রুম হিসেবে যোগ')}</button>`:`<button type="button" class="btn sm" data-pcact="radd">${tr('+ Add this room to the list','+ এই রুম তালিকায় যোগ করুন')}</button>`}<output class="pcrmsay" id="pc-rmsay" role="status"></output></div>
 <p class="pch" id="pc-rmhint"></p>
 ${n?`<ul class="pcrml">${items}</ul>${tot}`:`<p class="pcempty">${tr('No rooms added yet.','এখনো কোনো রুম যোগ করা হয়নি।')}</p>`}
-<div class="pcrmo"><button type="button" class="pcg pcgp"${can?'':' disabled'} data-pcact="rprint">${tr('Print / Save as PDF','প্রিন্ট / PDF সেভ')}</button><button type="button" class="pcg" data-pcact="rwa"${can?'':' disabled'}>WhatsApp</button><button type="button" class="pcg"${can?'':' disabled'} data-pcact="rcopy">${tr('Copy summary','সারাংশ কপি')}</button>${can?share:''}${n?`<button type="button" class="pcg pcgd" data-pcact="rclr">${tr('Clear list','তালিকা মুছুন')}</button>`:''}</div>`;
+<div class="pcrmo"><button type="button" class="pcg" data-pcact="rwa"${can?'':' disabled'}>WhatsApp</button><button type="button" class="pcg"${can?'':' disabled'} data-pcact="rcopy">${tr('Copy summary','সারাংশ কপি')}</button>${can?share:''}${n?`<button type="button" class="pcg pcgd" data-pcact="rclr">${tr('Clear list','তালিকা মুছুন')}</button>`:''}</div>`;
  pcRoomsBtn(root,R)}
 function pcRmAct(root,act,a){const list=pcRmLoad(),id=a.dataset.rid,say=m=>pcRmSay(root,m);
  const find=()=>list.findIndex(r=>r.id===id);
@@ -3107,7 +3038,6 @@ function pcRmAct(root,act,a){const list=pcRmLoad(),id=a.dataset.rid,say=m=>pcRmS
  if(act==='rdel'){const i=find();if(i<0)return;list.splice(i,1);pcRmSave(list);if(PCX._ed===id)PCX._ed=0;pcRenderRooms(root);return}
  if(act==='rclr'){const now=Date.now();if(!(PCX._clr&&now-PCX._clr<3500)){PCX._clr=now;a.textContent=tr('Tap again to clear','মুছতে আবার চাপুন');a.classList.add('warn');setTimeout(()=>{if(a.isConnected){a.textContent=tr('Clear list','তালিকা মুছুন');a.classList.remove('warn')}},3500);return}
   PCX._clr=0;pcRmSave([]);PCX._ed=0;pcRenderRooms(root);return}
- if(act==='rprint'){pcPrint();return}
  const rows=pcRowsFor();if(!rows.length)return;const txt=pcSummary(rows);
  if(act==='rwa'){window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener');return}
  if(act==='rshare'){if(navigator.share)navigator.share({title:'Teksoi Rong',text:txt}).catch(()=>{});return}
@@ -3115,7 +3045,7 @@ function pcRmAct(root,act,a){const list=pcRmLoad(),id=a.dataset.rid,say=m=>pcRmS
   const fb=()=>{try{const t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');t.style.cssText='position:fixed;opacity:0;top:0;left:0';document.body.appendChild(t);t.select();const r=document.execCommand('copy');t.remove();say(r?tr('Summary copied.','সারাংশ কপি হয়েছে।'):tr('Could not copy. Use Share or WhatsApp.','কপি করা যায়নি। শেয়ার বা WhatsApp ব্যবহার করুন।'))}catch(e){say(tr('Could not copy.','কপি করা যায়নি।'))}};
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,fb);else fb()}}
 function pcRmRename(id,v){const list=pcRmLoad(),i=list.findIndex(r=>r.id===id);if(i<0)return;list[i].name=pcStr(v,40)||tr('Room','রুম');pcRmSave(list)}
-window.PCRM={pcRmLoad,pcRmCalc,pcRmTotals,pcSummary,pcQuoteHTML,pcCost,pcClean,pcRowsFor,pcSnap,pcRoomsSync};
+window.PCRM={pcRmLoad,pcRmCalc,pcRmTotals,pcSummary,pcClean,pcRowsFor,pcSnap,pcRoomsSync};
 /* ---------- QR code encoder (byte mode, versions 1-20, error correction L or M) ---------- */
 window.trQR=(function(){
 const ECC={L:{f:1,c:[0,7,10,15,20,26,18,20,24,30,18,20,24,26,30,22,24,28,30,28,28],b:[0,1,1,1,1,1,2,2,2,2,4,4,4,4,4,6,6,6,6,7,8]},
@@ -3334,7 +3264,7 @@ addEventListener('hashchange',amClose);
 document.addEventListener('click',e=>{if(e.target.closest('.lang button'))amClose()},true);
 addEventListener('resize',()=>{});
 /* ---------- search */
-const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#paint-calculator','Paint calculator cost estimate price per sft square feet area wall ceiling feet inch rate budget 3D room visualizer window door litre tin paint quantity coats primer','পেইন্ট ক্যালকুলেটর হিসাব খরচ দাম বর্গফুট এসএফটি ক্ষেত্রফল দেয়াল সিলিং ফুট ইঞ্চি বাজেট রেট ৩ডি রুম জানালা দরজা লিটার টিন রং কতটা কোট প্রাইমার'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
+const PG2=[['#about-us','About us 2007 journey','আমাদের সম্পর্কে ২০০৭ যাত্রা'],['#services','Services','সেবা'],['#projects','Projects gallery before after','প্রকল্প গ্যালারি আগে পরে'],['#our-process','Our process steps','প্রক্রিয়া ধাপ'],['#colour-catalog','Try Colours catalogue RGB shade paint room','রং বেছে দেখুন ক্যাটালগ রং শেড'],['#paint-calculator','Paint calculator estimate how much paint square feet area wall ceiling feet inch 3D room visualizer window door litre tin paint quantity coats primer','পেইন্ট ক্যালকুলেটর হিসাব বর্গফুট ক্ষেত্রফল দেয়াল সিলিং ফুট ইঞ্চি ৩ডি রুম জানালা দরজা লিটার টিন রং কতটা কোট প্রাইমার'],['#book-appointment','Book appointment booking','অ্যাপয়েন্টমেন্ট বুকিং'],['#bill-payment','Bill payment invoice bkash rocket','বিল পেমেন্ট ইনভয়েস বিকাশ রকেট'],['#reviews','Reviews feedback rating','রিভিউ মতামত রেটিং'],['#ask-question','Ask a question','প্রশ্ন'],['#complaint','Complaint','অভিযোগ'],['#faq','FAQ questions','সাধারণ জিজ্ঞাসা'],['#contact','Contact phone address Bakalia Noagaon Muradnagar','যোগাযোগ ফোন ঠিকানা বাকলিয়া নোয়াগাঁও মুরাদনগর'],['#request-quote','Free quote quotation paint type','বিনামূল্যে কোটেশন রংয়ের ধরন'],['#furniture-painting','Furniture painting wood chair','ফার্নিচার রং কাঠ চেয়ার']];
 function index(){const out=[];NAV.forEach(n=>{const k=PG2.find(p=>p[0]===n[0]);out.push({t:tr(n[2],n[3]),h:n[0],i:n[1],k:(k?k[1]+' '+k[2]:'')+' '+n[2]+' '+n[3]})});
 const q=PG2.find(p=>p[0]==='#request-quote');out.push({t:tr('Free quote','বিনামূল্যে কোটেশন'),h:'#request-quote',i:'bill',k:q[1]+' '+q[2]});
 SV.forEach((s,k)=>out.push({t:tr(s[1],s[2]),h:'#'+['residential-painting','commercial-painting','interior-painting','exterior-painting','full-home-painting','repainting'][k],i:'g',k:s[1]+' '+s[2]+' '+s[3]+' '+s[4]}));
@@ -3619,6 +3549,15 @@ window.TRU=async()=>{try{let u=S.u;
  const pd=regLoad();if(pd&&pd.uid===u.uid)return null;
  let m=S.u&&S.me;if(!m){F=F||await fb();try{const d=await F.getDoc(F.doc(F.db,'customers',u.uid));m=d.exists()?d.data():{}}catch(e){m={}}}
  return{uid:u.uid,ok:!!(m.emailVerified||m.phoneVerified)}}catch(e){return null}};
+/* paint calculator: who may see the result. Any signed-in account counts (customer or admin); a half-done e-mail sign-up does not. */
+window.TRA={hint:()=>!!(S.u&&S.u.email)||lgHint(),
+ go:tab=>{S.tab=tab==='up'?'up':'in';S._pt=null},
+ check:async()=>{try{let u=S.u;
+  if(!u){if(!lgHint())return false;F=F||await fb();u=await new Promise(res=>{let done=0;const off=F.onAuthStateChanged(F.auth,x=>{if(done)return;done=1;try{off&&off()}catch(e){}res(x)});setTimeout(()=>{if(!done){done=1;res(null)}},4000)})}
+  if(!u||!u.email)return false;
+  if(u.email!==AD){const pd=regLoad();if(pd&&pd.uid===u.uid)return false}
+  if(S.reg&&S.reg.m==='e'&&u.uid===S.reg.uid)return false;
+  return true}catch(e){return false}}};
 window.TRH=(c,id,d,cu)=>{if(!cu||!cu.uid||!RQC[c])return;const a=rqLoad();a.unshift({c,id:String(id||''),u:cu.uid,t:Date.now(),s:rqSum(c,d||{})});rqSave(a);S._rqt=0};
 /* this device's list, joined with the live status from the database when it could be read */
 const rqMine=()=>{const uid=S.u&&S.u.uid;if(!uid)return[];const srv=S.rqu===uid&&S.rqs?S.rqs:{},seen={},out=[];
@@ -3649,7 +3588,7 @@ const locH=m=>{const l=m.loc;return `<div class="pfr" style="cursor:default"><sp
 const lgo=()=>`<div class="lgp">${hd2('')}<div class="lgs"><div class="lgcard"><h2>${tr('Opening Admin Panel…','অ্যাডমিন প্যানেল খুলছে…')}</h2><p class="lgsub">${tr('If it does not open, press the button below.','না খুললে নিচের বাটনে চাপুন।')}</p><button type="button" class="lgbtn" data-k="panel">${tr('Open Admin Panel','অ্যাডমিন প্যানেল খুলুন')}</button></div></div>${ft2()}</div>`;
 const phUp=inp=>{const f=inp.files&&inp.files[0];if(!f||!S.u)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=async()=>{const c=document.createElement('canvas');c.width=c.height=240;const x=c.getContext('2d'),q=Math.min(im.width,im.height);x.drawImage(im,(im.width-q)/2,(im.height-q)/2,q,q,0,0,240,240);const d=c.toDataURL('image/jpeg',.82);try{await F.setDoc(F.doc(F.db,'customers',S.u.uid),{photo:d},{merge:true});S.me=Object.assign({},S.me,{photo:d});S.note=tr('Photo updated','ছবি আপডেট হয়েছে')}catch(e){S.msg=tr('Could not save the photo.','ছবি সেভ করা যায়নি।')}paint()};im.src=r.result};r.readAsDataURL(f)};
 const goAdmin=()=>{location.replace('#admin');setTimeout(()=>{const e=document.getElementById('tradm');if(!e||getComputedStyle(e).display==='none'){if(window.__trOpenAdmin){close();window.__trOpenAdmin()}}},600)};
-const lgv=(T,msg)=>{const up=T==='up',ad=T==='ad',RG=up&&S.reg?S.reg:null,st=RG?RG.step:1,ME=up&&(st>1?RG.m==='e':S.regM==='e'),FP=T==='fp'&&S.rs?S.rs:null;
+const lgv=(T,msg)=>{const up=T==='up',ad=T==='ad',RG=up&&S.reg?S.reg:null,st=RG?RG.step:1,ME=up,FP=T==='fp'&&S.rs?S.rs:null;
 const T2=FP?(FP.step===1?tr('Reset password','পাসওয়ার্ড রিসেট'):FP.step===2?tr('Verify your number','নম্বর যাচাই করুন'):tr('New password','নতুন পাসওয়ার্ড')):up?(st===2?(ME?tr('Check your email','ইমেইল দেখুন'):tr('Verify your number','নম্বর যাচাই করুন')):st===3?tr('Set a password','পাসওয়ার্ড দিন'):tr('Create Account','অ্যাকাউন্ট খুলুন')):ad?tr('Admin Login','অ্যাডমিন লগইন'):tr('Customer Login','কাস্টমার লগইন');
 const sub=FP?(FP.step===1?tr('Enter the mobile number you signed up with','যে মোবাইল নম্বরে অ্যাকাউন্ট খুলেছেন সেটি দিন'):FP.step===2?tr('Enter the 6-digit code we texted to ','আমরা যে ৬ সংখ্যার কোড পাঠিয়েছি তা দিন: ')+E(FP.ph):tr('Choose a new password to finish.','শেষ করতে নতুন একটি পাসওয়ার্ড দিন।')):up?(st===2?(ME?tr('Verify your email to continue','চালিয়ে যেতে ইমেইল যাচাই করুন'):tr('Enter the 6-digit code we texted to ','আমরা যে ৬ সংখ্যার কোড পাঠিয়েছি তা দিন: ')+E(RG.ph)):st===3?(ME?tr('Email verified. Choose a password to finish.','ইমেইল যাচাই হয়েছে। শেষ করতে একটি পাসওয়ার্ড দিন।'):tr('Number verified. Choose a password to finish.','নম্বর যাচাই হয়েছে। শেষ করতে একটি পাসওয়ার্ড দিন।')):tr('Hey, fill in your details to create your account','আপনার তথ্য দিয়ে নতুন অ্যাকাউন্ট খুলুন')):ad?tr('Authorised staff only. Enter your admin details to continue','শুধু অ্যাডমিনের জন্য। চালিয়ে যেতে তথ্য দিন'):tr('Hey, enter your details to get signed in to your account','আপনার তথ্য দিয়ে অ্যাকাউন্টে সাইন ইন করুন');
 const uic='<span class="lgx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.2-6.5 8-6.5s7 2 8 6.5"/></svg></span>';
@@ -3657,7 +3596,7 @@ const fld=(i,p,t,x,ic)=>`<label class="lgi"><input id="${i}" ${t?'type="'+t+'" '
 const pw=(ac)=>`<label class="lgi"><input id="tp" type="password" placeholder="${tr('Password','পাসওয়ার্ড')}" autocomplete="${ac}"><button type="button" class="lgeye" data-k="eye">${tr('Show','দেখুন')}</button></label>`;
 let f;
 if(up){const dv=k=>RG?E(RG[k]||''):'';
-if(st===1)f=rmTog(ME)+fld('tn',tr('Full name','পুরো নাম'),'','autocomplete="name" value="'+dv('nm')+'"',uic)+fld('tph',tr('Mobile (01XXXXXXXXX)','মোবাইল (01XXXXXXXXX)'),'tel','autocomplete="tel" inputmode="numeric" value="'+dv('ph')+'"')+fld('tem',ME?tr('Email','ইমেইল'):tr('Email (optional)','ইমেইল (ঐচ্ছিক)'),'email','autocomplete="email" value="'+dv('em')+'"')+fld('tad',tr('Address','ঠিকানা'),'','autocomplete="street-address" value="'+dv('ad')+'"')+'<p class="lgnt">'+(ME?tr('We will email you a verification link. Tap it, then come back here to choose your password. Use this email to sign in later.','আপনার ইমেইলে একটি ভেরিফিকেশন লিংক যাবে। লিংকে ক্লিক করে এখানে ফিরে পাসওয়ার্ড দিন। পরে এই ইমেইল দিয়েই সাইন ইন করবেন।'):tr('We will text a 6-digit code to this mobile number. You set your password after the code is verified.','এই মোবাইল নম্বরে ৬ সংখ্যার একটি কোড এসএমএস করা হবে। কোড যাচাইয়ের পরেই পাসওয়ার্ড দিতে পারবেন।'))+'</p>';
+if(st===1)f=rmTog(ME)+fld('tn',tr('Full name','পুরো নাম'),'','autocomplete="name" value="'+dv('nm')+'"',uic)+fld('tph',tr('Mobile (01XXXXXXXXX)','মোবাইল (01XXXXXXXXX)'),'tel','autocomplete="tel" inputmode="numeric" value="'+dv('ph')+'"')+fld('tem',ME?tr('Email','ইমেইল'):tr('Email (optional)','ইমেইল (ঐচ্ছিক)'),'email','autocomplete="email" value="'+dv('em')+'"')+fld('tad',tr('Address','ঠিকানা'),'','autocomplete="street-address" value="'+dv('ad')+'"')+'<p class="lgnt">'+(ME?tr('We will email you a verification link. Tap it, then come back here to choose your password. Use this email to sign in later. Your mobile number is only for contact: no SMS is sent.','আপনার ইমেইলে একটি ভেরিফিকেশন লিংক যাবে। লিংকে ক্লিক করে এখানে ফিরে পাসওয়ার্ড দিন। পরে এই ইমেইল দিয়েই সাইন ইন করবেন। মোবাইল নম্বর শুধু যোগাযোগের জন্য, কোনো এসএমএস যাবে না।'):tr('We will text a 6-digit code to this mobile number. You set your password after the code is verified.','এই মোবাইল নম্বরে ৬ সংখ্যার একটি কোড এসএমএস করা হবে। কোড যাচাইয়ের পরেই পাসওয়ার্ড দিতে পারবেন।'))+'</p>';
 else if(st===2&&ME)f=mailBox(RG);
 else if(st===2){const s=Math.max(0,Math.ceil((RG.t-Date.now())/1000));f=fld('tco',tr('6-digit code','৬ সংখ্যার কোড'),'tel','autocomplete="one-time-code" inputmode="numeric" maxlength="6" class="lgcode"')+'<button type="button" class="lgrs" data-k="rsend"'+(s>0?' disabled':'')+'>'+(s>0?tr('Resend code in ','আবার কোড পাঠান ')+s+tr('s','সে'):tr('Resend code','আবার কোড পাঠান'))+'</button>'}
 else f=pw('new-password')}
@@ -3687,7 +3626,7 @@ lgSwap(h,keep,u)}
 function unsub(){S.un.forEach(f=>f());S.un=[];S.rows=[];S.cs=[]}
 function watch(u){unsub();S.me=null;if(u.email===AD)return;(async()=>{try{const d=await F.getDoc(F.doc(F.db,'customers',u.uid));if(d.exists())S.me=d.data();try{await F.setDoc(F.doc(F.db,'customers',u.uid),{lastLoginAt:F.serverTimestamp()},{merge:true})}catch(e){}}catch(e){}paint()})()}
 async function open(){if(!el){const st=document.createElement('style');st.textContent=css;const _rm=document.getElementById('rtmark');_rm?_rm.before(st):document.head.appendChild(st);el=document.createElement('div');el.id='tkac';el.addEventListener('click',click);el.addEventListener('change',e=>{if(e.target.id==='tkph'){phUp(e.target);return}if(e.target.id==='tt'){const p=e.target.value==='proj';el.querySelectorAll('.pj').forEach(x=>x.style.display=p?'block':'none');el.querySelectorAll('.am').forEach(x=>x.style.display=p?'none':'')}});document.body.appendChild(el)}clearTimeout(S._ct);S._cl=0;S._bye=0;const wasOn=el.classList.contains('lgon');el.style.display='block';document.body.style.overflow='hidden';if(!wasOn){S._vk='';S._op=1;S._pt=null}paint();if(el.style.display!=='none'){void el.offsetWidth;el.classList.add('lgon')}
-if(!S.on){S.on=true;setTimeout(()=>{if(!S.rd){S.rd=1;paint()}},7000);try{F=await fb();F.onAuthStateChanged(F.auth,u=>{if(u&&S.reg&&S.reg.m==='e')return;if(u&&S.rs)return;{const pd=u&&u.email!==AD?regLoad():null;if(pd&&pd.uid===u.uid){S.reg=Object.assign({},pd,{m:'e',step:pd.step===3?3:2,t:0});S.tab='up';S.u=null;S.rd=1;S._pt=null;paint();regPoll();mailCheck(S.reg,0).catch(()=>{});return}}if(u&&!u.email){if(!S.reg){S.rd=1;try{F.signOut(F.auth)}catch(x){}}return}S.u=u;if(u)S._pt=null;S.msg='';S.rd=1;try{localStorage.setItem('tr-ah',u?'1':'')}catch(x){}u?watch(u):unsub();if(u&&u.email===AD&&S.go){S.go=0;goAdmin()}if(u&&u.email!==AD){clearTimeout(S._wt);S._wt=setTimeout(paint,1100)}else paint()})}catch(e){S.on=false;S.rd=1;S.msg='Could not connect.';paint()}}}
+if(!S.on){S.on=true;setTimeout(()=>{if(!S.rd){S.rd=1;paint()}},7000);try{F=await fb();F.onAuthStateChanged(F.auth,u=>{if(u&&S.reg&&S.reg.m==='e')return;if(u&&S.rs)return;{const pd=u&&u.email!==AD?regLoad():null;if(pd&&pd.uid===u.uid){S.reg=Object.assign({},pd,{m:'e',step:pd.step===3?3:2,t:0});S.tab='up';S.u=null;S.rd=1;S._pt=null;paint();regPoll();mailCheck(S.reg,0).catch(()=>{});return}}if(u&&!u.email){if(!S.reg){S.rd=1;try{F.signOut(F.auth)}catch(x){}}return}S.u=u;if(u)S._pt=null;S.msg='';S.rd=1;try{localStorage.setItem('tr-ah',u?'1':'')}catch(x){}u?watch(u):unsub();if(u&&u.email!==AD&&window.__trLgFrom&&window.__trLgFrom.auto)setTimeout(()=>{if(S.u&&window.__trLgFrom&&window.__trLgFrom.auto)lgBack()},500);if(u&&u.email===AD&&S.go){S.go=0;goAdmin()}if(u&&u.email!==AD){clearTimeout(S._wt);S._wt=setTimeout(paint,1100)}else paint()})}catch(e){S.on=false;S.rd=1;S.msg='Could not connect.';paint()}}}
 function close(){if(!el)return;document.body.style.overflow='';if(el.style.display==='none'||S._cl)return;if(!el.classList.contains('lgon')){el.style.display='none';lgWipe();return}S._cl=1;el.classList.remove('lgon');clearTimeout(S._ct);S._ct=setTimeout(()=>{S._cl=0;if(!el.classList.contains('lgon')){el.style.display='none';lgWipe()}},lgRM()?0:240)}
 const v=i=>{const e=el.querySelector('#'+i);return e?e.value.trim():''};
 const EM={'auth/email-already-in-use':'Already registered. Please login.','auth/weak-password':'Password must be at least 6 characters.','auth/invalid-email':'Invalid email or mobile.','auth/invalid-credential':'Wrong login or password. Use the same email/mobile you registered with.','auth/user-not-found':'No account found.','auth/wrong-password':'Wrong login or password.','auth/too-many-requests':'Too many tries. Try later.','permission-denied':'Could not save (permission denied). Please try again later.'};
@@ -3739,10 +3678,10 @@ if(R.tp){try{await F.reauthenticateWithCredential(cu,F.EmailAuthProvider.credent
 await F.updatePassword(cu,pw);
 try{await F.updateProfile(cu,{displayName:R.nm})}catch(x){}
 await F.setDoc(F.doc(F.db,'customers',cu.uid),{name:R.nm,contact:R.em,phone:R.ph,email:R.em,address:R.ad,emailVerified:true,createdAt:F.serverTimestamp()},{merge:true});
-S.reg=null;regClear();clearInterval(S._rp);S._rp=0;S.u=cu;S.rd=1;S._pt=null;try{localStorage.setItem('tr-ah','1')}catch(x){}S.me={name:R.nm,phone:R.ph,email:R.em,address:R.ad,fav:[],emailVerified:true};paint();watch(cu)}
+S.reg=null;regClear();clearInterval(S._rp);S._rp=0;S.u=cu;S.rd=1;S._pt=null;try{localStorage.setItem('tr-ah','1')}catch(x){}S.me={name:R.nm,phone:R.ph,email:R.em,address:R.ad,fav:[],emailVerified:true};paint();watch(cu);if(window.__trLgFrom&&window.__trLgFrom.auto)setTimeout(()=>{if(S.u&&window.__trLgFrom&&window.__trLgFrom.auto)lgBack()},900)}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&S.reg&&S.reg.m==='e'&&S.reg.step===2&&el&&el.style.display!=='none')mailCheck(S.reg,0).catch(()=>{})});
-/* method switch + mail card (sign-up) */
-const rmTog=ME=>`<div class="lgmt" role="radiogroup" aria-label="${tr('Verify with','যাচাইয়ের মাধ্যম')}"><button type="button" role="radio" aria-checked="${!ME}" class="${ME?'':'on'}" data-k="rm" data-v="s">${tr('SMS code','এসএমএস কোড')}</button><button type="button" role="radio" aria-checked="${!!ME}" class="${ME?'on':''}" data-k="rm" data-v="e">${tr('Email link','ইমেইল লিংক')}</button></div>`;
+/* mail card (sign-up is by e-mail only) */
+const rmTog=()=>'';
 const mailBox=R=>{const s=Math.max(0,Math.ceil((R.t-Date.now())/1000));return `<div class="lgml"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><b>${E(R.em)}</b><p>${tr('Open your email and tap the verification link. Then come back here and tap the button below. Cannot see it? Check Spam or Promotions.','ইমেইল খুলে ভেরিফিকেশন লিংকে ক্লিক করুন। তারপর এখানে ফিরে নিচের বাটন চাপুন। না পেলে Spam বা Promotions দেখুন।')}</p></div><button type="button" class="lgrs" data-k="rsend"${s>0?' disabled':''}>${s>0?tr('Resend link in ','আবার লিংক পাঠান ')+s+tr('s','সে'):tr('Resend link','আবার লিংক পাঠান')}</button>`};
 /* forgot password */
 const fpFields=(R,fld,pw)=>R.step===1?fld('tph',tr('Mobile (01XXXXXXXXX)','মোবাইল (01XXXXXXXXX)'),'tel','autocomplete="tel" inputmode="numeric" value="'+E(R.ph||'')+'"')+'<p class="lgnt">'+tr('We will text a 6-digit code to this number. After that you can choose a new password.','এই নম্বরে ৬ সংখ্যার কোড এসএমএস করা হবে। তারপর নতুন পাসওয়ার্ড দিতে পারবেন।')+'</p>'
@@ -3752,7 +3691,7 @@ async function abortRs(){const R=S.rs;if(S.tab==='fp')S.tab='in';if(!R)return;S.
 const cu=F&&F.auth&&F.auth.currentUser;if(cu&&R.step>=2){try{if(!cu.email)await F.deleteUser(cu);else await F.signOut(F.auth)}catch(x){try{await F.signOut(F.auth)}catch(y){}}}}
 async function fpStart(id){id=String(id||'').trim();
 if(!id){S.msg=tr('Type your email or mobile number above first.','আগে উপরে ইমেইল বা মোবাইল নম্বর লিখুন।');paint();return}
-if(PH.test(id)){S.tab='fp';S.rs={step:1,ph:id};paint();return}
+if(PH.test(id)){S.msg=tr('Password reset works by email. If your account was made with a mobile number only, please contact us.','পাসওয়ার্ড রিসেট ইমেইলে হয়। শুধু মোবাইল নম্বর দিয়ে অ্যাকাউন্ট খুলে থাকলে আমাদের জানান।');paint();return}
 if(!/^\S+@\S+\.\S+$/.test(id)){S.msg=tr('Email is not valid.','ইমেইল সঠিক নয়।');paint();return}
 F=F||await fb();mlLang();await F.sendPasswordResetEmail(F.auth,id);
 S.note=tr('If an account exists for this email, a password reset link is on its way. Check inbox and spam.','এই ইমেইলে অ্যাকাউন্ট থাকলে পাসওয়ার্ড রিসেটের লিংক পাঠানো হয়েছে। ইনবক্স ও স্প্যাম দেখুন।');paint()}
@@ -3812,8 +3751,8 @@ if(k==='go'){t.classList.add('lgbusy');const pw=(el.querySelector('#tp')||{value
 if(S.tab==='fp'&&S.rs){await fpGo();return}
 if(S.tab==='up'){const R=S.reg||{step:1};
 if(R.step===1){const nm=v('tn'),ph=v('tph'),em=v('tem'),ad=v('tad');if(nm.length<2)return bad(tr('Please enter your name.','নাম লিখুন।'));if(!PH.test(ph))return bad(tr('Enter a valid 11-digit mobile number.','সঠিক ১১ সংখ্যার মোবাইল নম্বর দিন।'));if(em&&!/^\S+@\S+\.\S+$/.test(em))return bad(tr('Email is not valid.','ইমেইল সঠিক নয়।'));if(ad.length<5)return bad(tr('Please enter your address.','ঠিকানা লিখুন।'));
-if(S.regM==='e'){if(!em)return bad(tr('Enter your email address.','ইমেইল ঠিকানা দিন।'));const N={step:1,m:'e',nm,ph,em,ad};S.reg=N;try{await startMail(N)}catch(x){S.reg=null;throw x}N.step=2;S.note=tr('We sent a verification link to your email.','আপনার ইমেইলে একটি ভেরিফিকেশন লিংক পাঠানো হয়েছে।');paint();regTick();regPoll();return}
-const N={step:2,nm,ph,em,ad};await sendOtp(N);S.reg=N;S.note=tr('We sent a 6-digit code by SMS.','এসএমএসে ৬ সংখ্যার কোড পাঠানো হয়েছে।');paint();regTick();return}
+{if(!em)return bad(tr('Enter your email address.','ইমেইল ঠিকানা দিন।'));const N={step:1,m:'e',nm,ph,em,ad};S.reg=N;try{await startMail(N)}catch(x){S.reg=null;throw x}N.step=2;S.note=tr('We sent a verification link to your email.','আপনার ইমেইলে একটি ভেরিফিকেশন লিংক পাঠানো হয়েছে।');paint();regTick();regPoll();return}
+}
 if(R.step===2&&R.m==='e'){await mailCheck(R,1);return}
 if(R.step===2){const cd=v('tco').replace(/\D/g,'');if(cd.length!==6)return bad(tr('Enter the 6-digit code.','৬ সংখ্যার কোডটি দিন।'));
 await R.cr.confirm(cd);R.step=3;S.reg=R;clearInterval(S._rt);paint();return}
